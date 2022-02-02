@@ -197,7 +197,7 @@ def load_fields(fpath):
 
 def prepare_input_sequence(fields, device, symbol_set, text_cleaners,
                            batch_size=128, dataset=None, load_mels=False,
-                           load_pitch=False, p_arpabet=0.0):
+                           load_pitch=False, load_durations=False, p_arpabet=0.0):
     tp = TextProcessing(symbol_set, text_cleaners, p_arpabet=p_arpabet)
 
     fields['text'] = [torch.LongTensor(tp.encode_text(text))
@@ -222,6 +222,11 @@ def prepare_input_sequence(fields, device, symbol_set, text_cleaners,
             torch.load(Path(dataset, fields['pitch'][i])) for i in order]
         fields['pitch_lens'] = torch.LongTensor([t.size(0) for t in fields['pitch']])
 
+    if load_durations:
+        assert 'duration' in fields
+        fields['duration'] = [torch.load(Path(dataset, fields['pitch'][i]))
+                              for i in order]
+
     if 'output' in fields:
         fields['output'] = [fields['output'][i] for i in order]
 
@@ -236,7 +241,8 @@ def prepare_input_sequence(fields, device, symbol_set, text_cleaners,
                 batch[f] = pad_sequence(batch[f], batch_first=True).permute(0, 2, 1)
             elif f == 'pitch' and load_pitch:
                 batch[f] = pad_sequence(batch[f], batch_first=True)
-
+            elif f == 'duration' and load_durations:
+                batch[f] = pad_sequence(batch[f], batch_first=True)
             if type(batch[f]) is torch.Tensor:
                 batch[f] = batch[f].to(device)
         batches.append(batch)
@@ -341,7 +347,8 @@ def main():
     fields = load_fields(args.input)
     batches = prepare_input_sequence(
         fields, device, args.symbol_set, args.text_cleaners, args.batch_size,
-        args.dataset_path, load_mels=(generator is None), p_arpabet=args.p_arpabet)
+        args.dataset_path, load_pitch=('pitch' in fields), load_durations=('durations' in fields),
+        load_mels=(generator is None), p_arpabet=args.p_arpabet)
 
     # Use real data rather than synthetic - FastPitch predicts len
     for _ in tqdm(range(args.warmup_steps), 'Warmup'):
@@ -358,7 +365,7 @@ def main():
 
     gen_kw = {'pace': args.pace,
               'speaker': args.speaker,
-              'pitch_tgt': None,
+              # 'pitch_tgt': None,
               'pitch_transform': build_pitch_transformation(args)}
 
     if args.torchscript:
@@ -380,6 +387,8 @@ def main():
                 log(rep, {'Synthesizing from ground truth mels'})
                 mel, mel_lens = b['mel'], b['mel_lens']
             else:
+                gen_kw['dur_tgt'] = b['duration'] if 'duration' in b else None
+                gen_kw['pitch_tgt'] = b['pitch'] if 'pitch' in b else None
                 with torch.no_grad(), gen_measures:
                     mel, mel_lens, *_ = generator(b['text'], **gen_kw)
 
