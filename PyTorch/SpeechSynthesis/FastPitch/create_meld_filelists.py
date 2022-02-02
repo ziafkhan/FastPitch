@@ -129,7 +129,7 @@ known_speakers = {}
 def speaker_to_int(speaker_key):
     if '-' in speaker_key:
         speaker_key = speaker_key.split('-')[0]
-    speaker_int = known_speakers.get(speaker_key, 0)
+    speaker_int = known_speakers.get(speaker_key, -1)
     if not speaker_int:
         speaker_int = len(known_speakers) + 1
         known_speakers[speaker_key] = speaker_int
