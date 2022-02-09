@@ -291,6 +291,28 @@ class MeasureTime(list):
         return MeasureTime((sum(ab) for ab in zip(self, other)), cuda=cuda)
 
 
+def save_pitch(pitch_pred):
+    pass
+
+
+def mess_with_pitch(pitch_pred):
+    pitch_array = pitch_pred.cpu().numpy()
+    print(pitch_array.dtype)
+    print(np.max(pitch_array), np.min(pitch_array))
+    amendment = np.random.randint(1, 100, size=pitch_array.shape)  # change so that value can get greaTER
+    frac = np.divide(1, amendment)
+    amended = np.zeroes(pitch_array.shape)
+    for column in pitch_array[, :, :]:
+        plusminus = np.random.choice(['p', 'm'])
+        if plusminus == 'p':
+            amended[column] = pitch_array[column] + np.multiply(pitch_array[column], frac[column], dtype=np.float32)
+        else:
+            amended[column] = pitch_array[column] - np.multiply(pitch_array[column], frac[column], dtype=np.float32)
+    print(np.max(frac), np.min(frac))
+    mod_array = torch.from_numpy(amended)
+    return mod_array
+
+
 def main():
     """
     Launches text to speech (inference).
@@ -390,6 +412,10 @@ def main():
                 gen_kw['dur_tgt'] = b['duration'] if 'duration' in b else None
                 gen_kw['pitch_tgt'] = b['pitch'] if 'pitch' in b else None
                 with torch.no_grad(), gen_measures:
+                    _, _, dur_pred, pitch_pred, energy_pred = generator(b['text'], **gen_kw)
+                    save_pitch(pitch_pred)
+                    new_pitch = mess_with_pitch(pitch_pred).to(device)
+                    gen_kw['pitch_tgt'] = new_pitch
                     mel, mel_lens, *_ = generator(b['text'], **gen_kw)
 
                 gen_infer_perf = mel.size(0) * mel.size(2) / gen_measures[-1]
@@ -420,7 +446,7 @@ def main():
                 log(rep, {"waveglow_samples/s": waveglow_infer_perf})
                 log(rep, {"waveglow_latency": waveglow_measures[-1]})
 
-                if args.output is not None and reps == 1:
+                if args.output is not None and reps == 1:  # why does this depend on reps being 1?
                     for i, audio in enumerate(audios):
                         audio = audio[:mel_lens[i].item() * args.stft_hop_length]
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 : ${WAVEGLOW:="pretrained_models/waveglow/nvidia_waveglow256pyt_fp16.pt"}
-: ${FASTPITCH:="pretrained_models/fastpitch/nvidia_fastpitch_210824.pt"}
+: ${FASTPITCH:="/home/emelie/Repos/FastPitches/PyTorch/SpeechSynthesis/FastPitch/output/FastPitch_checkpoint_200.pt"}
 : ${BATCH_SIZE:=32}
-: ${PHRASES:="phrases/devset10.tsv"}
-: ${OUTPUT_DIR:="./output/audio_$(basename ${PHRASES} .tsv)"}
+: ${PHRASES:="phrases/usborne/random_test_sentences_usborne.tsv"}
+: ${OUTPUT_DIR:="./output/lj_200/audio_$(basename ${PHRASES} .tsv)"}
 : ${LOG_FILE:="$OUTPUT_DIR/nvlog_infer.json"}
 : ${AMP:=false}
 : ${TORCHSCRIPT:=false}
