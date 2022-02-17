@@ -50,6 +50,8 @@ def parse_args(parser):
                         help='Calculate spectrograms from .wav files')
     parser.add_argument('--extract-pitch', action='store_true',
                         help='Extract pitch')
+    parser.add_argument('--extract-durations', action='store_true',
+                        help='Extract durations')
     parser.add_argument('--save-alignment-priors', action='store_true',
                         help='Pre-calculate diagonal matrices of alignment of text to audio')
     parser.add_argument('--log-file', type=str, default='preproc_log.json',
@@ -99,6 +101,9 @@ def main():
     if args.extract_pitch:
         Path(args.dataset_path, 'pitch').mkdir(parents=False, exist_ok=True)
 
+    if args.extract_durs:
+        Path(args.dataset_path, 'durations').mkdir(parents=False, exist_ok=True)
+
     if args.save_alignment_priors:
         Path(args.dataset_path, 'alignment_priors').mkdir(parents=False, exist_ok=True)
 
@@ -142,7 +147,7 @@ def main():
         for i, batch in enumerate(tqdm.tqdm(data_loader)):
             tik = time.time()
 
-            _, input_lens, mels, mel_lens, _, pitch, _, _, attn_prior, fpaths = batch
+            _, durs, input_lens, mels, mel_lens, _, pitch, _, _, attn_prior, fpaths = batch
 
             # Ensure filenames are unique
             for p in fpaths:

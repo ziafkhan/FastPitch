@@ -342,6 +342,14 @@ class TTSCollate:
             text = batch[ids_sorted_decreasing[i]][0]
             text_padded[i, :text.size(0)] = text
 
+        dur_padded = torch.zeros_like(text_padded, dtype=batch[0][3].dtype)
+        dur_lens = torch.zeros(dur_padded.size(0), dtype=torch.int32)
+        for i in range(len(ids_sorted_decreasing)):
+            dur = batch[ids_sorted_decreasing[i]][3]
+            dur_padded[i, :dur.shape[0]] = dur
+            dur_lens[i] = dur.shape[0]
+            assert dur_lens[i] == input_lengths[i]
+
         # Right zero-pad mel-spec
         num_mels = batch[0][1].size(0)
         max_target_len = max([x[1].size(1) for x in batch])
@@ -386,16 +394,17 @@ class TTSCollate:
 
         audiopaths = [batch[i][7] for i in ids_sorted_decreasing]
 
-        return (text_padded, input_lengths, mel_padded, output_lengths, len_x,
+        return (text_padded, dur_padded, input_lengths, mel_padded, output_lengths, len_x,
                 pitch_padded, energy_padded, speaker, attn_prior_padded,
                 audiopaths)
 
 
 def batch_to_gpu(batch):
-    (text_padded, input_lengths, mel_padded, output_lengths, len_x,
+    (text_padded, durs_padded, input_lengths, mel_padded, output_lengths, len_x,
      pitch_padded, energy_padded, speaker, attn_prior, audiopaths) = batch
 
     text_padded = to_gpu(text_padded).long()
+    durs_padded = to_gpu(durs_padded).long()
     input_lengths = to_gpu(input_lengths).long()
     mel_padded = to_gpu(mel_padded).float()
     output_lengths = to_gpu(output_lengths).long()
