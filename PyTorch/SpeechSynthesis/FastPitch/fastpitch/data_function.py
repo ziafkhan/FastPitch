@@ -329,23 +329,30 @@ class TTSCollate:
     """Zero-pads model inputs and targets based on number of frames per step"""
 
     def __call__(self, batch):
+        print('new call')
+        # print(batch)
         """Collate training batch from normalized text and mel-spec"""
         # Right zero-pad all one-hot text sequences to max input length
         input_lengths, ids_sorted_decreasing = torch.sort(
             torch.LongTensor([len(x[0]) for x in batch]),
             dim=0, descending=True)
         max_input_len = input_lengths[0]
+        print(max_input_len)
 
         text_padded = torch.LongTensor(len(batch), max_input_len)
         text_padded.zero_()
         for i in range(len(ids_sorted_decreasing)):
             text = batch[ids_sorted_decreasing[i]][0]
             text_padded[i, :text.size(0)] = text
+            #print(text)
 
         dur_padded = torch.zeros_like(text_padded, dtype=batch[0][3].dtype)
         dur_lens = torch.zeros(dur_padded.size(0), dtype=torch.int32)
+        #print(dur_lens)
         for i in range(len(ids_sorted_decreasing)):
             dur = batch[ids_sorted_decreasing[i]][3]
+            # error
+            print(i, dur.shape)
             dur_padded[i, :dur.shape[0]] = dur
             dur_lens[i] = dur.shape[0]
             assert dur_lens[i] == input_lengths[i]

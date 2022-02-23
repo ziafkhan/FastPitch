@@ -113,8 +113,8 @@ def parse_textgrid(tier, sampling_rate, hop_length):
 
 
 def check_durations(durs, mel_len, filepath):
-    assert (sum(durs) == mel_len,
-            f'Length mismatch: {filepath}, {sum(durs)} durs != {mel_len} lens')
+    assert sum(durs) == mel_len, \
+            f'Length mismatch: {filepath}, {sum(durs)} durs != {mel_len} lens'
 
 
 def main():
@@ -136,7 +136,7 @@ def main():
     if args.extract_pitch:
         Path(args.dataset_path, 'pitch').mkdir(parents=False, exist_ok=True)
 
-    if args.extract_durs:
+    if args.extract_durations:
         if not args.textgrid_path:
             args.textgridPath = os.path.join(args.dataset_path, 'TextGrid')
         Path(args.dataset_path, 'durations').mkdir(parents=False, exist_ok=True)
@@ -181,6 +181,8 @@ def main():
             drop_last=False)
 
         all_filenames = set()
+        print('pre-loop')
+        print(data_loader.dataset)
         for i, batch in enumerate(tqdm.tqdm(data_loader)):
             tik = time.time()
 
@@ -189,14 +191,14 @@ def main():
             # output_lengths, len_x, pitch_padded, energy_padded, speaker,
             # attn_prior_padded, audiopaths)
             _, durs, input_lens, mels, mel_lens, _, pitch, _, _, attn_prior, fpaths = batch
-
+            print(f'batch: {fpaths}')
             # Ensure filenames are unique
             for p in fpaths:
                 fname = Path(p).name
                 if fname in all_filenames:
                     raise ValueError(f'Filename is not unique: {fname}')
                 all_filenames.add(fname)
-
+            print('filename check complete')
             if args.extract_mels:
                 for j, mel in enumerate(mels):
                     fname = Path(fpaths[j]).with_suffix('.pt').name
