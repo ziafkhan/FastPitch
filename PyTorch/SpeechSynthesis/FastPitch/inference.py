@@ -26,6 +26,10 @@
 # *****************************************************************************
 
 import argparse
+
+import scipy
+from torch import nn
+
 import models
 import time
 import sys
@@ -41,7 +45,12 @@ from torch.nn.utils.rnn import pad_sequence
 
 import dllogger as DLLogger
 from dllogger import StdOutBackend, JSONStreamBackend, Verbosity
+from dtw import dtw, warp, rabinerJuangStepPattern
 
+from fastpitch.data_function import estimate_pitch
+from fastpitch.model import average_pitch
+from common import layers
+from common.utils import load_wav_to_torch
 from common import utils
 from common.tb_dllogger import (init_inference_metadata, stdout_metric_format,
                                 unique_log_fpath)
@@ -64,6 +73,7 @@ def parse_args(parser):
                         help='Output folder to save audio (file per phrase)')
     parser.add_argument('--log-file', type=str, default=None,
                         help='Path to a DLLogger log file')
+    parser.add_argument('--ref-wav', type=str)
     parser.add_argument('--save-mels', action='store_true', help='')
     parser.add_argument('--cuda', action='store_true',
                         help='Run inference on a GPU using CUDA')
@@ -295,22 +305,82 @@ def save_pitch(pitch_pred):
     pass
 
 
-def mess_with_pitch(pitch_pred):
-    pitch_array = pitch_pred.cpu().numpy()
-    print(pitch_array.dtype)
-    print(np.max(pitch_array), np.min(pitch_array))
-    amendment = np.random.randint(1, 100, size=pitch_array.shape)  # change so that value can get greaTER
-    frac = np.divide(1, amendment)
-    amended = np.zeroes(pitch_array.shape)
-    for column in pitch_array[, :, :]:
-        plusminus = np.random.choice(['p', 'm'])
-        if plusminus == 'p':
-            amended[column] = pitch_array[column] + np.multiply(pitch_array[column], frac[column], dtype=np.float32)
-        else:
-            amended[column] = pitch_array[column] - np.multiply(pitch_array[column], frac[column], dtype=np.float32)
-    print(np.max(frac), np.min(frac))
-    mod_array = torch.from_numpy(amended)
-    return mod_array
+def get_ref_mels(filename):
+    max_wav_value = 32768.0  # arg parse default from prepare_dataset
+    filter_length = 1024
+    hop_length = 256
+    win_length = 1024
+    n_mel_channels = 80
+    mel_fmin = 0.0
+    mel_fmax = 8000.0
+    # TODO: check varying sample rates
+    audio, sampling_rate = load_wav_to_torch(filename)
+    audio_norm = audio / max_wav_value
+    audio_norm = audio_norm.unsqueeze(0)
+    audio_norm = torch.autograd.Variable(audio_norm,
+                                         requires_grad=False)
+    stft = layers.TacotronSTFT(
+                filter_length, hop_length, win_length,
+                n_mel_channels, sampling_rate, mel_fmin, mel_fmax)
+    melspec = stft.mel_spectrogram(audio_norm)
+    return melspec
+
+
+def align_mels(ref_mel, mel):
+    # TODO: Deal with the batch dimension a bit nicer
+    mel = np.squeeze(mel.cpu().numpy(), axis=0).transpose(1, 0)
+    ref_mel = np.squeeze(ref_mel.cpu().numpy(), axis=0).transpose(1, 0)
+
+    # From Korin Richmond
+    dm = 'seuclidean'  # distance metric to use
+    # matrix of distances between all frames
+    dist_matrix = scipy.spatial.distance.cdist(mel, ref_mel, dm)
+
+    sp = rabinerJuangStepPattern(6, 'c', False)  # alternative 'symmetric1'
+    alignment = dtw(dist_matrix, keep_internals=True, step_pattern=sp)
+    # alignment.plot(type='density')
+    warper = warp(alignment, index_reference=False)
+    return warper
+
+
+def warp_pitch(alignment, ref_pitch, durations, device):
+    # 1 x no. of characters
+    int_durs = torch.round(durations).to(torch.int64)
+    aligned_ref_durs = np.zeros(shape=int_durs.shape)
+    consumed = 0
+    for i, dur in enumerate(torch.cumsum(int_durs, dim=1)[0, :]):
+        dur = dur.cpu().numpy()
+        ref_index = alignment[dur-2]  # durations start from 1?
+        # slice = ref_pitch[0, consumed:ref_index]
+        expected_slice_size = ref_index - consumed
+        aligned_ref_durs[0, i] = expected_slice_size  # non-cum duration
+        consumed = ref_index  # next ref slice starts from current ref index
+    ref_pitch = torch.unsqueeze(ref_pitch, dim=0).to(device)
+    avg_ref_pitch = average_pitch(ref_pitch, torch.from_numpy(aligned_ref_durs).to(device))
+    # print('averaged pitch: ', avg_ref_pitch)
+    return avg_ref_pitch
+
+
+def warp_dur(dur_pred, alignment, ref_wav):
+    return dur_pred
+
+
+def normalise_pitch(pitch, mean, std):
+    print('pitch/mean/std: ', pitch.shape, mean, std)
+    zeros = (pitch == 0.0)
+    pitch -= mean
+    pitch /= std
+    pitch[zeros] = 0.0
+    return pitch
+
+
+def get_ref_pitch(ref_wav, mel_len):
+    print('get ref pitch mel len shape', mel_len)
+    pitch_est = estimate_pitch(ref_wav, mel_len,
+                               method='pyin', n_formants=1)  # default
+    return normalise_pitch(pitch_est,
+                           214.72203,  # LJSpeech defaults, change to something useful
+                           65.72038)  # change to something useful)
 
 
 def main():
@@ -412,11 +482,24 @@ def main():
                 gen_kw['dur_tgt'] = b['duration'] if 'duration' in b else None
                 gen_kw['pitch_tgt'] = b['pitch'] if 'pitch' in b else None
                 with torch.no_grad(), gen_measures:
-                    _, _, dur_pred, pitch_pred, energy_pred = generator(b['text'], **gen_kw)
-                    save_pitch(pitch_pred)
-                    new_pitch = mess_with_pitch(pitch_pred).to(device)
-                    gen_kw['pitch_tgt'] = new_pitch
-                    mel, mel_lens, *_ = generator(b['text'], **gen_kw)
+                    mel, mel_lens, dur_pred, pitch_pred, energy_pred = generator(b['text'], **gen_kw)
+                    # save_pitch(pitch_pred)
+                    if args.ref_wav:
+                        ref_mel = get_ref_mels(args.ref_wav)
+                        print('ref_mel_shape: ', ref_mel.shape)
+                        ref_pitch = get_ref_pitch(args.ref_wav, ref_mel.shape[-1])
+                        alignment = align_mels(mel, ref_mel)
+
+                        new_pitch = warp_pitch(alignment, ref_pitch, dur_pred, device)
+                        print('new pitch shape: ', new_pitch.shape)
+                        print('pitch_pred shape: ', pitch_pred.shape)
+                        # for i, pitch in enumerate(new_pitch[:, 0, 0]):
+                        #     print(i, pitch, pitch_pred[0, 0, i])
+                        new_dur = warp_dur(dur_pred, alignment, args.ref_wav)
+                        gen_kw['pitch_tgt'] = new_pitch
+                        # gen_kw['dur_tgt'] = new_dur
+                        mel, mel_lens, *_ = generator(b['text'], **gen_kw)  # runs 'infer' method
+                        print('new mel shape: ', mel.shape)
 
                 gen_infer_perf = mel.size(0) * mel.size(2) / gen_measures[-1]
                 all_letters += b['text_lens'].sum().item()
