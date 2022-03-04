@@ -65,11 +65,10 @@ def load_wav_to_torch(full_path, force_sampling_rate=None):
     return torch.FloatTensor(data.astype(np.float32)), sampling_rate
 
 
-def load_filepaths_and_text(fnames, dataset_path=None, has_speakers=False,
+def load_filepaths_and_text(fnames, dataset_path=None, has_speakers=False, has_conditions=False,
                             split="|"):
-
-    #Reads in csv with headers mels|pitch|text|optional-speaker
-    #Returns list of dicts
+    # Reads in csv with headers mels|pitch|text|optional-speaker
+    # Returns list of dicts
 
     fpaths_and_text = []
     for fname in fnames:
