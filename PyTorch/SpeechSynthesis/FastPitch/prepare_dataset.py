@@ -27,6 +27,7 @@
 
 import argparse
 import os
+import sys
 import time
 from pathlib import Path
 
@@ -181,8 +182,7 @@ def main():
             drop_last=False)
 
         all_filenames = set()
-        print('pre-loop')
-        print(data_loader.dataset)
+        print('TIME TO LOOP')
         for i, batch in enumerate(tqdm.tqdm(data_loader)):
             tik = time.time()
 
@@ -191,7 +191,7 @@ def main():
             # output_lengths, len_x, pitch_padded, energy_padded, speaker,
             # attn_prior_padded, audiopaths)
             _, durs, input_lens, mels, mel_lens, _, pitch, _, _, attn_prior, fpaths = batch
-            print(f'batch: {fpaths}')
+            print(f'BATCH: {fpaths}')
             # Ensure filenames are unique
             for p in fpaths:
                 fname = Path(p).name
