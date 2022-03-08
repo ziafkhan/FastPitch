@@ -30,11 +30,12 @@ fi
 
 python prepare_dataset.py \
     --wav-text-filelists ${FILELIST} \
-    --n-workers 8 \
+    --n-workers 2 \
     --batch-size 1 \
     --dataset-path $DATA_DIR \
     --textgrid-path $ALIGNMENT_DIR \
     --extract-pitch \
     --extract-durations\
+    --durs-online-dir "/tmp/" \
     --f0-method pyin \
     $ARGS

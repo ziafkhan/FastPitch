@@ -50,7 +50,6 @@ from torch.utils.data.distributed import DistributedSampler
 import models
 from common.text import cmudict
 from common.utils import BenchmarkStats, prepare_tmp
-from fastpitch.attn_loss_function import AttentionBinarizationLoss
 from fastpitch.data_function import batch_to_gpu, TTSCollate, TTSDataset
 from fastpitch.loss_function import FastPitchLoss
 from fastpitch.model import regulate_len
@@ -129,7 +128,8 @@ def parse_args(parser):
                       help='Type of text cleaners for input text')
     data.add_argument('--symbol-set', type=str, default='english_basic',
                       help='Define symbol set for input text')
-    data.add_argument('--p-arpabet', type=float, default=0.0,
+    # should be 1.0 to work with MFA textgrids, which contain only phones
+    data.add_argument('--p-arpabet', type=float, default=1.0,
                       help='Probability of using arpabets instead of graphemes '
                            'for each word; set 0 for pure grapheme training')
     data.add_argument('--heteronyms-path', type=str, default='cmudict/heteronyms',
@@ -514,7 +514,6 @@ def main():
 
     model_config = models.get_model_config('FastPitch', args)
     model = models.get_model('FastPitch', model_config, device)
-    attention_kl_loss = AttentionBinarizationLoss()
 
     if args.local_rank == 0:
         wandb.init(project=args.project,
@@ -574,8 +573,7 @@ def main():
 
     criterion = FastPitchLoss(
         dur_predictor_loss_scale=args.dur_predictor_loss_scale,
-        pitch_predictor_loss_scale=args.pitch_predictor_loss_scale,
-        attn_loss_scale=args.attn_loss_scale)
+        pitch_predictor_loss_scale=args.pitch_predictor_loss_scale)
 
     collate_fn = TTSCollate()
 
@@ -640,26 +638,10 @@ def main():
             x, y, num_frames = batch_to_gpu(batch)
 
             with torch.cuda.amp.autocast(enabled=args.amp):
-                y_pred = model(x)
+                # (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt, energy_pred, energy_tgt)
+                y_pred = model(x, use_gt_durations=True)
+                # y = mel_padded, input_lengths, output_lengths
                 loss, meta = criterion(y_pred, y)
-
-                if (args.kl_loss_start_epoch is not None
-                        and epoch >= args.kl_loss_start_epoch):
-
-                    if args.kl_loss_start_epoch == epoch and epoch_iter == 1:
-                        print('Begin hard_attn loss')
-
-                    _, _, _, _, _, _, _, _, attn_soft, attn_hard, _, _ = y_pred
-                    binarization_loss = attention_kl_loss(attn_hard, attn_soft)
-                    kl_weight = min((epoch - args.kl_loss_start_epoch) / args.kl_loss_warmup_epochs, 1.0) * args.kl_loss_weight
-                    meta['kl_loss'] = binarization_loss.clone().detach() * kl_weight
-                    loss += kl_weight * binarization_loss
-
-                else:
-                    meta['kl_loss'] = torch.zeros_like(loss)
-                    kl_weight = 0
-                    binarization_loss = 0
-
                 loss /= args.grad_accumulation
 
             meta = {k: v / args.grad_accumulation
@@ -702,12 +684,12 @@ def main():
                     apply_multi_tensor_ema(args.ema_decay, *mt_ema_params)
 
                 iter_mel_loss = iter_meta['mel_loss'].item()
-                iter_kl_loss = iter_meta['kl_loss'].item()
                 iter_time = time.perf_counter() - iter_start_time
                 epoch_frames_per_sec += iter_num_frames / iter_time
                 epoch_loss += iter_loss
                 epoch_num_frames += iter_num_frames
                 epoch_mel_loss += iter_mel_loss
+
                 if epoch_iter % 5 == 0:
                     log({
                         'epoch': epoch,
@@ -716,8 +698,6 @@ def main():
                         'total_steps': total_iter,
                         'loss/loss': iter_loss,
                         'mel-loss/mel_loss': iter_mel_loss,
-                        'kl_loss': iter_kl_loss,
-                        'kl_weight': kl_weight,
                         'frames per s': iter_num_frames / iter_time,
                         'took': iter_time,
                         'lrate': optimizer.param_groups[0]['lr'],

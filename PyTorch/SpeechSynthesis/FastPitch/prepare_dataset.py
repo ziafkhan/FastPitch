@@ -27,16 +27,13 @@
 
 import argparse
 import os
-import sys
 import time
 from pathlib import Path
 
-import numpy as np
 import torch
 import tqdm
 import dllogger as DLLogger
 from dllogger import StdOutBackend, JSONStreamBackend, Verbosity
-from tgt.io import read_textgrid
 from torch.utils.data import DataLoader
 
 from fastpitch.data_function import TTSCollate, TTSDataset
@@ -58,8 +55,8 @@ def parse_args(parser):
                         help='Extract pitch')
     parser.add_argument('--extract-durations', action='store_true',
                         help='Extract durations (from alignment dir)')
-    parser.add_argument('--save-alignment-priors', action='store_true',
-                        help='Pre-calculate diagonal matrices of alignment of text to audio')
+    parser.add_argument('--durs-online-dir', type=str,
+                        help='Durations tmp dir')
     parser.add_argument('--log-file', type=str, default='preproc_log.json',
                          help='Filename for logging')
     parser.add_argument('--n-speakers', type=int, default=1)
@@ -88,36 +85,6 @@ def parse_args(parser):
     return parser
 
 
-def parse_textgrid(tier, sampling_rate, hop_length):
-    # From Dan Wells
-    # Latest MFA replaces silence phones with "" in output TextGrids
-    sil_phones = ['sil', 'sp', 'spn', '']
-    start_time = tier[0].start_time
-    end_time = tier[-1].end_time
-    phones = []
-    durations = []
-    for index, label in enumerate(tier._objects):
-        p_start, p_end, phone = label.start_time, label.end_time, label.text
-        if phone not in sil_phones:
-            phones.append(phone)
-        else:
-            if (index == 0) or (index == len(tier) - 1):
-                # leading or trailing silence
-                phones.append('sil')
-            else:
-                # short pause between words
-                phones.append('sp')
-
-        durations.append(int(np.ceil(p_end * sampling_rate / hop_length)
-                             - np.ceil(p_start * sampling_rate / hop_length)))
-    return phones, durations, start_time, end_time
-
-
-def check_durations(durs, mel_len, filepath):
-    assert sum(durs) == mel_len, \
-            f'Length mismatch: {filepath}, {sum(durs)} durs != {mel_len} lens'
-
-
 def main():
     parser = argparse.ArgumentParser(description='FastPitch Data Pre-processing')
     parser = parse_args(parser)
@@ -139,37 +106,32 @@ def main():
 
     if args.extract_durations:
         if not args.textgrid_path:
-            args.textgridPath = os.path.join(args.dataset_path, 'TextGrid')
-        Path(args.dataset_path, 'durations').mkdir(parents=False, exist_ok=True)
-
-    if args.save_alignment_priors:
-        Path(args.dataset_path, 'alignment_priors').mkdir(parents=False, exist_ok=True)
+            args.textgrid_path = os.path.join(args.dataset_path, 'TextGrid')
+        durs_path = Path(args.dataset_path, 'durations')
+        durs_path.mkdir(parents=False, exist_ok=True)
+        if args.durs_online_dir:
+            Path(args.durs_online_dir, durs_path).mkdir(parents=True, exist_ok=True)
 
     for filelist in args.wav_text_filelists:
 
         print(f'Processing {filelist}...')
 
-        dataset = TTSDataset(
-            args.dataset_path,
-            filelist,
-            text_cleaners=['english_cleaners_v2'],
-            n_mel_channels=args.n_mel_channels,
-            p_arpabet=0.0,
-            n_speakers=args.n_speakers,
-            load_mel_from_disk=False,
-            load_pitch_from_disk=False,
-            pitch_mean=None,
-            pitch_std=None,
-            max_wav_value=args.max_wav_value,
-            sampling_rate=args.sampling_rate,
-            filter_length=args.filter_length,
-            hop_length=args.hop_length,
-            win_length=args.win_length,
-            mel_fmin=args.mel_fmin,
-            mel_fmax=args.mel_fmax,
-            betabinomial_online_dir=None,
-            pitch_online_dir=None,
-            pitch_online_method=args.f0_method)
+        dataset = TTSDataset(args.dataset_path, filelist,
+                             text_cleaners=['english_cleaners_v2'],
+                             n_mel_channels=args.n_mel_channels, p_arpabet=1.0,
+                             n_speakers=args.n_speakers,
+                             load_mel_from_disk=False,
+                             load_pitch_from_disk=False, pitch_mean=None,
+                             pitch_std=None, max_wav_value=args.max_wav_value,
+                             sampling_rate=args.sampling_rate,
+                             filter_length=args.filter_length,
+                             hop_length=args.hop_length,
+                             win_length=args.win_length, mel_fmin=args.mel_fmin,
+                             mel_fmax=args.mel_fmax,
+                             pitch_online_dir=None,
+                             dur_online_dir=None,
+                             textgrid_path=args.textgrid_path,
+                             pitch_online_method=args.f0_method)
 
         data_loader = DataLoader(
             dataset,
@@ -213,31 +175,11 @@ def main():
 
             if args.extract_durations:
                 # From Dan Wells
-                for j, _ in range(len(mel_lens)):
+                for j, _ in range(len(durs)):
                     filename = fpaths[j]
-                    tgt_path = Path(args.textgrid_path, f'{filename}.TextGrid')
-                    try:
-                        textgrid = read_textgrid(tgt_path,
-                                                 include_empty_intervals=True)
-                    except FileNotFoundError:
-                        print(f'{filename}.wav TextGrid missing: {tgt_path}')
-                        raise
-                    _, durs, _, _ = parse_textgrid(
-                        textgrid.get_tier_by_name('phones'),
-                        args.sampling_rate,
-                        args.hop_length)
-
-                    check_durations(durs, mel_lens[j], filename)
-
                     dur_path = Path(args.dataset_path,
                                     'durations', f'{filename}.pt')
                     torch.save(torch.LongTensor(durs).cpu().int(), dur_path)
-
-            if args.save_alignment_priors:
-                for j, prior in enumerate(attn_prior):
-                    fname = Path(fpaths[j]).with_suffix('.pt').name
-                    fpath = Path(args.dataset_path, 'alignment_priors', fname)
-                    torch.save(prior[:mel_lens[j], :input_lens[j]], fpath)
 
 
 if __name__ == '__main__':

@@ -30,29 +30,24 @@ import torch.nn.functional as F
 from torch import nn
 
 from common.utils import mask_from_lens
-from fastpitch.attn_loss_function import AttentionCTCLoss
 
 
 class FastPitchLoss(nn.Module):
     def __init__(self, dur_predictor_loss_scale=1.0,
-                 pitch_predictor_loss_scale=1.0, attn_loss_scale=1.0,
+                 pitch_predictor_loss_scale=1.0,
                  energy_predictor_loss_scale=0.1):
         super(FastPitchLoss, self).__init__()
         self.dur_predictor_loss_scale = dur_predictor_loss_scale
         self.pitch_predictor_loss_scale = pitch_predictor_loss_scale
         self.energy_predictor_loss_scale = energy_predictor_loss_scale
-        self.attn_loss_scale = attn_loss_scale
-        self.attn_ctc_loss = AttentionCTCLoss()
 
     def forward(self, model_out, targets, is_training=True, meta_agg='mean'):
         (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt,
-         energy_pred, energy_tgt, attn_soft, attn_hard, attn_dur,
-         attn_logprob) = model_out
-
-        (mel_tgt, in_lens, out_lens) = targets
-
-        dur_tgt = attn_dur
-        dur_lens = in_lens
+         energy_pred, energy_tgt) = model_out
+        # model_out = (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt, energy_pred, energy_tgt)
+        #(mel_tgt, in_lens, out_lens) = targets
+        mel_tgt, dur_tgt, dur_lens, pitch_tgt = targets
+        #dur_lens = in_lens
 
         mel_tgt.requires_grad = False
         # (B,H,T) => (B,T,H)
@@ -83,21 +78,16 @@ class FastPitchLoss(nn.Module):
         else:
             energy_loss = 0
 
-        # Attention loss
-        attn_loss = self.attn_ctc_loss(attn_logprob, in_lens, out_lens)
-
         loss = (mel_loss
                 + dur_pred_loss * self.dur_predictor_loss_scale
                 + pitch_loss * self.pitch_predictor_loss_scale
-                + energy_loss * self.energy_predictor_loss_scale
-                + attn_loss * self.attn_loss_scale)
+                + energy_loss * self.energy_predictor_loss_scale)
 
         meta = {
             'loss': loss.clone().detach(),
             'mel_loss': mel_loss.clone().detach(),
             'duration_predictor_loss': dur_pred_loss.clone().detach(),
             'pitch_loss': pitch_loss.clone().detach(),
-            'attn_loss': attn_loss.clone().detach(),
             'dur_error': (torch.abs(dur_pred - dur_tgt).sum()
                           / dur_mask.sum()).detach(),
         }
