@@ -266,8 +266,8 @@ class TTSDataset(torch.utils.data.Dataset):
             print(f'{name}.wav TextGrid missing: {tgt_path}')
             raise
         phones, durs, _, _ = parse_textgrid(textgrid.get_tier_by_name('phones'),
-                                       self.sampling_rate,
-                                       self.hop_length)
+                                            self.sampling_rate,
+                                            self.hop_length)
 
         check_durations(durs, self.get_mel(audiopath).size(1), name)
 
@@ -324,7 +324,7 @@ class TTSCollate:
         # Right zero-pad all one-hot text sequences to max input length
         input_lengths, ids_sorted_decreasing = torch.sort(
             torch.LongTensor([len(x[0]) for x in batch]),
-            dim=0, descending=False)
+            dim=0, descending=True)
         max_input_len = input_lengths[0]
 
         text_padded = torch.LongTensor(len(batch), max_input_len)
