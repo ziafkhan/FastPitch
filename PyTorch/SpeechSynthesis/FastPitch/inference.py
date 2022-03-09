@@ -355,14 +355,11 @@ def warp_pitch(alignment, ref_pitch, durations, device):
         expected_slice_size = ref_index - consumed
         aligned_ref_durs[0, i] = expected_slice_size  # non-cum duration
         consumed = ref_index  # next ref slice starts from current ref index
+    ref_durs = torch.from_numpy(aligned_ref_durs).to(device)
     ref_pitch = torch.unsqueeze(ref_pitch, dim=0).to(device)
-    avg_ref_pitch = average_pitch(ref_pitch, torch.from_numpy(aligned_ref_durs).to(device))
+    avg_ref_pitch = average_pitch(ref_pitch, ref_durs)
     # print('averaged pitch: ', avg_ref_pitch)
-    return avg_ref_pitch
-
-
-def warp_dur(dur_pred, alignment, ref_wav):
-    return dur_pred
+    return ref_durs, avg_ref_pitch
 
 
 def normalise_pitch(pitch, mean, std):
@@ -490,14 +487,13 @@ def main():
                         ref_pitch = get_ref_pitch(args.ref_wav, ref_mel.shape[-1])
                         alignment = align_mels(mel, ref_mel)
 
-                        new_pitch = warp_pitch(alignment, ref_pitch, dur_pred, device)
-                        print('new pitch shape: ', new_pitch.shape)
-                        print('pitch_pred shape: ', pitch_pred.shape)
+                        new_durs, new_pitch = warp_pitch(alignment, ref_pitch, dur_pred, device)
                         # for i, pitch in enumerate(new_pitch[:, 0, 0]):
                         #     print(i, pitch, pitch_pred[0, 0, i])
-                        new_dur = warp_dur(dur_pred, alignment, args.ref_wav)
+                        print('dur_pred', type(dur_pred), type(new_durs))
+                        # new_dur = warp_dur(dur_pred, alignment, args.ref_wav)
                         gen_kw['pitch_tgt'] = new_pitch
-                        # gen_kw['dur_tgt'] = new_dur
+                        #gen_kw['dur_tgt'] = new_durs
                         mel, mel_lens, *_ = generator(b['text'], **gen_kw)  # runs 'infer' method
                         print('new mel shape: ', mel.shape)
 
