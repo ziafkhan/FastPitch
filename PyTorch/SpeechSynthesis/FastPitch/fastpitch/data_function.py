@@ -71,7 +71,7 @@ def parse_textgrid(tier, sampling_rate, hop_length):
 
         durations.append(int(np.ceil(p_end * sampling_rate / hop_length)
                              - np.ceil(p_start * sampling_rate / hop_length)))
-    print('PHONES', phones[:15])
+
     return phones, durations, start_time, end_time
 
 
@@ -196,11 +196,10 @@ class TTSDataset(torch.utils.data.Dataset):
             speaker = None
 
         mel = self.get_mel(audiopath)
-        text = self.get_text(text)
         pitch = self.get_pitch(index, mel.size(-1))
         energy = torch.norm(mel.float(), dim=0, p=2)
-        dur = self.get_dur(index)
-        print('get batch dur: ', len(dur))
+        dur, phones = self.get_dur(index)
+        text = torch.LongTensor(self.tp.arpabet_list_to_sequence(phones))
         assert pitch.size(-1) == mel.size(-1)
 
         # No higher formants?
@@ -237,7 +236,7 @@ class TTSDataset(torch.utils.data.Dataset):
         return melspec
 
     def get_text(self, text):
-        text = self.tp.encode_text(text)
+        text, text_clean, text_arpabet = self.tp.encode_text(text, return_all=True)
         space = [self.tp.encode_text("A A")[1]]
 
         if self.prepend_space_to_text:
@@ -246,8 +245,7 @@ class TTSDataset(torch.utils.data.Dataset):
         if self.append_space_to_text:
             text = text + space
 
-        print('TEXT: ', len(text))
-        return torch.LongTensor(text)
+        return torch.LongTensor(text), text_arpabet
 
     def get_dur(self, index):
         audiopath, *fields = self.audiopaths_and_text[index]
@@ -267,7 +265,7 @@ class TTSDataset(torch.utils.data.Dataset):
         except FileNotFoundError:
             print(f'{name}.wav TextGrid missing: {tgt_path}')
             raise
-        _, durs, _, _ = parse_textgrid(textgrid.get_tier_by_name('phones'),
+        phones, durs, _, _ = parse_textgrid(textgrid.get_tier_by_name('phones'),
                                        self.sampling_rate,
                                        self.hop_length)
 
@@ -276,7 +274,7 @@ class TTSDataset(torch.utils.data.Dataset):
         if self.dur_tmp_dir is not None and not cached_fpath.is_file():
             return torch.save(durs, cached_fpath)
 
-        return durs
+        return durs, phones
 
     def get_pitch(self, index, mel_len=None):
         audiopath, *fields = self.audiopaths_and_text[index]
@@ -326,7 +324,7 @@ class TTSCollate:
         # Right zero-pad all one-hot text sequences to max input length
         input_lengths, ids_sorted_decreasing = torch.sort(
             torch.LongTensor([len(x[0]) for x in batch]),
-            dim=0, descending=True)
+            dim=0, descending=False)
         max_input_len = input_lengths[0]
 
         text_padded = torch.LongTensor(len(batch), max_input_len)
@@ -340,8 +338,9 @@ class TTSCollate:
         dur_lens = torch.zeros(dur_padded.size(0), dtype=torch.int32)
         for i in range(len(ids_sorted_decreasing)):
             dur = batch[ids_sorted_decreasing[i]][6]
-            # ERROR some mismatch between phones in transcript vs phones form text preprocessing
-            print('TEXT LEN', dur_padded.shape, 'DUR LEN', len(dur))
+            # With MFA durations:
+            # some mismatch between phones in transcript vs phones from text preprocessing
+            # for now using phones from texgrid as input
             dur_padded[i, :len(dur)] = torch.Tensor(dur)
             dur_lens[i] = len(dur)
             assert dur_lens[i] == input_lengths[i]

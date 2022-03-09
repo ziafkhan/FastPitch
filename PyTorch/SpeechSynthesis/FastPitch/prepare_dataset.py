@@ -144,23 +144,20 @@ def main():
             drop_last=False)
 
         all_filenames = set()
-        print('TIME TO LOOP')
         for i, batch in enumerate(tqdm.tqdm(data_loader)):
             tik = time.time()
 
             # From TTSCollate __call__
             # (text_padded, dur_padded, input_lengths, mel_padded,
-            # output_lengths, len_x, pitch_padded, energy_padded, speaker,
-            # attn_prior_padded, audiopaths)
-            _, durs, input_lens, mels, mel_lens, _, pitch, _, _, attn_prior, fpaths = batch
-            print(f'BATCH: {fpaths}')
+            # output_lengths, len_x, pitch_padded, energy_padded, speaker, audiopaths)
+            _, durs, input_lens, mels, mel_lens, _, pitch, _, _, fpaths = batch
             # Ensure filenames are unique
             for p in fpaths:
                 fname = Path(p).name
                 if fname in all_filenames:
                     raise ValueError(f'Filename is not unique: {fname}')
                 all_filenames.add(fname)
-            print('filename check complete')
+
             if args.extract_mels:
                 for j, mel in enumerate(mels):
                     fname = Path(fpaths[j]).with_suffix('.pt').name
@@ -175,11 +172,11 @@ def main():
 
             if args.extract_durations:
                 # From Dan Wells
-                for j, _ in range(len(durs)):
-                    filename = fpaths[j]
+                for j, d in enumerate(durs):
+                    filename = Path(fpaths[j]).stem
                     dur_path = Path(args.dataset_path,
                                     'durations', f'{filename}.pt')
-                    torch.save(torch.LongTensor(durs).cpu().int(), dur_path)
+                    torch.save(d, dur_path)
 
 
 if __name__ == '__main__':

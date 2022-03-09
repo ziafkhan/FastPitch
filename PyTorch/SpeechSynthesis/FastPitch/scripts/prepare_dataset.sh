@@ -30,8 +30,8 @@ fi
 
 python prepare_dataset.py \
     --wav-text-filelists ${FILELIST} \
-    --n-workers 2 \
-    --batch-size 1 \
+    --n-workers 4 \
+    --batch-size 1 \  # don't change this
     --dataset-path $DATA_DIR \
     --textgrid-path $ALIGNMENT_DIR \
     --extract-pitch \

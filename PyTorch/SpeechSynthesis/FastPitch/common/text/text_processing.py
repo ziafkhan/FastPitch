@@ -121,9 +121,7 @@ class TextProcessing(object):
         else:
             arpabet = arpabet[0]
 
-        # arpabet = "{" + arpabet + arpabet_suffix + "}"
-
-        return arpabet
+        return arpabet + arpabet_suffix
 
     def encode_text(self, text, return_all=False):
         if self.expand_currency:
@@ -150,23 +148,13 @@ class TextProcessing(object):
                 text_arpabet = [[word[1]] if word[0] == ''
                                 else self.get_arpabet(word[0]).split(' ')
                                 for word in words]
-                text_arpabet = [phone for phone_list in text_arpabet for phone in phone_list if phone != ' ']
-                # text_arpabet = [
-                #     word[1] if word[0] == '' else (
-                #         self.get_arpabet(word[0])
-                #         if np.random.uniform() < self.p_arpabet
-                #         else word[0])
-                #     for word in words]
-                print('ARPABET: ', text_arpabet[:10])
-                #text_arpabet = ''.join(text_arpabet)
+                text_arpabet = [phone for phone_list in text_arpabet
+                                for phone in phone_list if phone != ' ']
                 text = text_arpabet
             elif self.handle_arpabet != '':
                 raise Exception("{} handle_arpabet is not supported".format(
                     self.handle_arpabet))
-        # text_encoded = self.arpabet_to_sequence(text)
-        # text_encoded = self.text_to_sequence(text)
         text_encoded = self.arpabet_list_to_sequence(text)
-        print(len(text_encoded))
         if return_all:
             return text_encoded, text_clean, text_arpabet
 
