@@ -361,7 +361,8 @@ class FastPitch(nn.Module):
                 energy_pred = self.energy_predictor(enc_out, enc_mask).squeeze(-1)
                 energy_emb = self.energy_emb(energy_pred.unsqueeze(1)).transpose(1, 2)
             else:
-                energy_emb = self.energy_emb(energy_tgt).transpose(1, 2)
+                energy_pred = energy_tgt
+                energy_emb = self.energy_emb(energy_pred.unsqueeze(1)).transpose(1, 2)
 
             enc_out = enc_out + energy_emb
         else:

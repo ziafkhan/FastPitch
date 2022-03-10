@@ -343,7 +343,7 @@ def align_mels(ref_mel, mel):
     return warper
 
 
-def warp_pitch(alignment, ref_pitch, durations, device):
+def warp_pitch(alignment, ref_pitch, ref_energy, durations, device):
     # 1 x no. of characters
     int_durs = torch.round(durations).to(torch.int64)
     aligned_ref_durs = np.zeros(shape=int_durs.shape)
@@ -357,13 +357,14 @@ def warp_pitch(alignment, ref_pitch, durations, device):
         consumed = ref_index  # next ref slice starts from current ref index
     ref_durs = torch.from_numpy(aligned_ref_durs).to(device)
     ref_pitch = torch.unsqueeze(ref_pitch, dim=0).to(device)
+    ref_energy = ref_energy.to(device)
     avg_ref_pitch = average_pitch(ref_pitch, ref_durs)
-    # print('averaged pitch: ', avg_ref_pitch)
-    return ref_durs, avg_ref_pitch
+    avg_ref_energy = average_pitch(ref_energy.unsqueeze(1), ref_durs)
+
+    return ref_durs, avg_ref_pitch, avg_ref_energy
 
 
 def normalise_pitch(pitch, mean, std):
-    print('pitch/mean/std: ', pitch.shape, mean, std)
     zeros = (pitch == 0.0)
     pitch -= mean
     pitch /= std
@@ -372,7 +373,6 @@ def normalise_pitch(pitch, mean, std):
 
 
 def get_ref_pitch(ref_wav, mel_len):
-    print('get ref pitch mel len shape', mel_len)
     pitch_est = estimate_pitch(ref_wav, mel_len,
                                method='pyin', n_formants=1)  # default
     return normalise_pitch(pitch_est,
@@ -480,22 +480,31 @@ def main():
                 gen_kw['pitch_tgt'] = b['pitch'] if 'pitch' in b else None
                 with torch.no_grad(), gen_measures:
                     mel, mel_lens, dur_pred, pitch_pred, energy_pred = generator(b['text'], **gen_kw)
-                    # save_pitch(pitch_pred)
                     if args.ref_wav:
                         ref_mel = get_ref_mels(args.ref_wav)
-                        print('ref_mel_shape: ', ref_mel.shape)
+                        ref_energy = torch.norm(ref_mel.float(), dim=0, p=2)
                         ref_pitch = get_ref_pitch(args.ref_wav, ref_mel.shape[-1])
                         alignment = align_mels(mel, ref_mel)
 
-                        new_durs, new_pitch = warp_pitch(alignment, ref_pitch, dur_pred, device)
-                        # for i, pitch in enumerate(new_pitch[:, 0, 0]):
-                        #     print(i, pitch, pitch_pred[0, 0, i])
-                        print('dur_pred', type(dur_pred), type(new_durs))
-                        # new_dur = warp_dur(dur_pred, alignment, args.ref_wav)
+                        new_durs, new_pitch, new_energy = warp_pitch(alignment, ref_pitch, ref_energy, dur_pred, device)
+                        new_energy = torch.log(1.0 + new_energy)
+                        new_energy = new_energy.squeeze(1)
+                        norm_new_energy = normalise_pitch(new_energy, new_energy.mean(), new_energy.std())
+                        print('NORMED: ', norm_new_energy.shape, norm_new_energy[0, :10])
+                        print('PRED MEAN/STD: ', energy_pred.mean(), energy_pred.std())
+                        norm_new_energy = norm_new_energy.mul(energy_pred.std())
+                        print('JUST ADD STD: ', norm_new_energy[0, :10])
+
+                        norm_new_energy = norm_new_energy.add(energy_pred.mean())
+
+                        print('W/ ORIG MEAN/STD: ', norm_new_energy.shape, norm_new_energy[0,0:10])
+
                         gen_kw['pitch_tgt'] = new_pitch
-                        #gen_kw['dur_tgt'] = new_durs
-                        mel, mel_lens, *_ = generator(b['text'], **gen_kw)  # runs 'infer' method
-                        print('new mel shape: ', mel.shape)
+                        gen_kw['dur_tgt'] = new_durs
+                        gen_kw['energy_tgt'] = norm_new_energy
+
+                        mel, mel_lens, *_, energy_pred = generator(b['text'], **gen_kw)  # runs 'infer' method
+                        print('NEW ENERGY: ', energy_pred.shape)
 
                 gen_infer_perf = mel.size(0) * mel.size(2) / gen_measures[-1]
                 all_letters += b['text_lens'].sum().item()
