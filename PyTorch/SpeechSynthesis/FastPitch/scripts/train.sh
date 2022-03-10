@@ -2,13 +2,13 @@
 
 export OMP_NUM_THREADS=1
 
-: ${NUM_GPUS:=8}
-: ${BATCH_SIZE:=16}
+: ${NUM_GPUS:=1}
+: ${BATCH_SIZE:=8}
 : ${GRAD_ACCUMULATION:=2}
-: ${OUTPUT_DIR:="./output"}
+: ${OUTPUT_DIR:="./output_mfa"}
 : ${DATASET_PATH:=LJSpeech-1.1}
-: ${TRAIN_FILELIST:=filelists/ljs_audio_pitch_text_train_v3.txt}
-: ${VAL_FILELIST:=filelists/ljs_audio_pitch_text_val.txt}
+: ${TRAIN_FILELIST:=filelists/ljs_audio_pitch_durs_text_train_v3.txt}
+: ${VAL_FILELIST:=filelists/ljs_audio_pitch_durs_text_val.txt}
 : ${AMP:=false}
 : ${SEED:=""}
 
@@ -18,7 +18,6 @@ export OMP_NUM_THREADS=1
 : ${EPOCHS:=1000}
 : ${EPOCHS_PER_CHECKPOINT:=100}
 : ${WARMUP_STEPS:=1000}
-: ${KL_LOSS_WARMUP:=100}
 
 # Train a mixed phoneme/grapheme model
 : ${PHONE:=true}
@@ -28,8 +27,9 @@ export OMP_NUM_THREADS=1
 # Add dummy space prefix/suffix is audio is not precisely trimmed
 : ${APPEND_SPACES:=false}
 
-: ${LOAD_PITCH_FROM_DISK:=true}
-: ${LOAD_MEL_FROM_DISK:=false}
+: ${LOAD_PITCH_FROM_DISK:=TRUE}
+: ${LOAD_DURS_FROM_DISK:=TRUE}
+: ${LOAD_MEL_FROM_DISK:=FALSE}
 
 # For multispeaker models, add speaker ID = {0, 1, ...} as the last filelist column
 : ${NSPEAKERS:=1}
@@ -60,9 +60,6 @@ ARGS+=" --grad-clip-thresh 1000.0"
 ARGS+=" --dur-predictor-loss-scale 0.1"
 ARGS+=" --pitch-predictor-loss-scale 0.1"
 
-# Autoalign & new features
-ARGS+=" --kl-loss-start-epoch 0"
-ARGS+=" --kl-loss-warmup-epochs $KL_LOSS_WARMUP"
 ARGS+=" --text-cleaners $TEXT_CLEANERS"
 ARGS+=" --n-speakers $NSPEAKERS"
 
@@ -72,8 +69,9 @@ ARGS+=" --n-speakers $NSPEAKERS"
 [ "$PHONE" = "true" ]              && ARGS+=" --p-arpabet 1.0"
 [ "$ENERGY" = "true" ]             && ARGS+=" --energy-conditioning"
 [ "$SEED" != "" ]                  && ARGS+=" --seed $SEED"
-[ "$LOAD_MEL_FROM_DISK" = true ]   && ARGS+=" --load-mel-from-disk"
-[ "$LOAD_PITCH_FROM_DISK" = true ] && ARGS+=" --load-pitch-from-disk"
+[ "$LOAD_MEL_FROM_DISK" = TRUE ]   && ARGS+=" --load-mel-from-disk"
+[ "$LOAD_DURS_FROM_DISK" = TRUE ]  && ARGS+=" --load-durs-from-disk"
+[ "$LOAD_PITCH_FROM_DISK" = TRUE ] && ARGS+=" --load-pitch-from-disk"
 [ "$PITCH_ONLINE_DIR" != "" ]      && ARGS+=" --pitch-online-dir $PITCH_ONLINE_DIR"  # e.g., /dev/shm/pitch
 [ "$PITCH_ONLINE_METHOD" != "" ]   && ARGS+=" --pitch-online-method $PITCH_ONLINE_METHOD"
 [ "$APPEND_SPACES" = true ]        && ARGS+=" --prepend-space-to-text"

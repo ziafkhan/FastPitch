@@ -89,12 +89,6 @@ def parse_args(parser):
                        help='Discounting factor for training weights EMA')
     train.add_argument('--grad-accumulation', type=int, default=1,
                        help='Training steps to accumulate gradients for')
-    train.add_argument('--kl-loss-start-epoch', type=int, default=250,
-                       help='Start adding the hard attention loss term')
-    train.add_argument('--kl-loss-warmup-epochs', type=int, default=100,
-                       help='Gradually increase the hard attention loss term')
-    train.add_argument('--kl-loss-weight', type=float, default=1.0,
-                       help='Gradually increase the hard attention loss term')
     train.add_argument('--benchmark-epochs-num', type=int, default=20,
                         help='Number of epochs for calculating final stats')
 
@@ -145,6 +139,8 @@ def parse_args(parser):
     cond.add_argument('--n-speakers', type=int, default=1,
                       help='Number of speakers in the dataset. '
                            'n_speakers > 1 enables speaker embeddings')
+    cond.add_argument('--load-durs-from-disk', action='store_true',
+                      help='Use durations cached on disk with prepare_dataset.py')
     cond.add_argument('--load-pitch-from-disk', action='store_true',
                       help='Use pitch cached on disk with prepare_dataset.py')
     cond.add_argument('--pitch-online-method', default='pyin',
@@ -580,6 +576,7 @@ def main():
     if args.local_rank == 0:
         prepare_tmp(args.pitch_online_dir)
 
+    print(args)
     trainset = TTSDataset(audiopaths_and_text=args.training_files, **vars(args))
     valset = TTSDataset(audiopaths_and_text=args.validation_files, **vars(args))
 

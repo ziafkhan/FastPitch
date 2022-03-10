@@ -27,6 +27,7 @@
 
 import argparse
 import os
+import sys
 import time
 from pathlib import Path
 
@@ -88,8 +89,10 @@ def parse_args(parser):
 def main():
     parser = argparse.ArgumentParser(description='FastPitch Data Pre-processing')
     parser = parse_args(parser)
+    print(sys.argv)
     args, unk_args = parser.parse_known_args()
     if len(unk_args) > 0:
+        print(unk_args)
         raise ValueError(f'Invalid options {unk_args}')
 
     DLLogger.init(backends=[JSONStreamBackend(Verbosity.DEFAULT, Path(args.dataset_path, args.log_file)),
@@ -149,8 +152,8 @@ def main():
 
             # From TTSCollate __call__
             # (text_padded, dur_padded, input_lengths, mel_padded,
-            # output_lengths, len_x, pitch_padded, energy_padded, speaker, audiopaths)
-            _, durs, input_lens, mels, mel_lens, _, pitch, _, _, fpaths = batch
+            # output_lengths, len_x, pitch_padded, energy_padded, speaker, audiopaths, phones)
+            _, durs, input_lens, mels, mel_lens, _, pitch, _, _, fpaths, phones = batch
             # Ensure filenames are unique
             for p in fpaths:
                 fname = Path(p).name
@@ -174,9 +177,16 @@ def main():
                 # From Dan Wells
                 for j, d in enumerate(durs):
                     filename = Path(fpaths[j]).stem
+                    # TODO remove hardcoding dataset path?
                     dur_path = Path(args.dataset_path,
                                     'durations', f'{filename}.pt')
                     torch.save(d, dur_path)
+                for j, p in enumerate(phones):
+                    filename = Path(fpaths[j]).stem
+                    # save phones too
+                    phones_path = Path(args.dataset_path,
+                                       'durations', f'{filename}_phones.pt')
+                    torch.save(p, phones_path)
 
 
 if __name__ == '__main__':

@@ -207,7 +207,7 @@ class FastPitch(nn.Module):
         # was FP1.0 : inputs, _, mel_tgt, _, DUR_TGT, _, pitch_tgt, speaker = inputs
         # will be: inputs, input_lens, mel_tgt, mel_lens, DUR_TGT, pitch_dense, energy_dense, speaker, audiopaths = inputs
         (inputs, input_lens, mel_tgt, mel_lens, dur_tgt, pitch_dense, energy_dense,
-         speaker, audiopaths) = inputs
+         speaker, audiopaths, phones_padded) = inputs
 
         mel_max_len = mel_tgt.size(2)
 
@@ -219,7 +219,7 @@ class FastPitch(nn.Module):
             spk_emb.mul_(self.speaker_emb_weight)
 
         # Input FFT
-        enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb)
+        enc_out, enc_mask = self.encoder(phones_padded, conditioning=spk_emb)
 
         # Predict durations
         log_dur_pred = self.duration_predictor(enc_out, enc_mask).squeeze(-1)
