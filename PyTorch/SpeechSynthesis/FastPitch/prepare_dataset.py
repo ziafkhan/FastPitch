@@ -150,10 +150,13 @@ def main():
         for i, batch in enumerate(tqdm.tqdm(data_loader)):
             tik = time.time()
 
-            # From TTSCollate __call__
-            # (text_padded, dur_padded, input_lengths, mel_padded,
-            # output_lengths, len_x, pitch_padded, energy_padded, speaker, audiopaths, phones)
-            _, durs, input_lens, mels, mel_lens, _, pitch, _, _, fpaths, phones = batch
+            # DATASET GETITEM
+            # (text, mel, len(text), pitch, energy, speaker, dur, audiopath, phones)
+            # TTSCOLLATE CALL
+            #  (text_padded, dur_padded, input_lengths, mel_padded,
+            #  output_lengths, len_x, pitch_padded, energy_padded, speaker,
+            #  audiopaths, phones_padded)
+            text, durs, input_lens, mels, mel_lens, _, pitch, _, _, fpaths, phones = batch
             # Ensure filenames are unique
             for p in fpaths:
                 fname = Path(p).name
@@ -182,6 +185,7 @@ def main():
                                     'durations', f'{filename}.pt')
                     torch.save(d, dur_path)
                 for j, p in enumerate(phones):
+                    print('LEN PHONES BEFORE SAVING: ', len(p))
                     filename = Path(fpaths[j]).stem
                     # save phones too
                     phones_path = Path(args.dataset_path,
