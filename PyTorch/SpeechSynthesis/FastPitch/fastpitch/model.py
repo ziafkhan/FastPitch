@@ -206,14 +206,9 @@ class FastPitch(nn.Module):
     def forward(self, inputs, use_gt_pitch=True, use_gt_durations=True, pace=1.0, max_duration=75):
         # was FP1.0 : inputs, _, mel_tgt, _, DUR_TGT, _, pitch_tgt, speaker = inputs
         # will be: inputs, input_lens, mel_tgt, mel_lens, DUR_TGT, pitch_dense, energy_dense, speaker, audiopaths = inputs
-        print('NUMBER OF INPUTS', len(inputs))
-        # text_padded, input_lengths, mel_padded, output_lengths,
-        # pitch_padded, energy_padded, speaker, durs_padded, audiopaths, \
-        # phones_padded
         (inputs, input_lens, mel_tgt, mel_lens, pitch_dense, energy_dense,
           speaker, dur_tgt, audiopaths, phones_padded) = inputs
-        # text, durs, input_lens, mels, mel_lens, _, pitch, _, _, fpaths, \
-        # phones = batch
+
         mel_max_len = mel_tgt.size(2)
 
         # Calculate speaker embedding
@@ -235,7 +230,6 @@ class FastPitch(nn.Module):
 
         # Average pitch over characters
         pitch_tgt = average_pitch(pitch_dense, dur_tgt)
-        print('DENSE PITCH SHAPE: ', pitch_tgt.shape, pitch_pred.shape)
 
         if use_gt_pitch and pitch_tgt is not None:
             pitch_emb = self.pitch_emb(pitch_tgt)

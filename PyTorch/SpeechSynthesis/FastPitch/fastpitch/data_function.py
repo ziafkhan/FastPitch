@@ -295,11 +295,8 @@ class TTSDataset(torch.utils.data.Dataset):
             spk = 0
 
         if self.load_pitch_from_disk:
-            print('WE RE LOADING PITCH')
             pitchpath = fields[0]
-            print('PATH: ', pitchpath)
             pitch = torch.load(pitchpath)
-            print('AND ITS SIZE: ', pitch.shape)
             if self.pitch_mean is not None:
                 assert self.pitch_std is not None
                 pitch = normalize_pitch(pitch, self.pitch_mean, self.pitch_std)
