@@ -576,7 +576,6 @@ def main():
     if args.local_rank == 0:
         prepare_tmp(args.pitch_online_dir)
 
-    print(args)
     trainset = TTSDataset(audiopaths_and_text=args.training_files, **vars(args))
     valset = TTSDataset(audiopaths_and_text=args.validation_files, **vars(args))
 
@@ -633,10 +632,12 @@ def main():
                 model.zero_grad(set_to_none=True)
 
             x, y, num_frames = batch_to_gpu(batch)
+            print('NUMBER OF X: ', len(x))
 
             with torch.cuda.amp.autocast(enabled=args.amp):
                 # (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt, energy_pred, energy_tgt)
                 y_pred = model(x, use_gt_durations=True)
+                print('LEN Y: ', len(y_pred), len(y))
                 # y = mel_padded, input_lengths, output_lengths
                 loss, meta = criterion(y_pred, y)
                 loss /= args.grad_accumulation

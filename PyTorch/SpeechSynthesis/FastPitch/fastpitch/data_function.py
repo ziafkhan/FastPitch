@@ -173,7 +173,6 @@ class TTSDataset(torch.utils.data.Dataset):
         self.f0_method = pitch_online_method
 
         expected_columns = (2 + int(load_durs_from_disk) + int(load_pitch_from_disk) + (n_speakers > 1))
-        print(load_durs_from_disk, load_pitch_from_disk, expected_columns)
         assert not (load_pitch_from_disk and self.pitch_tmp_dir is not None)
 
         if len(self.audiopaths_and_text[0]) < expected_columns:
@@ -201,7 +200,6 @@ class TTSDataset(torch.utils.data.Dataset):
         energy = torch.norm(mel.float(), dim=0, p=2)
         dur, phones = self.get_dur(index)
         text = phones
-        print('MOAR TEXT LEN: ', len(text))
         assert pitch.size(-1) == mel.size(-1)
 
         # No higher formants?
@@ -250,7 +248,6 @@ class TTSDataset(torch.utils.data.Dataset):
         return torch.LongTensor(text), text_arpabet
 
     def get_dur(self, index):
-        print('GET DUR')
         audiopath, *fields = self.audiopaths_and_text[index]
         name = Path(audiopath).stem
 
@@ -269,11 +266,7 @@ class TTSDataset(torch.utils.data.Dataset):
             duration_path = fields[1]  # assume durations come after pitch
             # assume phone_path is known from duration_path
             phone_path = Path(Path(duration_path).parent, name + '_phones').with_suffix('.pt')
-            a = torch.load(duration_path)
-            b = torch.load(phone_path)
-            print('PHONES', phone_path, b[:10])
-            print('LOADING LENS: ', len(a), len(b))
-            return a, b
+            return torch.load(duration_path), torch.load(phone_path)
 
         tgt_path = Path(self.textgrid_path, 'wavs', f'{name}.TextGrid')
         try:
@@ -289,10 +282,8 @@ class TTSDataset(torch.utils.data.Dataset):
         durs = torch.Tensor(durs)
 
         if self.dur_tmp_dir is not None and not cached_durpath.is_file() and not cached_phonepath.is_file():
-            print('HOWMANYPHONES', len(phones))
-            print('cached_phonepath: ', cached_phonepath)
             return torch.save(durs, cached_durpath), torch.save(phones, cached_phonepath)
-        print('HOWMANYPHONES', len(phones))
+
         return durs, phones
 
     def get_pitch(self, index, mel_len=None):
@@ -304,8 +295,11 @@ class TTSDataset(torch.utils.data.Dataset):
             spk = 0
 
         if self.load_pitch_from_disk:
+            print('WE RE LOADING PITCH')
             pitchpath = fields[0]
+            print('PATH: ', pitchpath)
             pitch = torch.load(pitchpath)
+            print('AND ITS SIZE: ', pitch.shape)
             if self.pitch_mean is not None:
                 assert self.pitch_std is not None
                 pitch = normalize_pitch(pitch, self.pitch_mean, self.pitch_std)
@@ -359,7 +353,6 @@ class TTSCollate:
         text_padded.zero_()
         for i in range(len(ids_sorted_decreasing)):
             text = batch[ids_sorted_decreasing[i]][0]
-            print('LEN TEXT AS WE SAVE: ', text.size(0))
             text_padded[i, :text.size(0)] = text
 
         dur_padded = torch.zeros_like(text_padded, dtype=torch.int32)
@@ -373,7 +366,6 @@ class TTSCollate:
             # PREP DATASET: DUR = LIST, TRAIN: DUR = TENSOR
             dur_padded[i, :len(dur)] = dur
             dur_lens[i] = len(dur)
-            print('LENS: ', dur_lens[i], input_lengths[i])
             assert dur_lens[i] == input_lengths[i]
 
         # Right zero-pad mel-spec
@@ -394,19 +386,13 @@ class TTSCollate:
                                    mel_padded.size(2), dtype=batch[0][3].dtype)
         energy_padded = torch.zeros_like(pitch_padded[:, 0, :])
         phones_padded = torch.zeros_like(text_padded, dtype=int)
-        print('PHONES PAD SETUP: ', phones_padded.shape)
         for i in range(len(ids_sorted_decreasing)):
             pitch = batch[ids_sorted_decreasing[i]][3]
             energy = batch[ids_sorted_decreasing[i]][4]
             phones = batch[ids_sorted_decreasing[i]][8]
-            print('BATCH OF PHONES: ', phones.shape[0])
             pitch_padded[i, :, :pitch.shape[1]] = pitch
             energy_padded[i, :energy.shape[0]] = energy
-            print('ADD TO PAD', i, phones.shape)
             phones_padded[i, :phones.shape[0]] = phones
-
-        print('PHONES PADDED SHAPE: ', phones_padded.shape)
-        print('ENERGY PADDED SHAPE: ', energy_padded.shape)
 
         if batch[0][5] is not None:
             speaker = torch.zeros_like(input_lengths)
@@ -422,12 +408,12 @@ class TTSCollate:
         audiopaths = [batch[i][7] for i in ids_sorted_decreasing]
 
         return (text_padded, dur_padded, input_lengths, mel_padded, output_lengths, len_x,
-                pitch_padded, energy_padded, speaker, audiopaths, phones_padded)
+                pitch_padded, energy_padded, dur_lens, speaker, audiopaths, phones_padded)
 
 
 def batch_to_gpu(batch):
     (text_padded, durs_padded, input_lengths, mel_padded, output_lengths, len_x,
-     pitch_padded, energy_padded, speaker, dur_lens, audiopaths, phones_padded) = batch
+     pitch_padded, energy_padded, dur_lens, speaker, audiopaths, phones_padded) = batch
 
     text_padded = to_gpu(text_padded).long()
     durs_padded = to_gpu(durs_padded).long()

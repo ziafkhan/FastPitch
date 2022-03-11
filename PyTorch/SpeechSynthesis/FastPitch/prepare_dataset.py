@@ -89,7 +89,6 @@ def parse_args(parser):
 def main():
     parser = argparse.ArgumentParser(description='FastPitch Data Pre-processing')
     parser = parse_args(parser)
-    print(sys.argv)
     args, unk_args = parser.parse_known_args()
     if len(unk_args) > 0:
         print(unk_args)
@@ -172,6 +171,7 @@ def main():
 
             if args.extract_pitch:
                 for j, p in enumerate(pitch):
+                    print('SIZE OF P: ', len(p), type(p))
                     fname = Path(fpaths[j]).with_suffix('.pt').name
                     fpath = Path(args.dataset_path, 'pitch', fname)
                     torch.save(p[:mel_lens[j]], fpath)
@@ -185,7 +185,6 @@ def main():
                                     'durations', f'{filename}.pt')
                     torch.save(d, dur_path)
                 for j, p in enumerate(phones):
-                    print('LEN PHONES BEFORE SAVING: ', len(p))
                     filename = Path(fpaths[j]).stem
                     # save phones too
                     phones_path = Path(args.dataset_path,
