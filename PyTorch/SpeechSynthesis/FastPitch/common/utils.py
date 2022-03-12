@@ -69,7 +69,6 @@ def load_filepaths_and_text(fnames, dataset_path=None, has_speakers=False, has_c
                             split="|"):
     # Reads in csv with headers mels|pitch|text|optional-speaker
     # Returns list of dicts
-
     fpaths_and_text = []
     for fname in fnames:
         with open(fname, encoding='utf-8') as f:
