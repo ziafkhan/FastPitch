@@ -23,10 +23,10 @@ then
   python ./create_lab_files.py --dataset ${WAV_DIR} --filelist ${FILELIST} --n-speakers ${NSPEAKERS}
 fi
 
-mfa model download acoustic english
-mfa model download dictionary english
-mfa validate ${WAV_DIR} english english
-mfa align ${WAV_DIR} english english ${ALIGNMENT_DIR}
+#mfa model download acoustic english --temp_directory /disk/scratch1/evdv/tmp/MFA
+#mfa model download dictionary english  --temp_directory /disk/scratch1/evdv/tmp/MFA
+#mfa validate ${WAV_DIR} english english  --temp_directory /disk/scratch1/evdv/tmp/MFA
+#mfa align ${WAV_DIR} english english ${ALIGNMENT_DIR}  --temp_directory /disk/scratch1/evdv/tmp/MFA
 
 # don't change batch size
 python prepare_dataset.py \

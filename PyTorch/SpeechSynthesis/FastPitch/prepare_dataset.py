@@ -155,7 +155,7 @@ def main():
             #  (text_padded, dur_padded, input_lengths, mel_padded,
             #  output_lengths, len_x, pitch_padded, energy_padded, speaker,
             #  audiopaths, phones_padded)
-            text, durs, input_lens, mels, mel_lens, _, pitch, _, _, fpaths, phones = batch
+            text, durs, input_lens, mels, mel_lens, _, pitch, _, _, _, fpaths, phones = batch
             # Ensure filenames are unique
             for p in fpaths:
                 fname = Path(p).name
@@ -171,7 +171,6 @@ def main():
 
             if args.extract_pitch:
                 for j, p in enumerate(pitch):
-                    print('SIZE OF P: ', len(p), type(p))
                     fname = Path(fpaths[j]).with_suffix('.pt').name
                     fpath = Path(args.dataset_path, 'pitch', fname)
                     torch.save(p[:mel_lens[j]], fpath)

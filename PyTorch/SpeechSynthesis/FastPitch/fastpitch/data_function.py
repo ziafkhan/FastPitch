@@ -268,7 +268,7 @@ class TTSDataset(torch.utils.data.Dataset):
             phone_path = Path(Path(duration_path).parent, name + '_phones').with_suffix('.pt')
             return torch.load(duration_path), torch.load(phone_path)
 
-        tgt_path = Path(self.textgrid_path, 'wavs', f'{name}.TextGrid')
+        tgt_path = Path(self.textgrid_path, f'{name}.TextGrid')
         try:
             textgrid = read_textgrid(tgt_path, include_empty_intervals=True)
         except FileNotFoundError:

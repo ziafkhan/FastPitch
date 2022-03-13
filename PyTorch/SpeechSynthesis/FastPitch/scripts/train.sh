@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
 
 export OMP_NUM_THREADS=1
+export MPLCONFIGDIR=/disk/scratch1/evdv/tmp/
+export WANDB_SHOW_RUN=true
+export WANDB_CONFIG_DIR=/disk/scratch1/evdv/tmp/.config/wandb
 
-: ${NUM_GPUS:=1}
-: ${BATCH_SIZE:=8}
+: ${NUM_GPUS:=2}
+: ${BATCH_SIZE:=16}
 : ${GRAD_ACCUMULATION:=2}
 : ${OUTPUT_DIR:="./output_mfa"}
 : ${DATASET_PATH:=LJSpeech-1.1}
