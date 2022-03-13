@@ -362,20 +362,20 @@ def plot_batch_mels(pred_tgt_lists, rank):
 
 
 def log_validation_batch(x, y_pred, rank):
+    # x = [text_padded, input_lengths, mel_padded, output_lengths,
+    #      pitch_padded, energy_padded, speaker, durs_padded, audiopaths, phones_padded]
+    # y_pred = mel_out, dec_lens, dur_pred, pitch_pred, energy_pred
     x_fields = ['text_padded', 'input_lengths', 'mel_padded',
                 'output_lengths', 'pitch_padded', 'energy_padded',
-                'speaker', 'attn_prior', 'audiopaths']
-    y_pred_fields = ['mel_out', 'dec_mask', 'dur_pred', 'log_dur_pred',
-                     'pitch_pred', 'pitch_tgt', 'energy_pred',
-                     'energy_tgt', 'attn_soft', 'attn_hard',
-                     'attn_hard_dur', 'attn_logprob']
+                'speaker', 'durs_padded', 'audiopaths', 'phones_padded']
+    y_pred_fields = ['mel_out', 'dec_mask', 'dur_pred', 'pitch_pred', 'energy_pred']
 
     validation_dict = dict(zip(x_fields + y_pred_fields,
                                list(x) + list(y_pred)))
     log(validation_dict, rank)  # something in here returns a warning
 
-    pred_specs_keys = ['mel_out', 'pitch_pred', 'energy_pred', 'attn_hard_dur']
-    tgt_specs_keys = ['mel_padded', 'pitch_tgt', 'energy_tgt', 'attn_hard_dur']
+    pred_specs_keys = ['mel_out', 'pitch_pred', 'energy_pred', 'durs_padded']
+    tgt_specs_keys = ['mel_padded', 'pitch_padded', 'energy_padded', 'durs_padded']
     plot_batch_mels([[validation_dict[key] for key in pred_specs_keys],
                      [validation_dict[key] for key in tgt_specs_keys]], rank)
 
@@ -396,7 +396,12 @@ def validate(model, criterion, valset, batch_size, collate_fn, distributed_run,
         val_meta = defaultdict(float)
         val_num_frames = 0
         for i, batch in enumerate(val_loader):
+            # x = [text_padded, input_lengths, mel_padded, output_lengths,
+            #      pitch_padded, energy_padded, speaker, durs_padded, audiopaths, phones_padded]
+            # y = [mel_padded, durs_padded, dur_lens, output_lengths]
+            # len_x = torch.sum(output_lengths)
             x, y, num_frames = batch_to_gpu(batch)
+            # y_pred = mel_out, dec_lens, dur_pred, pitch_pred, energy_pred
             y_pred = model(x)
 
             if i % 5 == 0:
