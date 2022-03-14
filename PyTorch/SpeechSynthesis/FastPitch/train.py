@@ -332,19 +332,27 @@ def plot_batch_mels(pred_tgt_lists, rank):
     regulated_features = []
     # prediction: mel, pitch, energy
     # target: mel, pitch, energy
-    for mel_pitch_energy in pred_tgt_lists:
+    for i, mel_pitch_energy in enumerate(pred_tgt_lists):
+        if i == 0:
+            print('PREDICTION')
+        elif i == 1:
+            print('TARGET')
         mels = mel_pitch_energy[0]
         if mels.size(dim=2) == 80:  # tgt and pred mel have diff dimension order
             mels = mels.permute(0, 2, 1)
-        mel_lens = mel_pitch_energy[-1]
+        mel_lens = mel_pitch_energy[-1].squeeze()
+        pitch = mel_pitch_energy[1].squeeze().unsqueeze(dim=-1)
+        energy = mel_pitch_energy[2].squeeze().unsqueeze(dim=-1)
         # reverse regulation for plotting: for every mel frame get pitch+energy
-        new_pitch = regulate_len(mel_lens,
-                                 mel_pitch_energy[1].permute(0, 2, 1))[0]
-        new_energy = regulate_len(mel_lens,
-                                  mel_pitch_energy[2].unsqueeze(dim=-1))[0]
+        if i == 0:
+            energy = regulate_len(mel_lens, energy)[0]
+            pitch = regulate_len(mel_lens, pitch)[0]
+
+        print('PITCH: ', pitch.shape)
+        print('ENERGY', energy.shape)
         regulated_features.append([mels,
-                                   new_pitch.squeeze(axis=2),
-                                   new_energy.squeeze(axis=2)])
+                                   pitch.squeeze(axis=2),
+                                   energy.squeeze(axis=2)])
 
     batch_sizes = [feature.size(dim=0)
                    for pred_tgt in regulated_features
@@ -404,8 +412,8 @@ def validate(model, criterion, valset, batch_size, collate_fn, distributed_run,
             # y_pred = mel_out, dec_lens, dur_pred, pitch_pred, energy_pred
             y_pred = model(x)
 
-            if i % 5 == 0:
-                log_validation_batch(x, y_pred, rank)
+            #if i % 5 == 0:
+            log_validation_batch(x, y_pred, rank)
 
             loss, meta = criterion(y_pred, y, is_training=False, meta_agg='sum')
 
@@ -709,6 +717,9 @@ def main():
                 iter_num_frames = 0
                 iter_meta = {}
                 iter_start_time = time.perf_counter()
+                # for debugging only
+                # validate(model, criterion, valset, args.batch_size, collate_fn,
+                #          distributed_run, batch_to_gpu, args.local_rank)
 
         # Finished epoch
         epoch_loss /= epoch_iter

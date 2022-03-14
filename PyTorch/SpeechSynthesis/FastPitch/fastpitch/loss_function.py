@@ -42,13 +42,9 @@ class FastPitchLoss(nn.Module):
         self.energy_predictor_loss_scale = energy_predictor_loss_scale
 
     def forward(self, model_out, targets, is_training=True, meta_agg='mean'):
-        (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt,
-         energy_pred, energy_tgt) = model_out
+        (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt, energy_pred, energy_tgt) = model_out
         # model_out = (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt, energy_pred, energy_tgt)
-        #(mel_tgt, in_lens, out_lens) = targets
-        # mel_padded, durs_padded, dur_lens,
         mel_tgt, dur_tgt, dur_lens, output_lengths = targets
-        #dur_lens = in_lens
 
         mel_tgt.requires_grad = False
         # (B,H,T) => (B,T,H)
