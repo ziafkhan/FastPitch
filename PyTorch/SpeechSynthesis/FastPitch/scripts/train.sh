@@ -2,7 +2,6 @@
 
 export OMP_NUM_THREADS=1
 #export MPLCONFIGDIR=/disk/scratch1/evdv/tmp/
-export WANDB_SHOW_RUN=true
 #export WANDB_CONFIG_DIR=/disk/scratch1/evdv/tmp/.config/wandb
 
 : ${NUM_GPUS:=1}
@@ -11,16 +10,16 @@ export WANDB_SHOW_RUN=true
 : ${OUTPUT_DIR:="./output_mfa"}
 : ${DATASET_PATH:=LJSpeech-1.1}
 : ${TRAIN_FILELIST:=filelists/ljs_audio_pitch_durs_text_train_v3.txt}
-: ${VAL_FILELIST:=filelists/ljs_audio_pitch_durs_text_val.txt}
+: ${VAL_FILELIST:=filelists/mini_ljs_audio_pitch_durs_text_val.txt}
 : ${AMP:=false}
 : ${SEED:=""}
 
 : ${LEARNING_RATE:=0.1}
 
 # Adjust these when the amount of data changes
-: ${EPOCHS:=1000}
-: ${EPOCHS_PER_CHECKPOINT:=100}
-: ${WARMUP_STEPS:=1000}
+: ${EPOCHS:=50}
+: ${EPOCHS_PER_CHECKPOINT:=10}
+: ${WARMUP_STEPS:=10}
 
 # Train a mixed phoneme/grapheme model
 : ${PHONE:=true}

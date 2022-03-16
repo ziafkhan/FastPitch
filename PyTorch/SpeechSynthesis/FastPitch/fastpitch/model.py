@@ -54,7 +54,6 @@ def regulate_len(durations, enc_out, pace: float = 1.0,
     mult = ((reps_cumsum[:, :, :-1] <= range_) &
             (reps_cumsum[:, :, 1:] > range_))
     mult = mult.to(dtype)
-    print('THESE SHAPES WILL BE MATMULLED: ', mult.shape, enc_out.shape)
     enc_rep = torch.matmul(mult, enc_out)
 
     if mel_max_len is not None:

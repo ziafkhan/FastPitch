@@ -333,10 +333,6 @@ def plot_batch_mels(pred_tgt_lists, rank):
     # prediction: mel, pitch, energy
     # target: mel, pitch, energy
     for i, mel_pitch_energy in enumerate(pred_tgt_lists):
-        if i == 0:
-            print('PREDICTION')
-        elif i == 1:
-            print('TARGET')
         mels = mel_pitch_energy[0]
         if mels.size(dim=2) == 80:  # tgt and pred mel have diff dimension order
             mels = mels.permute(0, 2, 1)
@@ -348,8 +344,6 @@ def plot_batch_mels(pred_tgt_lists, rank):
             energy = regulate_len(mel_lens, energy)[0]
             pitch = regulate_len(mel_lens, pitch)[0]
 
-        print('PITCH: ', pitch.shape)
-        print('ENERGY', energy.shape)
         regulated_features.append([mels,
                                    pitch.squeeze(axis=2),
                                    energy.squeeze(axis=2)])
