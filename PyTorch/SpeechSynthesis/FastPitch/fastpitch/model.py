@@ -125,7 +125,7 @@ class FastPitch(nn.Module):
                  energy_predictor_kernel_size, energy_predictor_filter_size,
                  p_energy_predictor_dropout, energy_predictor_n_layers,
                  energy_embedding_kernel_size,
-                 n_speakers, speaker_emb_weight, pitch_conditioning_formants=1):
+                 n_speakers, speaker_emb_weight, pitch_conditioning_formants=1, norm_energy=True):
         super(FastPitch, self).__init__()
 
         self.encoder = FFTransformer(
@@ -186,6 +186,7 @@ class FastPitch(nn.Module):
         self.register_buffer('pitch_std', torch.zeros(1))
 
         self.energy_conditioning = energy_conditioning
+        self.norm_energy = norm_energy
         if energy_conditioning:
             self.energy_predictor = TemporalPredictor(
                 in_fft_output_size,
@@ -243,7 +244,8 @@ class FastPitch(nn.Module):
 
             # Average energy over characters
             energy_tgt = average_pitch(energy_dense.unsqueeze(1), dur_tgt)
-            energy_tgt = torch.log(1.0 + energy_tgt)
+            if not self.norm_energy:
+                energy_tgt = torch.log(1.0 + energy_tgt)
 
             energy_emb = self.energy_emb(energy_tgt)
             energy_tgt = energy_tgt.squeeze(1)

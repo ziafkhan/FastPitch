@@ -653,6 +653,8 @@ def main():
                 y_pred = model(x, use_gt_durations=True)
                 # y = mel_padded, input_lengths, output_lengths
                 loss, meta = criterion(y_pred, y)
+                print(loss)
+                print(meta)
                 loss /= args.grad_accumulation
 
             meta = {k: v / args.grad_accumulation

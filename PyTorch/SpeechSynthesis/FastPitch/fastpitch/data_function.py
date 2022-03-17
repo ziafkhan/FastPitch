@@ -130,7 +130,8 @@ class TTSDataset(torch.utils.data.Dataset):
                  cmu_dict='cmudict/cmudict-0.7b',
                  n_speakers=1, load_mel_from_disk=True,
                  load_pitch_from_disk=True, pitch_mean=214.72203,
-                 pitch_std=65.72038, max_wav_value=None, sampling_rate=None,
+                 pitch_std=65.72038, energy_mean=51.796032, energy_std=9.861213,
+                 max_wav_value=None, sampling_rate=None,
                  filter_length=None, hop_length=None, win_length=None,
                  mel_fmin=None, mel_fmax=None, prepend_space_to_text=False,
                  append_space_to_text=False, load_durs_from_disk=False,
@@ -185,6 +186,8 @@ class TTSDataset(torch.utils.data.Dataset):
         to_tensor = lambda x: torch.Tensor([x]) if type(x) is float else x
         self.pitch_mean = to_tensor(pitch_mean)
         self.pitch_std = to_tensor(pitch_std)
+        self.energy_mean = to_tensor(energy_mean)
+        self.energy_std = to_tensor(energy_std)
 
     def __getitem__(self, index):
         # Separate filename and text
@@ -198,6 +201,11 @@ class TTSDataset(torch.utils.data.Dataset):
         mel = self.get_mel(audiopath)
         pitch = self.get_pitch(index, mel.size(-1))
         energy = torch.norm(mel.float(), dim=0, p=2)
+        if self.energy_mean is not None:
+            assert self.energy_std is not None
+            norm_energy = normalize_pitch(energy.unsqueeze(dim=0), self.energy_mean, self.energy_std)
+            energy = norm_energy.squeeze()
+
         dur, phones = self.get_dur(index)
         text = phones
         assert pitch.size(-1) == mel.size(-1)
