@@ -235,6 +235,7 @@ class TTSDataset(torch.utils.data.Dataset):
 
         return melspec
 
+    @lru_cache()
     def get_text(self, text):
         text, text_clean, text_arpabet = self.tp.encode_text(text, return_all=True)
         space = [self.tp.encode_text("A A")[1]]
@@ -247,6 +248,7 @@ class TTSDataset(torch.utils.data.Dataset):
 
         return torch.LongTensor(text), text_arpabet
 
+    @lru_cache()
     def get_dur(self, index):
         audiopath, *fields = self.audiopaths_and_text[index]
         name = Path(audiopath).stem
@@ -286,6 +288,7 @@ class TTSDataset(torch.utils.data.Dataset):
 
         return durs, phones
 
+    @lru_cache()
     def get_pitch(self, index, mel_len=None):
         audiopath, *fields = self.audiopaths_and_text[index]
 

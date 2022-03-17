@@ -75,6 +75,7 @@ ARGS+=" --n-speakers $NSPEAKERS"
 [ "$LOAD_DURS_FROM_DISK" = TRUE ]  && ARGS+=" --load-durs-from-disk"
 [ "$LOAD_PITCH_FROM_DISK" = TRUE ] && ARGS+=" --load-pitch-from-disk"
 [ "$PITCH_ONLINE_DIR" != "" ]      && ARGS+=" --pitch-online-dir $PITCH_ONLINE_DIR"  # e.g., /dev/shm/pitch
+[ "$DUR_ONLINE_DIR" != "" ]        && ARGS+=" --dur-online-dir $DUR_ONLINE_DIR"  # e.g., /dev/shm/dur
 [ "$PITCH_ONLINE_METHOD" != "" ]   && ARGS+=" --pitch-online-method $PITCH_ONLINE_METHOD"
 [ "$APPEND_SPACES" = true ]        && ARGS+=" --prepend-space-to-text"
 [ "$APPEND_SPACES" = true ]        && ARGS+=" --append-space-to-text"

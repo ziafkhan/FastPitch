@@ -148,6 +148,8 @@ def parse_args(parser):
                       help='Calculate pitch on the fly during trainig')
     cond.add_argument('--pitch-online-dir', type=str, default=None,
                       help='A directory for storing pitch calculated on-line')
+    cond.add_argument('--dur-online-dir', type=str, default=None,
+                      help='A directory for storing durations calculated on-line')
     cond.add_argument('--pitch-mean', type=float, default=214.72203,
                       help='Normalization value for pitch')
     cond.add_argument('--pitch-std', type=float, default=65.72038,
@@ -406,8 +408,8 @@ def validate(model, criterion, valset, batch_size, collate_fn, distributed_run,
             # y_pred = mel_out, dec_lens, dur_pred, pitch_pred, energy_pred
             y_pred = model(x)
 
-            #if i % 5 == 0:
-            log_validation_batch(x, y_pred, rank)
+            if i % 5 == 0:
+                log_validation_batch(x, y_pred, rank)
 
             loss, meta = criterion(y_pred, y, is_training=False, meta_agg='sum')
 
