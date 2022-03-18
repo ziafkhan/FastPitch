@@ -367,11 +367,12 @@ def plot_batch_mels(pred_tgt_lists, rank):
 
 def log_validation_batch(x, y_pred, rank):
     x_fields = ['text_padded', 'input_lengths', 'mel_padded',
-                'output_lengths', 'pitch_padded', 'energy_padded',
+                'output_lengths', 'pitch_padded', 'energy_padded', 'spectral_tilt_padded',
                 'speaker', 'attn_prior', 'audiopaths']
     y_pred_fields = ['mel_out', 'dec_mask', 'dur_pred', 'log_dur_pred',
                      'pitch_pred', 'pitch_tgt', 'energy_pred',
-                     'energy_tgt', 'attn_soft', 'attn_hard',
+                     'energy_tgt', 'spectral_tilt_pred',
+                     'spectral_tilt_tgt', 'attn_soft', 'attn_hard',
                      'attn_hard_dur', 'attn_logprob']
 
     validation_dict = dict(zip(x_fields + y_pred_fields,
@@ -400,7 +401,13 @@ def validate(model, criterion, valset, batch_size, collate_fn, distributed_run,
         val_meta = defaultdict(float)
         val_num_frames = 0
         for i, batch in enumerate(val_loader):
+            # x = (inputs, input_lens, mel_tgt, mel_lens, pitch_dense,
+            # energy_dense, spectral_tilt_dense, speaker, attn_prior, audiopaths)
             x, y, num_frames = batch_to_gpu(batch)
+            # (mel_out, dec_mask, dur_pred, log_dur_pred,
+            #  pitch_pred, pitch_tgt, energy_pred, energy_tgt,
+            #  spectral_tilt_pred, spectral_tilt_tgt,
+            #  attn_soft, attn_hard, attn_hard_dur, attn_logprob)
             y_pred = model(x)
 
             if i % 5 == 0:
