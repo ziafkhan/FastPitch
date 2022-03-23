@@ -32,8 +32,10 @@ from pathlib import Path
 
 import librosa
 import numpy as np
+import scipy.signal
 import torch
 import torch.nn.functional as F
+from matplotlib import pyplot as plt
 from scipy import ndimage
 from scipy.stats import betabinom
 
@@ -217,6 +219,7 @@ class TTSDataset(torch.utils.data.Dataset):
         text = self.get_text(text)
         pitch = self.get_pitch(index, mel.size(-1))
         energy = torch.norm(mel.float(), dim=0, p=2)
+        spectral_tilt = self.get_spectral_tilt(mel)
         attn_prior = self.get_prior(index, mel.shape[1], text.shape[0])
 
         assert pitch.size(-1) == mel.size(-1)
@@ -324,6 +327,12 @@ class TTSDataset(torch.utils.data.Dataset):
 
         return pitch_mel
 
+    def get_spectral_tilt(self, mels):
+        n_mels = mels.size(0)
+        # surface tilt
+        poly_coefficients = np.polynomial.polynomial.polyfit(np.arange(1, n_mels + 1), mels, 5)
+        return torch.FloatTensor(poly_coefficients)
+
 
 class TTSCollate:
     """Zero-pads model inputs and targets based on number of frames per step"""
@@ -355,19 +364,20 @@ class TTSCollate:
             mel_padded[i, :, :mel.size(1)] = mel
             output_lengths[i] = mel.size(1)
 
-        n_formants = batch[0][3].shape[0]
+        n_formants = batch[0][3].shape[0]  # default 1
         pitch_padded = torch.zeros(mel_padded.size(0), n_formants,
                                    mel_padded.size(2), dtype=batch[0][3].dtype)
         energy_padded = torch.zeros_like(pitch_padded[:, 0, :])
-        spectral_tilt_padded = torch.zeros_like(pitch_padded)
 
+        num_coefficients = batch[0][5].size(0)
+        spectral_tilt_padded = torch.FloatTensor(len(batch), num_coefficients, max_target_len).zero_()
         for i in range(len(ids_sorted_decreasing)):
             pitch = batch[ids_sorted_decreasing[i]][3]
             energy = batch[ids_sorted_decreasing[i]][4]
             spectral_tilt = batch[ids_sorted_decreasing[i]][5]
             pitch_padded[i, :, :pitch.shape[1]] = pitch
             energy_padded[i, :energy.shape[0]] = energy
-            spectral_tilt_padded[i, ] = spectral_tilt
+            spectral_tilt_padded[i, :, :spectral_tilt.shape[1]] = spectral_tilt
 
         if batch[0][6] is not None:
             speaker = torch.zeros_like(input_lengths)

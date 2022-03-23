@@ -662,7 +662,7 @@ def main():
                     if args.kl_loss_start_epoch == epoch and epoch_iter == 1:
                         print('Begin hard_attn loss')
 
-                    _, _, _, _, _, _, _, _, attn_soft, attn_hard, _, _ = y_pred
+                    _, _, _, _, _, _, _, _, _, _, attn_soft, attn_hard, _, _ = y_pred
                     binarization_loss = attention_kl_loss(attn_hard, attn_soft)
                     kl_weight = min((epoch - args.kl_loss_start_epoch) / args.kl_loss_warmup_epochs, 1.0) * args.kl_loss_weight
                     meta['kl_loss'] = binarization_loss.clone().detach() * kl_weight
