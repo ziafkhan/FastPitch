@@ -68,6 +68,7 @@ def parse_args(parser):
     parser.add_argument('--experiment-desc', type=str, default='',
                         help='Run description for logging')
     parser.add_argument('--architecture', type=str, default='FastPitch1.1')
+    parser.add_argument('--source-tilt', type=bool, default=False)
 
     train = parser.add_argument_group('training setup')
     train.add_argument('--epochs', type=int, required=True,
@@ -637,8 +638,9 @@ def main():
 
         epoch_iter = 0
         num_iters = len(train_loader) // args.grad_accumulation
+        print('before bach or during?')
         for batch in train_loader:
-
+            print('next batch')
             if accumulated_steps == 0:
                 if epoch_iter == num_iters:
                     break
@@ -647,15 +649,16 @@ def main():
 
                 adjust_learning_rate(total_iter, optimizer, args.learning_rate,
                                      args.warmup_steps)
-
+                print('learning rate adjusted')
                 model.zero_grad(set_to_none=True)
 
             x, y, num_frames = batch_to_gpu(batch)
-
+            print('batch to gpu done')
             with torch.cuda.amp.autocast(enabled=args.amp):
                 y_pred = model(x)
+                print('running model')
                 loss, meta = criterion(y_pred, y)
-
+                print('loss calculated')
                 if (args.kl_loss_start_epoch is not None
                         and epoch >= args.kl_loss_start_epoch):
 
@@ -752,6 +755,7 @@ def main():
                 iter_meta = {}
                 iter_start_time = time.perf_counter()
 
+        print('finished epoch')
         # Finished epoch
         epoch_loss /= epoch_iter
         epoch_mel_loss /= epoch_iter
@@ -769,7 +773,7 @@ def main():
         }, args.local_rank)
         bmark_stats.update(epoch_num_frames, epoch_loss, epoch_mel_loss,
                            epoch_time)
-
+        print('validating epoch happening now')
         validate(model, criterion, valset, args.batch_size, collate_fn,
                  distributed_run, batch_to_gpu, args.local_rank)
 

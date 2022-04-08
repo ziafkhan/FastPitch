@@ -26,13 +26,11 @@
 # *****************************************************************************
 
 import functools
-import json
 import re
 from pathlib import Path
 
 import librosa
 import numpy as np
-import scipy.signal
 import torch
 import torch.nn.functional as F
 from matplotlib import pyplot as plt
@@ -155,6 +153,7 @@ class TTSDataset(torch.utils.data.Dataset):
                  betabinomial_online_dir=None,
                  use_betabinomial_interpolator=True,
                  pitch_online_method='pyin',
+                 source_tilt=False,
                  **ignored):
 
         # Expect a list of filenames
@@ -206,6 +205,8 @@ class TTSDataset(torch.utils.data.Dataset):
         self.pitch_mean = to_tensor(pitch_mean)
         self.pitch_std = to_tensor(pitch_std)
 
+        self.source_tilt = source_tilt
+
     def __getitem__(self, index):
         # Separate filename and text
         if self.n_speakers > 1:
@@ -219,7 +220,7 @@ class TTSDataset(torch.utils.data.Dataset):
         text = self.get_text(text)
         pitch = self.get_pitch(index, mel.size(-1))
         energy = torch.norm(mel.float(), dim=0, p=2)
-        spectral_tilt = self.get_spectral_tilt(mel)
+        spectral_tilt = self.get_spectral_tilt(mel, audiopath, self.source_tilt)
         attn_prior = self.get_prior(index, mel.shape[1], text.shape[0])
 
         assert pitch.size(-1) == mel.size(-1)
@@ -327,11 +328,41 @@ class TTSDataset(torch.utils.data.Dataset):
 
         return pitch_mel
 
-    def get_spectral_tilt(self, mels):
+    def get_spectral_tilt(self, mels, audio_path, source_tilt=False):
+        # # plot these during development
+        # fig, axes = plt.subplots(2, 1, squeeze=False)
+        # titles = ["Mel Spectrogram", "One Slice"]
+        # axes[0][0].imshow(mels, origin="lower")
+        # axes[0][0].set_aspect(2.5, adjustable="box")
+        # axes[0][0].set_ylim(0, mels.shape[0])
+        # axes[0][0].set_title(titles[0], fontsize="medium")
+        # axes[0][0].tick_params(labelsize="x-small", left=False,
+        #                        labelleft=False)
+        # axes[0][0].set_anchor("W")
+        # one_slice = mels[:, 200]
+        # axes[1][0].plot(one_slice)
+        # axes[1][0].set_ylim(min(one_slice) - 0.5, max(one_slice) + 0.5)
+        # axes[1][0].set_title(titles[0], fontsize="medium")
+        # axes[1][0].tick_params(labelsize="x-small", left=False,
+        #                        labelleft=False)
+        # axes[1][0].set_anchor("W")
+        #
+        # plt.show()
         n_mels = mels.size(0)
+
         # surface tilt
+        # shape 6 x input_frames
         poly_coefficients = np.polynomial.polynomial.polyfit(np.arange(1, n_mels + 1), mels, 5)
-        return torch.FloatTensor(poly_coefficients)
+        if source_tilt:
+            audio_path = re.sub('/wavs/', '/iaif_gci_wavs/', audio_path)
+            iaif_mels = self.get_mel(audio_path)
+            iaif_poly_coefficients = np.polynomial.polynomial.polyfit(
+                np.arange(1, n_mels + 1), iaif_mels, 5)
+            # shape 12 x input_frames
+            return torch.cat([torch.FloatTensor(poly_coefficients),
+                              torch.FloatTensor(iaif_poly_coefficients)])
+        else:
+            return torch.FloatTensor(poly_coefficients)
 
 
 class TTSCollate:
