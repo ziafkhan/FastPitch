@@ -3,8 +3,8 @@ USER=`whoami`
 export OMP_NUM_THREADS=1
 export WANDB_CONFIG_DIR=/disk/scratch1/${USER}/tmp/.config/wandb
 
-: ${NUM_GPUS:=3}
-: ${BATCH_SIZE:=16}
+: ${NUM_GPUS:=4}
+: ${BATCH_SIZE:=32}
 : ${PROJECT="fp_spectral_tilt"}
 : ${PROJECT_DESC="Testing surface tilt only"}
 : ${GRAD_ACCUMULATION:=2}
@@ -104,4 +104,4 @@ fi
 mkdir -p "$OUTPUT_DIR"
 
 : ${DISTRIBUTED:="-m torch.distributed.run --standalone --nnodes=1 --nproc_per_node $NUM_GPUS"}
-CUDA_DEVICES=0,1,2 python $DISTRIBUTED train.py $ARGS "$@"
+CUDA_DEVICES=0,1,2,3 python $DISTRIBUTED train.py $ARGS "$@"
