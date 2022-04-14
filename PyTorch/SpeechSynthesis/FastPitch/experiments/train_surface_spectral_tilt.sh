@@ -105,4 +105,4 @@ fi
 mkdir -p "$OUTPUT_DIR"
 
 : ${DISTRIBUTED:="-m torch.distributed.run --standalone --nnodes=1 --nproc_per_node $NUM_GPUS"}
-CUDA_DEVICES=0 python $DISTRIBUTED train.py $ARGS "$@"
+CUDA_DEVICES=0,1,2 python $DISTRIBUTED train.py $ARGS "$@"
