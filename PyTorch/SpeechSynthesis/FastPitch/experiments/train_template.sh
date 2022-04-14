@@ -29,8 +29,8 @@ export WANDB_CONFIG_DIR=/disk/scratch1/${USER}/tmp/.config/wandb
 : ${ENERGY:=true}
 # Enable spectral tilt conditioning
 : ${SPECTRAL_TILT:=true}
-# Include source tilt in spectral tilt condition
-: ${SOURCE_TILT:=true}
+# options for spectral tilt: surface, source, both
+: ${WHICH_TILT:=both}
 : ${TEXT_CLEANERS:=english_cleaners_v2}
 # Add dummy space prefix/suffix is audio is not precisely trimmed
 : ${APPEND_SPACES:=false}
@@ -79,7 +79,7 @@ ARGS+=" --n-speakers $NSPEAKERS"
 [ "$PHONE" = "true" ]              && ARGS+=" --p-arpabet 1.0"
 [ "$ENERGY" = "true" ]             && ARGS+=" --energy-conditioning"
 [ "$SPECTRAL_TILT" = "true" ]      && ARGS+=" --spectral-tilt-conditioning"
-[ "$SOURCE_TILT" = "true" ]        && ARGS+=" --include-tilt both"
+[ "$WHICH_TILT" != "" ]            && ARGS+=" --include-tilt ${WHICH_TILT}"
 [ "$SEED" != "" ]                  && ARGS+=" --seed $SEED"
 [ "$LOAD_MEL_FROM_DISK" = true ]   && ARGS+=" --load-mel-from-disk"
 [ "$LOAD_PITCH_FROM_DISK" = true ] && ARGS+=" --load-pitch-from-disk"
