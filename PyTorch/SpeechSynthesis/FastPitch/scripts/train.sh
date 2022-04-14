@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
-
+USER=`whoami`
 export OMP_NUM_THREADS=1
+export WANDB_CONFIG_DIR=/disk/scratch1/${USER}/tmp/.config/wandb
 
-: ${NUM_GPUS:=8}
+: ${NUM_GPUS:=1}
 : ${BATCH_SIZE:=16}
 : ${GRAD_ACCUMULATION:=2}
-: ${OUTPUT_DIR:="./output"}
+: ${OUTPUT_DIR:="./output/"}
 : ${DATASET_PATH:=LJSpeech-1.1}
-: ${TRAIN_FILELIST:=filelists/ljs_audio_pitch_text_train_v3.txt}
-: ${VAL_FILELIST:=filelists/ljs_audio_pitch_text_val.txt}
+: ${TRAIN_FILELIST:=filelists/ljs_audio_pitch_durs_text_train_v3.txt}
+: ${VAL_FILELIST:=filelists/ljs_audio_pitch_durs_text_val.txt}
 : ${AMP:=false}
 : ${SEED:=""}
 
@@ -94,5 +95,5 @@ fi
 
 mkdir -p "$OUTPUT_DIR"
 
-: ${DISTRIBUTED:="-m torch.distributed.launch --nproc_per_node $NUM_GPUS"}
-python $DISTRIBUTED train.py $ARGS "$@"
+: ${DISTRIBUTED:="-m torch.distributed.run --standalone --nnodes=1 --nproc_per_node $NUM_GPUS"}
+CUDA_DEVICES=0 python $DISTRIBUTED train.py $ARGS "$@"
