@@ -68,7 +68,6 @@ def parse_args(parser):
     parser.add_argument('--experiment-desc', type=str, default='',
                         help='Run description for logging')
     parser.add_argument('--architecture', type=str, default='FastPitch1.1')
-    parser.add_argument('--source-tilt', type=bool, default=False)
 
     train = parser.add_argument_group('training setup')
     train.add_argument('--epochs', type=int, required=True,
@@ -159,6 +158,9 @@ def parse_args(parser):
                       help='Normalization value for pitch')
     cond.add_argument('--load-mel-from-disk', action='store_true',
                       help='Use mel-spectrograms cache on the disk')  # XXX
+    # for spectral tilt estimation
+    cond.add_argument('--include-tilt', default='both', type=str,
+                      choices=['source', 'surface', 'both'])
 
     audio = parser.add_argument_group('audio parameters')
     audio.add_argument('--max-wav-value', default=32768.0, type=float,
