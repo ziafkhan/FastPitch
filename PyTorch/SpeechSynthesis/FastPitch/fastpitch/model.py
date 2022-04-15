@@ -214,11 +214,11 @@ class FastPitch(nn.Module):
                 kernel_size=spectral_tilt_predictor_kernel_size,
                 dropout=p_spectral_tilt_predictor_dropout,
                 n_layers=spectral_tilt_predictor_n_layers,
-                n_predictions=1
+                n_predictions=6
             )
 
             self.spectral_tilt_emb = nn.Conv1d(
-                1, symbols_embedding_dim,
+                6, symbols_embedding_dim,
                 kernel_size=spectral_tilt_embedding_kernel_size,
                 padding=int((spectral_tilt_embedding_kernel_size - 1) / 2))
 
@@ -332,9 +332,10 @@ class FastPitch(nn.Module):
             spectral_tilt_pred = self.spectral_tilt_predictor(enc_out, enc_mask).squeeze(-1)
 
             # Average energy over characters
-            spectral_tilt_tgt = average_pitch(spectral_tilt_dense.unsqueeze(1), dur_tgt)
-            spectral_tilt_tgt = torch.log(1.0 + spectral_tilt_tgt)
-
+            spectral_tilt_tgt = average_pitch(spectral_tilt_dense, dur_tgt)
+            eps = 1e-7
+            spectral_tilt_tgt = F.relu(spectral_tilt_tgt)
+            spectral_tilt_tgt = torch.log(eps + spectral_tilt_tgt)
             spectral_tilt_emb = self.spectral_tilt_emb(spectral_tilt_tgt)
             spectral_tilt_tgt = spectral_tilt_tgt.squeeze(1)
             enc_out = enc_out + spectral_tilt_emb.transpose(1, 2)

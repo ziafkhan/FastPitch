@@ -90,9 +90,11 @@ class FastPitchLoss(nn.Module):
             energy_loss = 0
 
         if spectral_tilt_pred is not None:
+            spectral_tilt_pred = spectral_tilt_pred.permute(0, 2, 1)
             spectral_tilt_pred = F.pad(spectral_tilt_pred, (0, ldiff, 0, 0), value=0.0)
             spectral_tilt_loss = F.mse_loss(spectral_tilt_tgt, spectral_tilt_pred, reduction='none')
-            spectral_tilt_loss = (spectral_tilt_loss * dur_mask).sum() / dur_mask.sum()
+            spectral_dur_mask = torch.repeat_interleave(dur_mask[:, None, :], spectral_tilt_loss.size(1), dim=1) 
+            spectral_tilt_loss = (spectral_tilt_loss * spectral_dur_mask).sum() / spectral_dur_mask.sum()
         else:
             spectral_tilt_loss = 0
 
