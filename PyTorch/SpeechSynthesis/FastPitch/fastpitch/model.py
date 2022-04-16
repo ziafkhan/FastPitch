@@ -409,7 +409,7 @@ class FastPitch(nn.Module):
 
             if spectral_tilt_tgt is None:
                 spectral_tilt_pred = self.spectral_tilt_predictor(enc_out, enc_mask).squeeze(-1)
-                spectral_tilt_emb = self.spectral_tilt_emb(spectral_tilt_pred.unsqueeze(1)).transpose(1, 2)
+                spectral_tilt_emb = self.spectral_tilt_emb(spectral_tilt_pred.permute(0, 2, 1)).transpose(1, 2)
             else:
                 spectral_tilt_emb = self.spectral_tilt_emb(spectral_tilt_tgt).transpose(1, 2)
 
