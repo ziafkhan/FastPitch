@@ -3,8 +3,8 @@
 : ${WAVEGLOW:="pretrained_models/waveglow/nvidia_waveglow256pyt_fp16.pt"}
 : ${FASTPITCH:="/home/emelie/Repos/FastPitches/PyTorch/SpeechSynthesis/FastPitch/pretrained_models/fastpitch/nvidia_fastpitch_210824.pt"}
 : ${BATCH_SIZE:=32}
-: ${PHRASES:="phrases/phrase.txt"}
-: ${OUTPUT_DIR:="./output/LJ/puppet_pitch_lj_audio_$(basename ${PHRASES} .txt)"}
+: ${PHRASES:="phrases/$1"}
+: ${OUTPUT_DIR:="$2"}
 : ${LOG_FILE:="$OUTPUT_DIR/nvlog_infer.json"}
 : ${AMP:=false}
 : ${TORCHSCRIPT:=false}
