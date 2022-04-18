@@ -75,6 +75,9 @@ def parse_args(parser):
     parser.add_argument('--log-file', type=str, default=None,
                         help='Path to a DLLogger log file')
     parser.add_argument('--ref-wav', type=str)
+    parser.add_argument('--puppet-pitch', action='store_true')
+    parser.add_argument('--puppet-energy', action='store_true')
+    parser.add_argument('--puppet-durs', action='store_true')
     parser.add_argument('--save-mels', action='store_true', help='')
     parser.add_argument('--cuda', action='store_true',
                         help='Run inference on a GPU using CUDA')
@@ -536,11 +539,12 @@ def main():
 
                         norm_new_energy = norm_new_energy.add(energy_pred.mean())
 
-                        print('W/ ORIG MEAN/STD: ', norm_new_energy.shape, norm_new_energy[0,0:10])
-
-                        gen_kw['pitch_tgt'] = new_pitch
-                        gen_kw['dur_tgt'] = new_durs
-                        gen_kw['energy_tgt'] = norm_new_energy
+                        if args.puppet_pitch:
+                            gen_kw['pitch_tgt'] = new_pitch
+                        if  args.puppet_durs:
+                            gen_kw['dur_tgt'] = new_durs
+                        if  args.puppet_energy:
+                            gen_kw['energy_tgt'] = norm_new_energy
 
                         mel, mel_lens, *_, energy_pred = generator(b['text'], **gen_kw)  # runs 'infer' method
                         print('NEW ENERGY: ', energy_pred.shape)

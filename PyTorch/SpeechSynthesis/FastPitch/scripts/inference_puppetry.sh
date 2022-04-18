@@ -18,13 +18,18 @@
 : ${SPEAKER:=1}
 : ${NUM_SPEAKERS:=1}
 
+# puppeteering
+: ${PUPPET_PITCH:=true}
+: ${PUPPET_ENERGY:=true}
+: ${PUPPET_DURS:=true}
+: ${REF_WAV:="$3"}
+
 echo -e "\nAMP=$AMP, batch_size=$BATCH_SIZE\n"
 
 ARGS=""
 ARGS+=" -i $PHRASES"
 ARGS+=" -o $OUTPUT_DIR"
 ARGS+=" --log-file $LOG_FILE"
-ARGS+=" --ref-wav /home/emelie/Repos/FastPitches/PyTorch/SpeechSynthesis/FastPitch/LJSpeech-1.1/wavs/LJ029-0197.wav"
 ARGS+=" --fastpitch $FASTPITCH"
 ARGS+=" --waveglow $WAVEGLOW"
 ARGS+=" --wn-channels 256"
@@ -41,6 +46,10 @@ ARGS+=" --save-mels"
 [ "$PHONE" = "true" ]       && ARGS+=" --p-arpabet 1.0"
 [ "$ENERGY" = "true" ]      && ARGS+=" --energy-conditioning"
 [ "$TORCHSCRIPT" = "true" ] && ARGS+=" --torchscript"
+[ "$REF_WAV" != "" ]        && ARGS+=" --ref-wav $REF_WAV"
+[ "$PUPPET_PITCH" = "true" ] && ARGS+=" --puppet-pitch"
+[ "$PUPPET_ENERGY" = "true" ] && ARGS+=" --puppet-energy"
+[ "$PUPPET_DURS" = "true" ] && ARGS+="  --puppet-durs"
 
 mkdir -p "$OUTPUT_DIR"
 
