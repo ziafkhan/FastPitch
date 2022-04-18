@@ -3,7 +3,7 @@
 : ${WAVEGLOW:="pretrained_models/waveglow/nvidia_waveglow256pyt_fp16.pt"}
 : ${FASTPITCH:="/home/emelie/Repos/FastPitches/PyTorch/SpeechSynthesis/FastPitch/pretrained_models/fastpitch/nvidia_fastpitch_210824.pt"}
 : ${BATCH_SIZE:=32}
-: ${PHRASES:="phrases/$1"}
+: ${PHRASES:="$1"}
 : ${OUTPUT_DIR:="$2"}
 : ${LOG_FILE:="$OUTPUT_DIR/nvlog_infer.json"}
 : ${AMP:=false}
@@ -19,10 +19,10 @@
 : ${NUM_SPEAKERS:=1}
 
 # puppeteering
-: ${PUPPET_PITCH:=true}
-: ${PUPPET_ENERGY:=true}
-: ${PUPPET_DURS:=true}
-: ${REF_WAV:="$3"}
+: ${PUPPET_PITCH:=false}
+: ${PUPPET_ENERGY:=false}
+: ${PUPPET_DURS:=false}
+: ${REF_WAV:=""}
 
 echo -e "\nAMP=$AMP, batch_size=$BATCH_SIZE\n"
 
@@ -53,4 +53,4 @@ ARGS+=" --save-mels"
 
 mkdir -p "$OUTPUT_DIR"
 
-python inference.py $ARGS "$@"
+python inference.py $ARGS
