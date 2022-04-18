@@ -87,7 +87,7 @@ class FastPitchLoss(nn.Module):
             energy_loss = F.mse_loss(energy_tgt, energy_pred, reduction='none')
             energy_loss = (energy_loss * dur_mask).sum() / dur_mask.sum()
         else:
-            energy_loss = 0
+            energy_loss = torch.tensor(0, dtype=torch.int8).to(device='cuda')
 
         if spectral_tilt_pred is not None:
             spectral_tilt_pred = spectral_tilt_pred.permute(0, 2, 1)
@@ -96,7 +96,7 @@ class FastPitchLoss(nn.Module):
             spectral_dur_mask = torch.repeat_interleave(dur_mask[:, None, :], spectral_tilt_loss.size(1), dim=1) 
             spectral_tilt_loss = (spectral_tilt_loss * spectral_dur_mask).sum() / spectral_dur_mask.sum()
         else:
-            spectral_tilt_loss = 0
+            spectral_tilt_loss = torch.tensor(0, dtype=torch.int8).to(device='cuda')
 
         # Attention loss
         attn_loss = self.attn_ctc_loss(attn_logprob, in_lens, out_lens)

@@ -153,7 +153,7 @@ class TTSDataset(torch.utils.data.Dataset):
                  betabinomial_online_dir=None,
                  use_betabinomial_interpolator=True,
                  pitch_online_method='pyin',
-                 include_tilt='both',
+                 include_tilt=None,
                  **ignored):
 
         # Expect a list of filenames
@@ -220,7 +220,10 @@ class TTSDataset(torch.utils.data.Dataset):
         text = self.get_text(text)
         pitch = self.get_pitch(index, mel.size(-1))
         energy = torch.norm(mel.float(), dim=0, p=2)
-        spectral_tilt = self.get_spectral_tilt(mel, audiopath, self.spectral_tilt_features)
+        if self.spectral_tilt_features:
+                spectral_tilt = self.get_spectral_tilt(mel, audiopath, self.spectral_tilt_features)
+        else:
+                spectral_tilt = None
         attn_prior = self.get_prior(index, mel.shape[1], text.shape[0])
 
         assert pitch.size(-1) == mel.size(-1)
@@ -402,15 +405,20 @@ class TTSCollate:
                                    mel_padded.size(2), dtype=batch[0][3].dtype)
         energy_padded = torch.zeros_like(pitch_padded[:, 0, :])
 
-        num_coefficients = batch[0][5].size(0)
-        spectral_tilt_padded = torch.FloatTensor(len(batch), num_coefficients, max_target_len).zero_()
         for i in range(len(ids_sorted_decreasing)):
             pitch = batch[ids_sorted_decreasing[i]][3]
             energy = batch[ids_sorted_decreasing[i]][4]
             spectral_tilt = batch[ids_sorted_decreasing[i]][5]
             pitch_padded[i, :, :pitch.shape[1]] = pitch
             energy_padded[i, :energy.shape[0]] = energy
-            spectral_tilt_padded[i, :, :spectral_tilt.shape[1]] = spectral_tilt
+
+        if batch[0][5] is not None:  # if None, there is no spectral tilt
+            num_coefficients = batch[0][5].size(0)
+            spectral_tilt_padded = torch.FloatTensor(len(batch), num_coefficients, max_target_len).zero_()
+            for i in range(len(ids_sorted_decreasing)):
+                spectral_tilt_padded[i, :, :spectral_tilt.shape[1]] = spectral_tilt
+        else:
+            spectral_tilt_padded = None
 
         if batch[0][6] is not None:
             speaker = torch.zeros_like(input_lengths)
@@ -447,8 +455,9 @@ def batch_to_gpu(batch):
     output_lengths = to_gpu(output_lengths).long()
     pitch_padded = to_gpu(pitch_padded).float()
     energy_padded = to_gpu(energy_padded).float()
-    spectral_tilt_padded = to_gpu(spectral_tilt_padded).float()
     attn_prior = to_gpu(attn_prior).float()
+    if spectral_tilt_padded is not None:
+        spectral_tilt_padded = to_gpu(spectral_tilt_padded).float()
     if speaker is not None:
         speaker = to_gpu(speaker).long()
 

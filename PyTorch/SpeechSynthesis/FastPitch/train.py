@@ -159,8 +159,8 @@ def parse_args(parser):
     cond.add_argument('--load-mel-from-disk', action='store_true',
                       help='Use mel-spectrograms cache on the disk')  # XXX
     # for spectral tilt estimation
-    cond.add_argument('--include-tilt', default='both', type=str,
-                      choices=['source', 'surface', 'both'])
+    cond.add_argument('--include-tilt', default=None, type=str,
+                      choices=['source', 'surface', 'both', None])
 
     audio = parser.add_argument_group('audio parameters')
     audio.add_argument('--max-wav-value', default=32768.0, type=float,
