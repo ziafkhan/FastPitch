@@ -27,6 +27,7 @@
 
 import argparse
 
+import librosa.feature
 import scipy
 from torch import nn
 
@@ -45,7 +46,7 @@ from torch.nn.utils.rnn import pad_sequence
 
 import dllogger as DLLogger
 from dllogger import StdOutBackend, JSONStreamBackend, Verbosity
-from dtw import dtw, warp, rabinerJuangStepPattern
+from dtw import dtw, warp, rabinerJuangStepPattern  # conda install -c conda-forge dtw-python
 
 from fastpitch.data_function import estimate_pitch
 from fastpitch.model import average_pitch
@@ -481,6 +482,22 @@ def main():
                 with torch.no_grad(), gen_measures:
                     mel, mel_lens, dur_pred, pitch_pred, energy_pred = generator(b['text'], **gen_kw)
                     if args.ref_wav:
+                        with torch.no_grad(), waveglow_measures:
+                            synth_audios = waveglow(mel, sigma=args.sigma_infer)
+                            synth_audios = denoiser(synth_audios.float(),
+                                              strength=args.denoising_strength
+                                              ).squeeze(1)
+                        print('SHAPES: ', mel.shape, mel_lens.shape, synth_audios.shape)
+                        synth_audio = synth_audios[:mel_lens.item() * args.stft_hop_length]
+
+                        if args.fade_out:
+                            fade_len = args.fade_out * args.stft_hop_length
+                            fade_w = torch.linspace(1.0, 0.0, fade_len)
+                            synth_audio[-fade_len:] *= fade_w.to(synth_audio.device)
+
+                        synth_audio = synth_audio / torch.max(torch.abs(synth_audio))
+                        synth_mfccs = librosa.feature.mfcc(synth_audio, sr=args.sampling_rate, n_mfcc=39)
+                        print('MFCC SHAPE: ', type(synth_mfccs))
                         ref_mel = get_ref_mels(args.ref_wav)
                         ref_energy = torch.norm(ref_mel.float(), dim=0, p=2)
                         ref_pitch = get_ref_pitch(args.ref_wav, ref_mel.shape[-1])
