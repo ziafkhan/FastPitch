@@ -320,7 +320,6 @@ def get_ref_mels(filename, synth_audio=None, mfccs=True):
     # TODO: check varying sample rates
     audio, sampling_rate = load_wav_to_torch(filename)
     if mfccs:
-        print(type(synth_audio))
         return (librosa.feature.mfcc(synth_audio.cpu().numpy(), sr=sampling_rate, n_mfcc=39, hop_length=hop_length, win_length=win_length),
         librosa.feature.mfcc(np.array(audio), sr=sampling_rate, n_mfcc=39, hop_length=hop_length, win_length=win_length))
     audio_norm = audio / max_wav_value
@@ -339,14 +338,12 @@ def align_mels(mel_known_durs, mel_unknown_durs, mfccs=True):
     if not mfccs:
         mel_known_durs = np.squeeze(mel_known_durs.cpu().numpy(), axis=0)
         mel_unknown_durs = np.squeeze(mel_unknown_durs.cpu().numpy(), axis=0)
-    print('MFCC SHAPES: ', mel_known_durs.shape, mel_unknown_durs.shape)
     mel_known_durs = mel_known_durs.transpose(1, 0)
     mel_unknown_durs = mel_unknown_durs.transpose(1, 0)
     if mfccs:
         import tslearn.metrics
         alignment, similarity = tslearn.metrics.dtw_path(mel_known_durs, mel_unknown_durs)
-        print('NUMBER OF FRAMES known_dur/unknown dur: ', mel_known_durs.shape, mel_unknown_durs.shape)
-        return alignment 
+        return alignment
     # From Korin Richmond
     dm = 'seuclidean'  # distance metric to use
     # matrix of distances between all frames
@@ -365,12 +362,9 @@ def warp_pitch(alignment, ref_pitch, ref_energy, durations, device):
     aligned_ref_durs = np.zeros(shape=int_durs.shape)
     alignment = dict(alignment)
     consumed = 0
-    print('NUMBER OF DURATIONS: ', durations.shape)
-    print('ORIGINAL DURATION:  ', torch.cumsum(int_durs, dim=1)[0, -1])
     # if total synth duration = 700, synth features = (701 x no. features)
     for i, dur in enumerate(torch.cumsum(int_durs, dim=1)[0, :]):
         dur = dur.item()
-        print('NEXT DUR:  ', i, dur)
         # if character 0 has duration 4, the index to convert is 3
         new_index = alignment[dur]  # possible this doesn't work for mel DTW, just mfcc DTW
         # slice = ref_pitch[0, consumed:new_index + 1]  # new index needs to be included
@@ -378,9 +372,6 @@ def warp_pitch(alignment, ref_pitch, ref_energy, durations, device):
         expected_slice_size = new_index - consumed
         aligned_ref_durs[0, i] = expected_slice_size  # non-cum duration
         consumed = new_index  # next ref slice starts from current ref index
-    print('CONSUMED:  ', consumed)
-    print(aligned_ref_durs[0])
-    print('TOTAL NEW DURATION:  ',  aligned_ref_durs.shape, np.sum(aligned_ref_durs[0]))
     ref_durs = torch.from_numpy(aligned_ref_durs).to(device)
     ref_pitch = torch.unsqueeze(ref_pitch, dim=0).to(device)
     ref_energy = ref_energy.to(device)
@@ -513,16 +504,13 @@ def main():
                                               strength=args.denoising_strength
                                               ).squeeze(1)
                         synth_audio = synth_audios[0][:mel_lens[0].item() * args.stft_hop_length]
-                        print('AUDIO SHAPE:  ', synth_audio.shape)
                         if args.fade_out:
                             fade_len = args.fade_out * args.stft_hop_length
                             fade_w = torch.linspace(1.0, 0.0, fade_len)
-                            print('FADING, shape: ', fade_w.shape)
                             synth_audio[-fade_len:] *= fade_w.to(synth_audio.device)
 
                         synth_audio = synth_audio / torch.max(torch.abs(synth_audio))
                         synth_mfccs, ref_mfccs = get_ref_mels(args.ref_wav, synth_audio, mfccs=True)
-                        print('MFCC shapes synth/puppet: ', synth_mfccs.shape, ref_mfccs.shape)
                         ref_mel = get_ref_mels(args.ref_wav, mfccs=False)
                         ref_energy = torch.norm(ref_mel.float(), dim=0, p=2)
                         ref_pitch = get_ref_pitch(args.ref_wav, ref_mel.shape[-1])
@@ -532,10 +520,7 @@ def main():
                         new_energy = torch.log(1.0 + new_energy)
                         new_energy = new_energy.squeeze(1)
                         norm_new_energy = normalise_pitch(new_energy, new_energy.mean(), new_energy.std())
-                        print('NORMED: ', norm_new_energy.shape, norm_new_energy[0, :10])
-                        print('PRED MEAN/STD: ', energy_pred.mean(), energy_pred.std())
                         norm_new_energy = norm_new_energy.mul(energy_pred.std())
-                        print('JUST ADD STD: ', norm_new_energy[0, :10])
 
                         norm_new_energy = norm_new_energy.add(energy_pred.mean())
 
@@ -547,7 +532,6 @@ def main():
                             gen_kw['energy_tgt'] = norm_new_energy
 
                         mel, mel_lens, *_, energy_pred = generator(b['text'], **gen_kw)  # runs 'infer' method
-                        print('NEW ENERGY: ', energy_pred.shape)
 
                 gen_infer_perf = mel.size(0) * mel.size(2) / gen_measures[-1]
                 all_letters += b['text_lens'].sum().item()
