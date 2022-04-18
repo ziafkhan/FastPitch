@@ -306,7 +306,7 @@ def save_pitch(pitch_pred):
     pass
 
 
-def get_ref_mels(filename):
+def get_ref_mels(filename, synth_audio=None, mfccs=True):
     max_wav_value = 32768.0  # arg parse default from prepare_dataset
     filter_length = 1024
     hop_length = 256
@@ -316,6 +316,10 @@ def get_ref_mels(filename):
     mel_fmax = 8000.0
     # TODO: check varying sample rates
     audio, sampling_rate = load_wav_to_torch(filename)
+    if mfccs:
+        print(type(synth_audio))
+        return (librosa.feature.mfcc(synth_audio.cpu().numpy(), sr=sampling_rate, n_mfcc=39, hop_length=hop_length, win_length=win_length),
+        librosa.feature.mfcc(np.array(audio), sr=sampling_rate, n_mfcc=39, hop_length=hop_length, win_length=win_length))
     audio_norm = audio / max_wav_value
     audio_norm = audio_norm.unsqueeze(0)
     audio_norm = torch.autograd.Variable(audio_norm,
@@ -327,11 +331,19 @@ def get_ref_mels(filename):
     return melspec
 
 
-def align_mels(ref_mel, mel):
+def align_mels(mel_known_durs, mel_unknown_durs, mfccs=True):
     # TODO: Deal with the batch dimension a bit nicer
-    mel = np.squeeze(mel.cpu().numpy(), axis=0).transpose(1, 0)
-    ref_mel = np.squeeze(ref_mel.cpu().numpy(), axis=0).transpose(1, 0)
-
+    if not mfccs:
+        mel_known_durs = np.squeeze(mel_known_durs.cpu().numpy(), axis=0)
+        mel_unknown_durs = np.squeeze(mel_unknown_durs.cpu().numpy(), axis=0)
+    print('MFCC SHAPES: ', mel_known_durs.shape, mel_unknown_durs.shape)
+    mel_known_durs = mel_known_durs.transpose(1, 0)
+    mel_unknown_durs = mel_unknown_durs.transpose(1, 0)
+    if mfccs:
+        import tslearn.metrics
+        alignment, similarity = tslearn.metrics.dtw_path(mel_known_durs, mel_unknown_durs)
+        print('NUMBER OF FRAMES known_dur/unknown dur: ', mel_known_durs.shape, mel_unknown_durs.shape)
+        return alignment 
     # From Korin Richmond
     dm = 'seuclidean'  # distance metric to use
     # matrix of distances between all frames
@@ -348,14 +360,24 @@ def warp_pitch(alignment, ref_pitch, ref_energy, durations, device):
     # 1 x no. of characters
     int_durs = torch.round(durations).to(torch.int64)
     aligned_ref_durs = np.zeros(shape=int_durs.shape)
+    alignment = dict(alignment)
     consumed = 0
+    print('NUMBER OF DURATIONS: ', durations.shape)
+    print('ORIGINAL DURATION:  ', torch.cumsum(int_durs, dim=1)[0, -1])
+    # if total synth duration = 700, synth features = (701 x no. features)
     for i, dur in enumerate(torch.cumsum(int_durs, dim=1)[0, :]):
-        dur = dur.cpu().numpy()
-        ref_index = alignment[dur-2]  # durations start from 1?
-        # slice = ref_pitch[0, consumed:ref_index]
-        expected_slice_size = ref_index - consumed
+        dur = dur.item()
+        print('NEXT DUR:  ', i, dur)
+        # if character 0 has duration 4, the index to convert is 3
+        new_index = alignment[dur]  # possible this doesn't work for mel DTW, just mfcc DTW
+        # slice = ref_pitch[0, consumed:new_index + 1]  # new index needs to be included
+        # the new index is included in the duration
+        expected_slice_size = new_index - consumed
         aligned_ref_durs[0, i] = expected_slice_size  # non-cum duration
-        consumed = ref_index  # next ref slice starts from current ref index
+        consumed = new_index  # next ref slice starts from current ref index
+    print('CONSUMED:  ', consumed)
+    print(aligned_ref_durs[0])
+    print('TOTAL NEW DURATION:  ',  aligned_ref_durs.shape, np.sum(aligned_ref_durs[0]))
     ref_durs = torch.from_numpy(aligned_ref_durs).to(device)
     ref_pitch = torch.unsqueeze(ref_pitch, dim=0).to(device)
     ref_energy = ref_energy.to(device)
@@ -487,21 +509,21 @@ def main():
                             synth_audios = denoiser(synth_audios.float(),
                                               strength=args.denoising_strength
                                               ).squeeze(1)
-                        print('SHAPES: ', mel.shape, mel_lens.shape, synth_audios.shape)
-                        synth_audio = synth_audios[:mel_lens.item() * args.stft_hop_length]
-
+                        synth_audio = synth_audios[0][:mel_lens[0].item() * args.stft_hop_length]
+                        print('AUDIO SHAPE:  ', synth_audio.shape)
                         if args.fade_out:
                             fade_len = args.fade_out * args.stft_hop_length
                             fade_w = torch.linspace(1.0, 0.0, fade_len)
+                            print('FADING, shape: ', fade_w.shape)
                             synth_audio[-fade_len:] *= fade_w.to(synth_audio.device)
 
                         synth_audio = synth_audio / torch.max(torch.abs(synth_audio))
-                        synth_mfccs = librosa.feature.mfcc(synth_audio, sr=args.sampling_rate, n_mfcc=39)
-                        print('MFCC SHAPE: ', type(synth_mfccs))
-                        ref_mel = get_ref_mels(args.ref_wav)
+                        synth_mfccs, ref_mfccs = get_ref_mels(args.ref_wav, synth_audio, mfccs=True)
+                        print('MFCC shapes synth/puppet: ', synth_mfccs.shape, ref_mfccs.shape)
+                        ref_mel = get_ref_mels(args.ref_wav, mfccs=False)
                         ref_energy = torch.norm(ref_mel.float(), dim=0, p=2)
                         ref_pitch = get_ref_pitch(args.ref_wav, ref_mel.shape[-1])
-                        alignment = align_mels(mel, ref_mel)
+                        alignment = align_mels(synth_mfccs, ref_mfccs)
 
                         new_durs, new_pitch, new_energy = warp_pitch(alignment, ref_pitch, ref_energy, dur_pred, device)
                         new_energy = torch.log(1.0 + new_energy)
