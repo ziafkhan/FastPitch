@@ -129,6 +129,8 @@ def parse_fastpitch_args(parent, add_help=False):
                                help='Pitch probability for energy predictor')
     spectral_pred.add_argument('--spectral-tilt-predictor-n-layers', default=2, type=int,
                                help='Number of conv-1D layers')
+    spectral_pred.add_argument('--no-spectral-predictors', default=6, type=int,
+                               help='6 if only one of surface or source, 12 if both')
 
     cond = parser.add_argument_group('conditioning parameters')
     cond.add_argument('--pitch-embedding-kernel-size', default=3, type=int,

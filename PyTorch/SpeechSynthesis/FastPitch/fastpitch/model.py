@@ -130,7 +130,8 @@ class FastPitch(nn.Module):
                  spectral_tilt_predictor_kernel_size, spectral_tilt_predictor_filter_size,
                  p_spectral_tilt_predictor_dropout, spectral_tilt_predictor_n_layers,
                  spectral_tilt_embedding_kernel_size,
-                 pitch_conditioning_formants=1):
+                 pitch_conditioning_formants=1,
+                 no_spectral_predictors=6):
         super(FastPitch, self).__init__()
 
         self.encoder = FFTransformer(
@@ -214,11 +215,11 @@ class FastPitch(nn.Module):
                 kernel_size=spectral_tilt_predictor_kernel_size,
                 dropout=p_spectral_tilt_predictor_dropout,
                 n_layers=spectral_tilt_predictor_n_layers,
-                n_predictions=6
+                n_predictions=no_spectral_predictors
             )
 
             self.spectral_tilt_emb = nn.Conv1d(
-                6, symbols_embedding_dim,
+                no_spectral_predictors, symbols_embedding_dim,
                 kernel_size=spectral_tilt_embedding_kernel_size,
                 padding=int((spectral_tilt_embedding_kernel_size - 1) / 2))
 

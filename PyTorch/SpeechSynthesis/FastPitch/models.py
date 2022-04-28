@@ -152,6 +152,7 @@ def get_model_config(model_name, args):
             # spectral tilt conditioning
             spectral_tilt_conditioning=args.spectral_tilt_conditioning,
             spectral_tilt_embedding_kernel_size=args.spectral_tilt_embedding_kernel_size,
+            no_spectral_predictors=args.no_spectral_predictors
         )
         return model_config
 
