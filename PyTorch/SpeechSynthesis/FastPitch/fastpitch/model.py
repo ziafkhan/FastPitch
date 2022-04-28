@@ -56,7 +56,6 @@ def regulate_len(durations, enc_out, pace: float = 1.0,
             (reps_cumsum[:, :, 1:] > range_))
     mult = mult.to(dtype)
     enc_rep = torch.matmul(mult, enc_out)
-
     if mel_max_len is not None:
         enc_rep = enc_rep[:, :mel_max_len]
         dec_lens = torch.clamp_max(dec_lens, mel_max_len)
@@ -239,7 +238,7 @@ class FastPitch(nn.Module):
                              out_lens.cpu().numpy(), width=1)
         return torch.from_numpy(attn_out).to(attn.get_device())
 
-    def forward(self, inputs, use_gt_pitch=True, pace=1.0, max_duration=75):
+    def forward(self, inputs, use_gt_pitch=True, pace=1.0, max_duration=20):
 
         (inputs, input_lens, mel_tgt, mel_lens, pitch_dense, energy_dense,
          speaker, attn_prior, audiopaths) = inputs
@@ -318,7 +317,7 @@ class FastPitch(nn.Module):
                 attn_hard_dur, attn_logprob)
 
     def infer(self, inputs, pace=1.0, dur_tgt=None, pitch_tgt=None,
-              energy_tgt=None, pitch_transform=None, max_duration=75,
+              energy_tgt=None, pitch_transform=None, max_duration=20,
               speaker=0):
 
         if self.speaker_emb is None:
@@ -368,10 +367,11 @@ class FastPitch(nn.Module):
         else:
             energy_pred = None
 
+        if dur_tgt is not None:
+            dur_tgt = torch.clamp(dur_tgt, 0, max_duration)
         len_regulated, dec_lens = regulate_len(
             dur_pred if dur_tgt is None else dur_tgt,
             enc_out, pace, mel_max_len=None)
-
         dec_out, dec_mask = self.decoder(len_regulated, dec_lens)
         mel_out = self.proj(dec_out)
         # mel_lens = dec_mask.squeeze(2).sum(axis=1).long()

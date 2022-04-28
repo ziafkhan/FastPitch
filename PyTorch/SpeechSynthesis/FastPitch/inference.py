@@ -342,24 +342,23 @@ def align_mels(mel_known_durs, mel_unknown_durs, mfccs=True):
     mel_unknown_durs = mel_unknown_durs.transpose(1, 0)
     if mfccs:
         import tslearn.metrics
-        alignment, similarity = tslearn.metrics.dtw_path(mel_known_durs, mel_unknown_durs)
-        return alignment
-    # From Korin Richmond
-    dm = 'seuclidean'  # distance metric to use
-    # matrix of distances between all frames
-    dist_matrix = scipy.spatial.distance.cdist(mel, ref_mel, dm)
-
-    sp = rabinerJuangStepPattern(6, 'c', False)  # alternative 'symmetric1'
-    alignment = dtw(dist_matrix, keep_internals=True, step_pattern=sp)
-    # alignment.plot(type='density')
-    warper = warp(alignment, index_reference=False)
-    return warper
+        return tslearn.metrics.dtw_path(mel_known_durs, mel_unknown_durs)  # alignment, similarity
+    # # From Korin Richmond
+    # dm = 'seuclidean'  # distance metric to use
+    # # matrix of distances between all frames
+    # dist_matrix = scipy.spatial.distance.cdist(mel, ref_mel, dm)
+    #
+    # sp = rabinerJuangStepPattern(6, 'c', False)  # alternative 'symmetric1'
+    # alignment = dtw(dist_matrix, keep_internals=True, step_pattern=sp)
+    # # alignment.plot(type='density')
+    # warper = warp(alignment, index_reference=False)
+    # return warper
 
 
 def warp_pitch(alignment, ref_pitch, ref_energy, durations, device):
     # 1 x no. of characters
     int_durs = torch.round(durations).to(torch.int64)
-    aligned_ref_durs = np.zeros(shape=int_durs.shape)
+    aligned_ref_durs = np.zeros(shape=int_durs.shape, dtype=float)
     alignment = dict(alignment)
     consumed = 0
     # if total synth duration = 700, synth features = (701 x no. features)
@@ -504,18 +503,15 @@ def main():
                                               strength=args.denoising_strength
                                               ).squeeze(1)
                         synth_audio = synth_audios[0][:mel_lens[0].item() * args.stft_hop_length]
-                        if args.fade_out:
-                            fade_len = args.fade_out * args.stft_hop_length
-                            fade_w = torch.linspace(1.0, 0.0, fade_len)
-                            synth_audio[-fade_len:] *= fade_w.to(synth_audio.device)
-
                         synth_audio = synth_audio / torch.max(torch.abs(synth_audio))
                         synth_mfccs, ref_mfccs = get_ref_mels(args.ref_wav, synth_audio, mfccs=True)
+                        print('lens in MFCCS synth/ref: ', synth_mfccs.shape, ref_mfccs.shape)
                         ref_mel = get_ref_mels(args.ref_wav, mfccs=False)
                         ref_energy = torch.norm(ref_mel.float(), dim=0, p=2)
                         ref_pitch = get_ref_pitch(args.ref_wav, ref_mel.shape[-1])
-                        alignment = align_mels(synth_mfccs, ref_mfccs)
-
+                        alignment, similarity = align_mels(synth_mfccs, ref_mfccs)
+                        print('SIMILARITY: ', similarity)
+                        log(rep, {"!!reference similarity": similarity})
                         new_durs, new_pitch, new_energy = warp_pitch(alignment, ref_pitch, ref_energy, dur_pred, device)
                         new_energy = torch.log(1.0 + new_energy)
                         new_energy = new_energy.squeeze(1)
@@ -526,9 +522,9 @@ def main():
 
                         if args.puppet_pitch:
                             gen_kw['pitch_tgt'] = new_pitch
-                        if  args.puppet_durs:
+                        if args.puppet_durs:
                             gen_kw['dur_tgt'] = new_durs
-                        if  args.puppet_energy:
+                        if args.puppet_energy:
                             gen_kw['energy_tgt'] = norm_new_energy
 
                         mel, mel_lens, *_, energy_pred = generator(b['text'], **gen_kw)  # runs 'infer' method
