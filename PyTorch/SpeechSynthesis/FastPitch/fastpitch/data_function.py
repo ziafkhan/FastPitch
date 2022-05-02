@@ -357,6 +357,7 @@ class TTSDataset(torch.utils.data.Dataset):
         # shape 6 x input_frames
         poly_coefficients = np.polynomial.polynomial.polyfit(np.arange(1, n_mels + 1), mels, 5)
         if tilt_features == 'both' or tilt_features == 'source':
+            # TODO: remove hardcoded path
             audio_path = re.sub('/wavs/', '/iaif_gci_wavs/', audio_path)
             iaif_mels = self.get_mel(audio_path)
             iaif_poly_coefficients = np.polynomial.polynomial.polyfit(
