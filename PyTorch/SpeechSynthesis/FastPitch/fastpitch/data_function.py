@@ -41,6 +41,8 @@ import common.layers as layers
 from common.text.text_processing import TextProcessing
 from common.utils import load_wav_to_torch, load_filepaths_and_text, to_gpu
 
+from .cwt_conditioning import upsample_word_label
+
 
 class BetaBinomialInterpolator:
     """Interpolates alignment prior matrices to save computation.
@@ -138,6 +140,8 @@ class TTSDataset(torch.utils.data.Dataset):
                  n_speakers=1,
                  load_mel_from_disk=True,
                  load_pitch_from_disk=True,
+                 load_cwt_from_disk=False,
+                 cwt_accent=False,
                  pitch_mean=214.72203,  # LJSpeech defaults
                  pitch_std=65.72038,
                  max_wav_value=None,
@@ -155,7 +159,7 @@ class TTSDataset(torch.utils.data.Dataset):
                  pitch_online_method='pyin',
                  **ignored):
 
-        # Expect a list of filenames
+        # Expect a list of filenames i.e. train and val
         if type(audiopaths_and_text) is str:
             audiopaths_and_text = [audiopaths_and_text]
 
@@ -172,6 +176,10 @@ class TTSDataset(torch.utils.data.Dataset):
                 n_mel_channels, sampling_rate, mel_fmin, mel_fmax)
         self.load_pitch_from_disk = load_pitch_from_disk
 
+        #word level conditioning
+        self.cwt_accent = cwt_accent
+        self.load_cwt_from_disk = load_cwt_from_disk
+
         self.prepend_space_to_text = prepend_space_to_text
         self.append_space_to_text = append_space_to_text
 
@@ -179,7 +187,7 @@ class TTSDataset(torch.utils.data.Dataset):
             'Only 0.0 and 1.0 p_arpabet is currently supported. '
             'Variable probability breaks caching of betabinomial matrices.')
 
-        self.tp = TextProcessing(symbol_set, text_cleaners, p_arpabet=p_arpabet)
+        self.tp = TextProcessing(symbol_set, text_cleaners, p_arpabet=p_arpabet, get_counts=True) #get counts is getting number of symbols per word for upsampling
         self.n_speakers = n_speakers
         self.pitch_tmp_dir = pitch_online_dir
         self.f0_method = pitch_online_method
@@ -189,7 +197,8 @@ class TTSDataset(torch.utils.data.Dataset):
         if use_betabinomial_interpolator:
             self.betabinomial_interpolator = BetaBinomialInterpolator()
 
-        expected_columns = (2 + int(load_pitch_from_disk) + (n_speakers > 1))
+       # expected_columns = (2 + int(load_pitch_from_disk) + (n_speakers > 1))
+       # @Johannah add a check for dictionary values to check for input arguments in meta
 
         assert not (load_pitch_from_disk and self.pitch_tmp_dir is not None)
 
@@ -200,7 +209,7 @@ class TTSDataset(torch.utils.data.Dataset):
 
     def __getitem__(self, index):
 
-        #Indexing items using dictionary entries
+        #Indexing items using dictionary entries instead of list indices
         if self.n_speakers > 1:
             audiopath = self.audiopaths_and_text[index]['mels']
             text = self.audiopaths_and_text[index]['text']
@@ -211,12 +220,24 @@ class TTSDataset(torch.utils.data.Dataset):
             text = self.audiopaths_and_text[index]['text']
             speaker = None
 
+#        if self.cwt_accent == True:
+#            cwt_acc = self.get_cwt_labels(index, text_info)
+#        else:
+#            cwt_acc = None
+
+
 
         mel = self.get_mel(audiopath)
-        text = self.get_text(text)
+        text, text_info = self.get_text(text)
         pitch = self.get_pitch(index, mel.size(-1))
         energy = torch.norm(mel.float(), dim=0, p=2)
         attn_prior = self.get_prior(index, mel.shape[1], text.shape[0])
+
+        if self.cwt_accent == True:
+            cwt_acc = self.get_cwt_labels(index, text_info)
+        else:
+            cwt_acc = None
+
 
         assert pitch.size(-1) == mel.size(-1)
 
@@ -225,12 +246,13 @@ class TTSDataset(torch.utils.data.Dataset):
             pitch = pitch[None, :]
 
         return (text, mel, len(text), pitch, energy, speaker, attn_prior,
-                audiopath)
+                audiopath, cwt_acc)
 
     def __len__(self):
         return len(self.audiopaths_and_text)
 
     def get_mel(self, filename):
+        #print(filename)
         if not self.load_mel_from_disk:
             audio, sampling_rate = load_wav_to_torch(filename)
             if sampling_rate != self.stft.sampling_rate:
@@ -251,7 +273,7 @@ class TTSDataset(torch.utils.data.Dataset):
         return melspec
 
     def get_text(self, text):
-        text = self.tp.encode_text(text)
+        text, text_info = self.tp.encode_text(text)
         space = [self.tp.encode_text("A A")[1]]
 
         if self.prepend_space_to_text:
@@ -260,7 +282,7 @@ class TTSDataset(torch.utils.data.Dataset):
         if self.append_space_to_text:
             text = text + space
 
-        return torch.LongTensor(text)
+        return torch.LongTensor(text), text_info
 
     def get_prior(self, index, mel_len, text_len):
 
@@ -287,7 +309,7 @@ class TTSDataset(torch.utils.data.Dataset):
 
     def get_pitch(self, index, mel_len=None):
         audiopath = self.audiopaths_and_text[index]['mels']
-
+        #print(audiopath)
         if self.n_speakers > 1:
             spk = int(self.audiopaths_and_text[index]['speaker'])
         else:
@@ -295,6 +317,7 @@ class TTSDataset(torch.utils.data.Dataset):
 
         if self.load_pitch_from_disk:
             pitchpath = self.audiopaths_and_text[index]['pitch']
+            #print(pitchpath)
             pitch = torch.load(pitchpath)
             if self.pitch_mean is not None:
                 assert self.pitch_std is not None
@@ -322,6 +345,22 @@ class TTSDataset(torch.utils.data.Dataset):
             torch.save(pitch_mel, cached_fpath)
 
         return pitch_mel
+
+    def get_cwt_labels(self, index, text_info, text=False):
+        '''Reads in array of cwt on a per word basis and
+           usamples OR predicts cwt labels and upsamples'''
+
+        if self.load_cwt_from_disk:
+            cwt_path = self.audiopaths_and_text[index]['cwt_accent']
+            cwt_labels = torch.load(cwt_path)
+            cwt_upsampled = upsample_word_label(text_info, cwt_labels)
+ 
+            return torch.LongTensor(cwt_upsampled)
+
+        else:
+             #predict labels
+             #Here we will eventually add the other task
+            return None
 
 
 class TTSCollate:
@@ -385,14 +424,26 @@ class TTSCollate:
 
         audiopaths = [batch[i][7] for i in ids_sorted_decreasing]
 
+        #if word-level conditioning pad cwt labels to max input length
+        if batch[0][8] is not None:
+            cwt_padded = torch.LongTensor(len(batch), max_input_len)
+            cwt_padded.zero_()
+            for i in range(len(ids_sorted_decreasing)):
+                cwt = batch[ids_sorted_decreasing[i]][0]
+                cwt_padded[i, :cwt.size(0)] = cwt
+        else:
+            cwt = None
+
+        print(cwt_padded.size(), text_padded.size())
+
         return (text_padded, input_lengths, mel_padded, output_lengths, len_x,
                 pitch_padded, energy_padded, speaker, attn_prior_padded,
-                audiopaths)
+                audiopaths, cwt_padded)
 
 
 def batch_to_gpu(batch):
     (text_padded, input_lengths, mel_padded, output_lengths, len_x,
-     pitch_padded, energy_padded, speaker, attn_prior, audiopaths) = batch
+     pitch_padded, energy_padded, speaker, attn_prior, audiopaths, cwt_padded) = batch
 
     text_padded = to_gpu(text_padded).long()
     input_lengths = to_gpu(input_lengths).long()
@@ -404,9 +455,12 @@ def batch_to_gpu(batch):
     if speaker is not None:
         speaker = to_gpu(speaker).long()
 
+    if cwt_padded is not None:
+        cwt_padded = to_gpu(cwt_padded).long()
+
     # Alignments act as both inputs and targets - pass shallow copies
     x = [text_padded, input_lengths, mel_padded, output_lengths,
-         pitch_padded, energy_padded, speaker, attn_prior, audiopaths]
+         pitch_padded, energy_padded, speaker, attn_prior, audiopaths, cwt_padded]
     y = [mel_padded, input_lengths, output_lengths]
     len_x = torch.sum(output_lengths)
     return (x, y, len_x)

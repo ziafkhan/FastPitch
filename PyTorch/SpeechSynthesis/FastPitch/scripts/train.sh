@@ -1,22 +1,22 @@
 #!/usr/bin/env bash
 
 export OMP_NUM_THREADS=1
-
-: ${NUM_GPUS:=8}
+export CUDA_VISIBLE_DEVICES=1
+: ${NUM_GPUS:=1}
 : ${BATCH_SIZE:=16}
 : ${GRAD_ACCUMULATION:=2}
 : ${OUTPUT_DIR:="./output"}
 : ${DATASET_PATH:=LJSpeech-1.1}
-: ${TRAIN_FILELIST:=filelists/ljs_audio_pitch_text_train_v3.txt}
-: ${VAL_FILELIST:=filelists/ljs_audio_pitch_text_val.txt}
+: ${TRAIN_FILELIST:=filelists/train_2_conditions.txt}
+: ${VAL_FILELIST:=filelists/val_2_conditions.txt}
 : ${AMP:=false}
 : ${SEED:=""}
 
 : ${LEARNING_RATE:=0.1}
 
 # Adjust these when the amount of data changes
-: ${EPOCHS:=1000}
-: ${EPOCHS_PER_CHECKPOINT:=100}
+: ${EPOCHS:=10}
+: ${EPOCHS_PER_CHECKPOINT:=1}
 : ${WARMUP_STEPS:=1000}
 : ${KL_LOSS_WARMUP:=100}
 
@@ -27,9 +27,12 @@ export OMP_NUM_THREADS=1
 : ${TEXT_CLEANERS:=english_cleaners_v2}
 # Add dummy space prefix/suffix is audio is not precisely trimmed
 : ${APPEND_SPACES:=false}
+# Enable CWT conditioning
+: ${CWT_ACCENT:=true}
 
 : ${LOAD_PITCH_FROM_DISK:=true}
-: ${LOAD_MEL_FROM_DISK:=false}
+: ${LOAD_MEL_FROM_DISK:=true}
+: ${LOAD_CWT_FROM_DISK:=true}
 
 # For multispeaker models, add speaker ID = {0, 1, ...} as the last filelist column
 : ${NSPEAKERS:=1}
@@ -74,6 +77,8 @@ ARGS+=" --n-speakers $NSPEAKERS"
 [ "$SEED" != "" ]                  && ARGS+=" --seed $SEED"
 [ "$LOAD_MEL_FROM_DISK" = true ]   && ARGS+=" --load-mel-from-disk"
 [ "$LOAD_PITCH_FROM_DISK" = true ] && ARGS+=" --load-pitch-from-disk"
+[ "$CWT_ACCENT" = true ]                && ARGS+=" --cwt-accent"
+[ "$LOAD_CWT_FROM_DISK" = true ] && ARGS+=" --load-cwt-from-disk"
 [ "$PITCH_ONLINE_DIR" != "" ]      && ARGS+=" --pitch-online-dir $PITCH_ONLINE_DIR"  # e.g., /dev/shm/pitch
 [ "$PITCH_ONLINE_METHOD" != "" ]   && ARGS+=" --pitch-online-method $PITCH_ONLINE_METHOD"
 [ "$APPEND_SPACES" = true ]        && ARGS+=" --prepend-space-to-text"
@@ -95,4 +100,4 @@ fi
 mkdir -p "$OUTPUT_DIR"
 
 : ${DISTRIBUTED:="-m torch.distributed.launch --nproc_per_node $NUM_GPUS"}
-python $DISTRIBUTED train.py $ARGS "$@"
+python train.py $ARGS "$@"

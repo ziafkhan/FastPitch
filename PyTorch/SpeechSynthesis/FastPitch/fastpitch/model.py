@@ -126,7 +126,7 @@ class FastPitch(nn.Module):
                  energy_predictor_kernel_size, energy_predictor_filter_size,
                  p_energy_predictor_dropout, energy_predictor_n_layers,
                  energy_embedding_kernel_size,
-                 n_speakers, speaker_emb_weight, pitch_conditioning_formants=1):
+                 n_speakers, speaker_emb_weight, cwt_accent, pitch_conditioning_formants=1): #@Johannah change here
         super(FastPitch, self).__init__()
 
         self.encoder = FFTransformer(
@@ -242,7 +242,7 @@ class FastPitch(nn.Module):
     def forward(self, inputs, use_gt_pitch=True, pace=1.0, max_duration=75):
 
         (inputs, input_lens, mel_tgt, mel_lens, pitch_dense, energy_dense,
-         speaker, attn_prior, audiopaths) = inputs
+         speaker, attn_prior, audiopaths, cwt) = inputs
 
         mel_max_len = mel_tgt.size(2)
 

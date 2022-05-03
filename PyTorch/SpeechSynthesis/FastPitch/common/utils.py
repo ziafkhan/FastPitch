@@ -76,7 +76,6 @@ def load_filepaths_and_text(fnames, dataset_path=None, has_speakers=False,
         with open(fname, encoding='utf-8') as f:
             dict_reader = DictReader(f, delimiter='|')
             fpaths_and_text = list(dict_reader)
-
     return fpaths_and_text
 
 

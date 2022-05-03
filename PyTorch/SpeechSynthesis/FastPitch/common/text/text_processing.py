@@ -24,7 +24,7 @@ _arpa_re = re.compile(r'{[^}]+}|\S+')
 class TextProcessing(object):
     def __init__(self, symbol_set, cleaner_names, p_arpabet=0.0,
                  handle_arpabet='word', handle_arpabet_ambiguous='ignore',
-                 expand_currency=True):
+                 expand_currency=True, get_counts=False):
         self.symbols = get_symbols(symbol_set)
         self.cleaner_names = cleaner_names
 
@@ -32,16 +32,20 @@ class TextProcessing(object):
         self.symbol_to_id = {s: i for i, s in enumerate(self.symbols)}
         self.id_to_symbol = {i: s for i, s in enumerate(self.symbols)}
         self.expand_currency = expand_currency
-
+       
         # cmudict
         self.p_arpabet = p_arpabet
         self.handle_arpabet = handle_arpabet
         self.handle_arpabet_ambiguous = handle_arpabet_ambiguous
 
+        # get counts of words per utt and symbols per word
+        self.get_counts = get_counts
 
     def text_to_sequence(self, text):
-        sequence = []
+        '''encodes sequences of graphemes/phonemes to indices'''
 
+        sequence = []
+        #print(text)
         # Check for curly braces and treat their contents as ARPAbet:
         while len(text):
             m = _curly_re.match(text)
@@ -51,7 +55,6 @@ class TextProcessing(object):
             sequence += self.symbols_to_sequence(m.group(1))
             sequence += self.arpabet_to_sequence(m.group(2))
             text = m.group(3)
-
         return sequence
 
     def sequence_to_text(self, sequence):
@@ -142,7 +145,9 @@ class TextProcessing(object):
                         for word in words]
                     text_arpabet = ''.join(text_arpabet)
                     text = text_arpabet
-            elif self.handle_arpabet == 'word':
+                    text_encoded = self.text_to_sequence(text)
+
+            elif self.handle_arpabet == 'word' and self.get_counts == False:
                 words = _words_re.findall(text)
                 text_arpabet = [
                     word[1] if word[0] == '' else (
@@ -152,13 +157,37 @@ class TextProcessing(object):
                     for word in words]
                 text_arpabet = ''.join(text_arpabet)
                 text = text_arpabet
+                text_encoded = self.text_to_sequence(text)
+
+            elif self.handle_arpabet == 'word' and self.get_counts == True:
+                words = _words_re.findall(text)
+                text_arpabet = []
+                text_encoded = []
+                text_info = [] 
+                for word in words:
+                    if word[0] == '':
+                        te = self.text_to_sequence(word[1])
+                        text_encoded += te
+                        text_info.append((word[1], len(te)))
+                        text_arpabet.append(word[1])
+                    else:
+                        if np.random.uniform() < self.p_arpabet:
+                            ta = self.get_arpabet(word[0])
+                            te = self.text_to_sequence(ta)
+                            text_encoded += te
+                            text_info.append((word[0], len(te)))
+                            text_arpabet.append(ta)
+                        else:
+                            text_arpabet.append(word[0])
+                            te = self.text_to_sequence(word[0])
+                            text_info.append((word[0], len(te)))
+                            text_encoded += te
+
             elif self.handle_arpabet != '':
                 raise Exception("{} handle_arpabet is not supported".format(
                     self.handle_arpabet))
 
-        text_encoded = self.text_to_sequence(text)
-
         if return_all:
             return text_encoded, text_clean, text_arpabet
 
-        return text_encoded
+        return text_encoded, text_info

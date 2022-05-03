@@ -158,6 +158,10 @@ def parse_args(parser):
                       help='Normalization value for pitch')
     cond.add_argument('--load-mel-from-disk', action='store_true',
                       help='Use mel-spectrograms cache on the disk')  # XXX
+    cond.add_argument('--load-cwt-from-disk', action='store_true',
+                      help='Use CWT cache on the disk')
+    cond.add_argument('--cwt-accent', action='store_true',
+                      help='Enable CWT Accent Conditioning') #Can be used for any word level conditioning
 
     audio = parser.add_argument_group('audio parameters')
     audio.add_argument('--max-wav-value', default=32768.0, type=float,
@@ -368,7 +372,7 @@ def plot_batch_mels(pred_tgt_lists, rank):
 def log_validation_batch(x, y_pred, rank):
     x_fields = ['text_padded', 'input_lengths', 'mel_padded',
                 'output_lengths', 'pitch_padded', 'energy_padded',
-                'speaker', 'attn_prior', 'audiopaths']
+                'speaker', 'attn_prior', 'audiopaths', 'cwt_padded']
     y_pred_fields = ['mel_out', 'dec_mask', 'dur_pred', 'log_dur_pred',
                      'pitch_pred', 'pitch_tgt', 'energy_pred',
                      'energy_tgt', 'attn_soft', 'attn_hard',
@@ -515,8 +519,8 @@ def main():
 
     device = torch.device('cuda' if args.cuda else 'cpu')
 
-    model_config = models.get_model_config('FastPitch', args)
-    model = models.get_model('FastPitch', model_config, device)
+    model_config = models.get_model_config('FastPitch', args) # @Johannah change here
+    model = models.get_model('FastPitch', model_config, device) # @Johannah change here
     attention_kl_loss = AttentionBinarizationLoss()
 
     if args.local_rank == 0:
@@ -585,8 +589,8 @@ def main():
     if args.local_rank == 0:
         prepare_tmp(args.pitch_online_dir)
 
-    trainset = TTSDataset(audiopaths_and_text=args.training_files, **vars(args))
-    valset = TTSDataset(audiopaths_and_text=args.validation_files, **vars(args))
+    trainset = TTSDataset(audiopaths_and_text=args.training_files, **vars(args)) # @Johannah change here
+    valset = TTSDataset(audiopaths_and_text=args.validation_files, **vars(args)) # @Johannah change here
 
     if distributed_run:
         train_sampler, shuffle = DistributedSampler(trainset), False
@@ -594,7 +598,7 @@ def main():
         train_sampler, shuffle = None, True
 
     # 4 workers are optimal on DGX-1 (from epoch 2 onwards)
-    train_loader = DataLoader(trainset, num_workers=4, shuffle=shuffle,
+    train_loader = DataLoader(trainset, num_workers=4, shuffle=shuffle, # @Johannah change here
                               sampler=train_sampler, batch_size=args.batch_size,
                               pin_memory=True, persistent_workers=True,
                               drop_last=True, collate_fn=collate_fn)
@@ -646,7 +650,7 @@ def main():
             x, y, num_frames = batch_to_gpu(batch)
 
             with torch.cuda.amp.autocast(enabled=args.amp):
-                y_pred = model(x)
+                y_pred = model(x) #forward pass called
                 loss, meta = criterion(y_pred, y)
 
                 if (args.kl_loss_start_epoch is not None
