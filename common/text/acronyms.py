@@ -58,7 +58,7 @@ def _expand_acronyms_to_arpa(m, add_spaces=True):
     acronym = m.group(0)
 
     # remove dots if they exist
-    acronym = re.sub('\.', '', acronym)
+    acronym = re.sub('', '', acronym)
 
     acronym = "".join(acronym.split())
     arpabet = cmudict.lookup(acronym)
