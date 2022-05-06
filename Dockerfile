@@ -21,4 +21,4 @@ WORKDIR /workspace/fastpitch
 ADD requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY . .
+COPY FastPitch .
