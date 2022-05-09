@@ -149,6 +149,12 @@ class FastPitch(nn.Module):
             self.speaker_emb = None
         self.speaker_emb_weight = speaker_emb_weight
 
+        #Embedding for word_level_conditioning
+        if cwt_accent == True:
+            self.word_level_emb = nn.Embedding(5, symbols_embedding_dim, padding_idx=padding_idx)
+        else:
+            self.word_level_emb = None
+
         self.duration_predictor = TemporalPredictor(
             in_fft_output_size,
             filter_size=dur_predictor_filter_size,
@@ -246,15 +252,23 @@ class FastPitch(nn.Module):
 
         mel_max_len = mel_tgt.size(2)
 
-        # Calculate speaker embedding
+        # Calculate speaker embedding torch.Size([1, 1, 384])
         if self.speaker_emb is None:
             spk_emb = 0
         else:
             spk_emb = self.speaker_emb(speaker).unsqueeze(1)
             spk_emb.mul_(self.speaker_emb_weight)
 
+        # Add word-level conditioning @Johannah not sure whether to add embedding weight or not 
+        if self.word_level_emb is None:
+            cwt_emb = 0
+        else:
+            #print(cwt, torch.max(cwt), torch.min(cwt))
+            cwt_emb = self.word_level_emb(cwt) 
+            #print(cwt_emb.size())
+
         # Input FFT
-        enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb)
+        enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb, word_level_conditioning=cwt_emb)
 
         # Alignment
         text_emb = self.encoder.word_emb(inputs)
@@ -319,7 +333,7 @@ class FastPitch(nn.Module):
 
     def infer(self, inputs, pace=1.0, dur_tgt=None, pitch_tgt=None,
               energy_tgt=None, pitch_transform=None, max_duration=75,
-              speaker=0):
+              speaker=0, word_level_conditioning=None):#not sure about this but need to input cwt
 
         if self.speaker_emb is None:
             spk_emb = 0
@@ -329,8 +343,14 @@ class FastPitch(nn.Module):
             spk_emb = self.speaker_emb(speaker).unsqueeze(1)
             spk_emb.mul_(self.speaker_emb_weight)
 
+        # word-level conditioning. 
+        if self.word_level_emb is None:
+            cwt_emb = 0
+        else:
+            cwt_emb = self.word_level_emb(word_level_conditioning)
+        print(cwt_emb)
         # Input FFT
-        enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb)
+        enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb, word_level_conditioning=cwt_emb)
 
         # Predict durations
         log_dur_pred = self.duration_predictor(enc_out, enc_mask).squeeze(-1)

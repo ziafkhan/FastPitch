@@ -45,6 +45,7 @@ from dllogger import StdOutBackend, JSONStreamBackend, Verbosity
 from common import utils
 from common.tb_dllogger import (init_inference_metadata, stdout_metric_format,
                                 unique_log_fpath)
+from fastpitch.cwt_conditioning import upsample_word_label
 from common.text import cmudict
 from common.text.text_processing import TextProcessing
 from pitch_transform import pitch_transform_custom
@@ -128,7 +129,8 @@ def parse_args(parser):
     cond = parser.add_argument_group('conditioning on additional attributes')
     cond.add_argument('--n-speakers', type=int, default=1,
                       help='Number of speakers in the model.')
-
+    cond.add_argument('--cwt-accent', action='store_true',
+                      help='Enable CWT Accent Conditioning') #Can be used for any word level conditioning
     return parser
 
 
@@ -197,14 +199,26 @@ def load_fields(fpath):
 
 def prepare_input_sequence(fields, device, symbol_set, text_cleaners,
                            batch_size=128, dataset=None, load_mels=False,
-                           load_pitch=False, p_arpabet=0.0):
-    tp = TextProcessing(symbol_set, text_cleaners, p_arpabet=p_arpabet)
+                           load_pitch=False, p_arpabet=0.0, load_cwt=False):
+    tp = TextProcessing(symbol_set, text_cleaners, p_arpabet=p_arpabet, get_counts=True)
 
-    fields['text'] = [torch.LongTensor(tp.encode_text(text))
-                      for text in fields['text']]
+
+#    fields['text'] = [torch.LongTensor(tp.encode_text(text))
+#                      for text in fields['text']]
+    fields['text2'] = []
+    fields['word_info'] = []
+    for text in fields['text']:
+        x, y = tp.encode_text(text)
+        x = torch.LongTensor(x)
+        fields['text2'].append(x)
+        fields['word_info'].append(y)
+    fields['text'] = fields['text2']
+
     order = np.argsort([-t.size(0) for t in fields['text']])
 
     fields['text'] = [fields['text'][i] for i in order]
+    fields['word_info'] = [fields['word_info'][i] for i in order]
+
     fields['text_lens'] = torch.LongTensor([t.size(0) for t in fields['text']])
 
     for t in fields['text']:
@@ -222,6 +236,16 @@ def prepare_input_sequence(fields, device, symbol_set, text_cleaners,
             torch.load(Path(dataset, fields['pitch'][i])) for i in order]
         fields['pitch_lens'] = torch.LongTensor([t.size(0) for t in fields['pitch']])
 
+    if load_cwt:
+        assert 'cwt_accent' in fields
+        fields['cwt_accent'] = [
+            torch.load(fields['cwt_accent'][i]) for i in order]
+        fields['cwt_upsampled'] = []
+        word_info_cwt = zip(fields['word_info'], fields['cwt_accent'])
+        for cwt in word_info_cwt:
+           fields['cwt_upsampled'].append(torch.LongTensor(upsample_word_label(cwt[0], cwt[1]))) 
+
+
     if 'output' in fields:
         fields['output'] = [fields['output'][i] for i in order]
 
@@ -236,11 +260,12 @@ def prepare_input_sequence(fields, device, symbol_set, text_cleaners,
                 batch[f] = pad_sequence(batch[f], batch_first=True).permute(0, 2, 1)
             elif f == 'pitch' and load_pitch:
                 batch[f] = pad_sequence(batch[f], batch_first=True)
-
+            elif f == 'cwt_upsampled' and load_cwt:
+                batch[f] = pad_sequence(batch[f], batch_first=True)
             if type(batch[f]) is torch.Tensor:
                 batch[f] = batch[f].to(device)
         batches.append(batch)
-
+    print(batches)
     return batches
 
 
@@ -341,7 +366,7 @@ def main():
     fields = load_fields(args.input)
     batches = prepare_input_sequence(
         fields, device, args.symbol_set, args.text_cleaners, args.batch_size,
-        args.dataset_path, load_mels=(generator is None), p_arpabet=args.p_arpabet)
+        args.dataset_path, load_mels=(generator is None), p_arpabet=args.p_arpabet, load_cwt=args.cwt_accent)
 
     # Use real data rather than synthetic - FastPitch predicts len
     for _ in tqdm(range(args.warmup_steps), 'Warmup'):
@@ -360,6 +385,8 @@ def main():
               'speaker': args.speaker,
               'pitch_tgt': None,
               'pitch_transform': build_pitch_transformation(args)}
+   
+    
 
     if args.torchscript:
         gen_kw.pop('pitch_transform')
@@ -381,8 +408,10 @@ def main():
                 mel, mel_lens = b['mel'], b['mel_lens']
             else:
                 with torch.no_grad(), gen_measures:
-                    mel, mel_lens, *_ = generator(b['text'], **gen_kw)
-
+                    if args.cwt_accent == True:
+                        mel, mel_lens, *_ = generator(b['text'], **gen_kw, word_level_conditioning=b['cwt_upsampled'])
+                    else:
+                        mel, mel_lens, *_ = generator(b['text'], **gen_kw)
                 gen_infer_perf = mel.size(0) * mel.size(2) / gen_measures[-1]
                 all_letters += b['text_lens'].sum().item()
                 all_frames += mel.size(0) * mel.size(2)

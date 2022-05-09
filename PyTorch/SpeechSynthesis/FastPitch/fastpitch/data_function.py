@@ -354,7 +354,7 @@ class TTSDataset(torch.utils.data.Dataset):
             cwt_path = self.audiopaths_and_text[index]['cwt_accent']
             cwt_labels = torch.load(cwt_path)
             cwt_upsampled = upsample_word_label(text_info, cwt_labels)
- 
+
             return torch.LongTensor(cwt_upsampled)
 
         else:
@@ -429,12 +429,12 @@ class TTSCollate:
             cwt_padded = torch.LongTensor(len(batch), max_input_len)
             cwt_padded.zero_()
             for i in range(len(ids_sorted_decreasing)):
-                cwt = batch[ids_sorted_decreasing[i]][0]
+                cwt = batch[ids_sorted_decreasing[i]][8]
                 cwt_padded[i, :cwt.size(0)] = cwt
         else:
             cwt = None
 
-        print(cwt_padded.size(), text_padded.size())
+        #print(cwt_padded.size(), text_padded.size())
 
         return (text_padded, input_lengths, mel_padded, output_lengths, len_x,
                 pitch_padded, energy_padded, speaker, attn_prior_padded,
