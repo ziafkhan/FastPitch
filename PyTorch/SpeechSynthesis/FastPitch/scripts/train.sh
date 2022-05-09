@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 
 export OMP_NUM_THREADS=1
-export CUDA_VISIBLE_DEVICES=1
-: ${NUM_GPUS:=1}
+export CUDA_VISIBLE_DEVICES=1,2,3
+
+: ${NUM_GPUS:=2}
 : ${BATCH_SIZE:=16}
 : ${GRAD_ACCUMULATION:=2}
 : ${OUTPUT_DIR:="./output"}
 : ${DATASET_PATH:=LJSpeech-1.1}
-: ${TRAIN_FILELIST:=filelists/train_2_conditions.txt}
-: ${VAL_FILELIST:=filelists/val_2_conditions.txt}
+: ${TRAIN_FILELIST:=/disk/scratch/s2132904/slt_2022/Step1_Dev/data/filelists/train_normalised.csv}
+: ${VAL_FILELIST:=/disk/scratch/s2132904/slt_2022/Step1_Dev/data/filelists/val_normalised.csv}
 : ${AMP:=false}
 : ${SEED:=""}
 
 : ${LEARNING_RATE:=0.1}
 
 # Adjust these when the amount of data changes
-: ${EPOCHS:=10}
-: ${EPOCHS_PER_CHECKPOINT:=1}
+: ${EPOCHS:=500}
+: ${EPOCHS_PER_CHECKPOINT:=50}
 : ${WARMUP_STEPS:=1000}
 : ${KL_LOSS_WARMUP:=100}
 
@@ -69,8 +70,8 @@ ARGS+=" --kl-loss-warmup-epochs $KL_LOSS_WARMUP"
 ARGS+=" --text-cleaners $TEXT_CLEANERS"
 ARGS+=" --n-speakers $NSPEAKERS"
 
-[ "$PROJECT" != "" ]               && ARGS+=" --project \"${PROJECT}\""
-[ "$EXPERIMENT_DESC" != "" ]       && ARGS+=" --experiment-desc \"${EXPERIMENT_DESC}\""
+[ "$PROJECT" != "slt_development" ]               && ARGS+=" --project \"${PROJECT}\""
+[ "$EXPERIMENT_DESC" != "Step1" ]       && ARGS+=" --experiment-desc \"${EXPERIMENT_DESC}\""
 [ "$AMP" = "true" ]                && ARGS+=" --amp"
 [ "$PHONE" = "true" ]              && ARGS+=" --p-arpabet 1.0"
 [ "$ENERGY" = "true" ]             && ARGS+=" --energy-conditioning"
@@ -100,4 +101,4 @@ fi
 mkdir -p "$OUTPUT_DIR"
 
 : ${DISTRIBUTED:="-m torch.distributed.launch --nproc_per_node $NUM_GPUS"}
-python train.py $ARGS "$@"
+python $DISTRIBUTED train.py $ARGS "$@"

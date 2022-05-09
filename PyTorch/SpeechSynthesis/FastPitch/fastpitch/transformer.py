@@ -173,7 +173,7 @@ class FFTransformer(nn.Module):
         self.d_model = d_model
         self.n_head = n_head
         self.d_head = d_head
-        self.padding_idx = padding_idx
+        self.padding_idx = padding_idx #it is 0
 
         if embed_input:
             self.word_emb = nn.Embedding(n_embed, d_embed or d_model,
@@ -192,19 +192,20 @@ class FFTransformer(nn.Module):
                     dropatt=dropatt, pre_lnorm=pre_lnorm)
             )
 
-    def forward(self, dec_inp, seq_lens=None, conditioning=0):
+    def forward(self, dec_inp, seq_lens=None, conditioning=0, word_level_conditioning=0): #@Johannah change
         if self.word_emb is None:
             inp = dec_inp
             mask = mask_from_lens(seq_lens).unsqueeze(2)
         else:
             inp = self.word_emb(dec_inp)
+            #print(inp.size())
             # [bsz x L x 1]
             mask = (dec_inp != self.padding_idx).unsqueeze(2)
 
         pos_seq = torch.arange(inp.size(1), device=inp.device).to(inp.dtype)
         pos_emb = self.pos_emb(pos_seq) * mask
 
-        out = self.drop(inp + pos_emb + conditioning)
+        out = self.drop(inp + pos_emb + conditioning + word_level_conditioning)
 
         for layer in self.layers:
             out = layer(out, mask=mask)
