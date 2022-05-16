@@ -193,7 +193,7 @@ class TTSDataset(torch.utils.data.Dataset):
             self.betabinomial_interpolator = BetaBinomialInterpolator()
 
         expected_columns = (2 + int(load_pitch_from_disk) + (n_speakers > 1) + (n_conditions > 1))
-        print("EXPECTED COLUMNS IS" + str(expected_columns))
+        print('EXPECTED COLUMNS IS ' + str(expected_columns))
         assert not (load_pitch_from_disk and self.pitch_tmp_dir is not None)
 
         if len(self.audiopaths_and_text[0]) < expected_columns:
