@@ -376,6 +376,8 @@ def log_validation_batch(x, y_pred, rank):
 
     validation_dict = dict(zip(x_fields + y_pred_fields,
                                list(x) + list(y_pred)))
+    # dec mask contains booleans, which to be logged need to be converted to integers
+    validation_dict.pop('dec_mask', None)
     log(validation_dict, rank)  # something in here returns a warning
 
     pred_specs_keys = ['mel_out', 'pitch_pred', 'energy_pred', 'attn_hard_dur']
@@ -400,13 +402,18 @@ def validate(model, criterion, valset, batch_size, collate_fn, distributed_run,
         val_meta = defaultdict(float)
         val_num_frames = 0
         for i, batch in enumerate(val_loader):
+            # x = (inputs, input_lens, mel_tgt, mel_lens, pitch_dense,
+            # energy_dense, spectral_tilt_dense, speaker, attn_prior, audiopaths)
             x, y, num_frames = batch_to_gpu(batch)
+            # (mel_out, dec_mask, dur_pred, log_dur_pred,
+            #  pitch_pred, pitch_tgt, energy_pred, energy_tgt,
+            #  spectral_tilt_pred, spectral_tilt_tgt,
+            #  attn_soft, attn_hard, attn_hard_dur, attn_logprob)
             y_pred = model(x)
 
+            loss, meta = criterion(y_pred, y, is_training=False, meta_agg='sum')
             if i % 5 == 0:
                 log_validation_batch(x, y_pred, rank)
-
-            loss, meta = criterion(y_pred, y, is_training=False, meta_agg='sum')
 
             if distributed_run:
                 for k, v in meta.items():
