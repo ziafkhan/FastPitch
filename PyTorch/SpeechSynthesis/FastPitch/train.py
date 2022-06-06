@@ -145,6 +145,8 @@ def parse_args(parser):
     cond.add_argument('--n-speakers', type=int, default=1,
                       help='Number of speakers in the dataset. '
                            'n_speakers > 1 enables speaker embeddings')
+    cond.add_argument('--speaker-independent', action='store_true',
+                      help='Add speaker conditioning after variance adapters')
     cond.add_argument('--load-pitch-from-disk', action='store_true',
                       help='Use pitch cached on disk with prepare_dataset.py')
     cond.add_argument('--pitch-online-method', default='pyin',
@@ -156,6 +158,13 @@ def parse_args(parser):
                       help='Normalization value for pitch')
     cond.add_argument('--pitch-std', type=float, default=65.72038,
                       help='Normalization value for pitch')
+    cond.add_argument('--pitch-norm-method', default='default',
+                      choices=['default', 'zscore', 'semitones'],
+                      help='Method for normalising pitch')
+    cond.add_argument('--pitch-norm', action='store_false',
+                      help='Enable pitch normalisation')
+    cond.add_argument('--two-pass-method', action='store_false',
+                      help='Find speaker specific thresholds for pitch extraction')
     cond.add_argument('--load-mel-from-disk', action='store_true',
                       help='Use mel-spectrograms cache on the disk')  # XXX
     cond.add_argument('--load-cwt-from-disk', action='store_true',

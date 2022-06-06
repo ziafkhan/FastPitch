@@ -35,6 +35,12 @@ export CUDA_VISIBLE_DEVICES=1,2,3
 : ${LOAD_MEL_FROM_DISK:=true}
 : ${LOAD_CWT_FROM_DISK:=true}
 
+#Pitch normalisation
+: ${PITCH_NORM_METHOD:=default}
+: ${PITCH_NORM:=true}
+: ${TWO_PASS_METHOD:=false}
+
+
 # For multispeaker models, add speaker ID = {0, 1, ...} as the last filelist column
 : ${NSPEAKERS:=1}
 : ${SAMPLING_RATE:=22050}
@@ -82,6 +88,12 @@ ARGS+=" --n-speakers $NSPEAKERS"
 [ "$LOAD_CWT_FROM_DISK" = true ] && ARGS+=" --load-cwt-from-disk"
 [ "$PITCH_ONLINE_DIR" != "" ]      && ARGS+=" --pitch-online-dir $PITCH_ONLINE_DIR"  # e.g., /dev/shm/pitch
 [ "$PITCH_ONLINE_METHOD" != "" ]   && ARGS+=" --pitch-online-method $PITCH_ONLINE_METHOD"
+
+[ "$PITCH_NORM_METHOD" = "default" ]   && ARGS+=" --pitch-online-method $PITCH_NORM_METHOD"
+[ "$PITCH_NORM" = true ]   && ARGS+=" --pitch-online-method $PITCH_NORM"
+[ "$TWO_PASS_METHOD" = false ]   && ARGS+=" --pitch-online-method $TWO_PASS_METHOD"
+
+
 [ "$APPEND_SPACES" = true ]        && ARGS+=" --prepend-space-to-text"
 [ "$APPEND_SPACES" = true ]        && ARGS+=" --append-space-to-text"
 

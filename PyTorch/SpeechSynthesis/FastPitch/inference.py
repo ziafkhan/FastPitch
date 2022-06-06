@@ -131,6 +131,8 @@ def parse_args(parser):
                       help='Number of speakers in the model.')
     cond.add_argument('--cwt-accent', action='store_true',
                       help='Enable CWT Accent Conditioning') #Can be used for any word level conditioning
+    cond.add_argument('--speaker-independent', action='store_true',
+                      help='Add speaker conditioning after variance adapters')
     return parser
 
 

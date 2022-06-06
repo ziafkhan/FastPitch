@@ -52,6 +52,8 @@ def parse_args(parser):
                         help='Extract pitch')
     parser.add_argument('--save-alignment-priors', action='store_true',
                         help='Pre-calculate diagonal matrices of alignment of text to audio')
+    parser.add_argument('--save-energy', action='store_true',
+                        help='Pre-calculate energy arrays')
     parser.add_argument('--log-file', type=str, default='preproc_log.json',
                          help='Filename for logging')
     parser.add_argument('--n-speakers', type=int, default=1)
@@ -74,6 +76,13 @@ def parse_args(parser):
     # Pitch extraction
     parser.add_argument('--f0-method', default='pyin', type=str,
                         choices=['pyin'], help='F0 estimation method')
+    parser.add_argument('--pitch-norm-method', default='default',
+                      choices=['default', 'zscore', 'semitones'],
+                      help='Method for normalising pitch')
+    parser.add_argument('--pitch-norm', action='store_true',
+                      help='Enable pitch normalisation')
+    parser.add_argument('--two-pass-method', action='store_true',
+                      help='Find speaker specific thresholds for pitch extraction')
     # Performance
     parser.add_argument('-b', '--batch-size', default=1, type=int)
     parser.add_argument('--n-workers', type=int, default=16)
@@ -102,6 +111,10 @@ def main():
     if args.save_alignment_priors:
         Path(args.dataset_path, 'alignment_priors').mkdir(parents=False, exist_ok=True)
 
+    if args.save_energy:
+        Path(args.dataset_path, 'energy').mkdir(parents=False, exist_ok=True)
+
+
     for filelist in args.wav_text_filelists:
 
         print(f'Processing {filelist}...')
@@ -126,7 +139,11 @@ def main():
             mel_fmax=args.mel_fmax,
             betabinomial_online_dir=None,
             pitch_online_dir=None,
-            pitch_online_method=args.f0_method)
+            pitch_online_method=args.f0_method,
+            pitch_norm=args.pitch_norm,
+            pitch_norm_method=args.pitch_norm_method,
+            two_pass_method=args.two_pass_method,
+            cwt_accent=False)
 
         data_loader = DataLoader(
             dataset,
@@ -141,9 +158,7 @@ def main():
         all_filenames = set()
         for i, batch in enumerate(tqdm.tqdm(data_loader)):
             tik = time.time()
-
-            _, input_lens, mels, mel_lens, _, pitch, _, _, attn_prior, fpaths = batch
-
+            text, input_lens, mels, mel_lens, _, pitch, energy, speaker, attn_prior, fpaths, cwt_acc = batch
             # Ensure filenames are unique
             for p in fpaths:
                 fname = Path(p).name
@@ -168,6 +183,12 @@ def main():
                     fname = Path(fpaths[j]).with_suffix('.pt').name
                     fpath = Path(args.dataset_path, 'alignment_priors', fname)
                     torch.save(prior[:mel_lens[j], :input_lens[j]], fpath)
+
+            if args.save_energy:
+                for j, e in enumerate(energy):
+                    fname = Path(fpaths[j]).with_suffix('.pt').name
+                    fpath = Path(args.dataset_path, 'energy', fname)
+                    torch.save(e[:mel_lens[j]], fpath)
 
 
 if __name__ == '__main__':

@@ -136,6 +136,7 @@ def get_model_config(model_name, args):
             # speakers parameters
             n_speakers=args.n_speakers,
             speaker_emb_weight=args.speaker_emb_weight,
+            speaker_independent=args.speaker_independent,
             # energy predictor
             energy_predictor_kernel_size=args.energy_predictor_kernel_size,
             energy_predictor_filter_size=args.energy_predictor_filter_size,
@@ -146,7 +147,7 @@ def get_model_config(model_name, args):
             energy_embedding_kernel_size=args.energy_embedding_kernel_size,
             # word level conditioning
             cwt_accent=args.cwt_accent # @Johannah not sure
-            
+                        
         )
         return model_config
 

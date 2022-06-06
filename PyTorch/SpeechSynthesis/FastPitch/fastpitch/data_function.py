@@ -41,6 +41,7 @@ import common.layers as layers
 from common.text.text_processing import TextProcessing
 from common.utils import load_wav_to_torch, load_filepaths_and_text, to_gpu
 
+from .acoustic_feat_extraction import estimate_pitch, estimate_energy 
 from .cwt_conditioning import upsample_word_label
 
 
@@ -80,50 +81,6 @@ def beta_binomial_prior_distribution(phoneme_count, mel_count, scaling=1.0):
     return torch.tensor(np.array(mel_text_probs))
 
 
-def estimate_pitch(wav, mel_len, method='pyin', normalize_mean=None,
-                   normalize_std=None, n_formants=1):
-
-    if type(normalize_mean) is float or type(normalize_mean) is list:
-        normalize_mean = torch.tensor(normalize_mean)
-
-    if type(normalize_std) is float or type(normalize_std) is list:
-        normalize_std = torch.tensor(normalize_std)
-
-    if method == 'pyin':
-
-        snd, sr = librosa.load(wav)
-        pitch_mel, voiced_flag, voiced_probs = librosa.pyin(
-            snd, fmin=librosa.note_to_hz('C2'),
-            fmax=librosa.note_to_hz('C7'), frame_length=1024)
-        assert np.abs(mel_len - pitch_mel.shape[0]) <= 1.0
-
-        pitch_mel = np.where(np.isnan(pitch_mel), 0.0, pitch_mel)
-        pitch_mel = torch.from_numpy(pitch_mel).unsqueeze(0)
-        pitch_mel = F.pad(pitch_mel, (0, mel_len - pitch_mel.size(1)))
-
-        if n_formants > 1:
-            raise NotImplementedError
-
-    else:
-        raise ValueError
-
-    pitch_mel = pitch_mel.float()
-
-    if normalize_mean is not None:
-        assert normalize_std is not None
-        pitch_mel = normalize_pitch(pitch_mel, normalize_mean, normalize_std)
-
-    return pitch_mel
-
-
-def normalize_pitch(pitch, mean, std):
-    zeros = (pitch == 0.0)
-    pitch -= mean[:, None]
-    pitch /= std[:, None]
-    pitch[zeros] = 0.0
-    return pitch
-
-
 class TTSDataset(torch.utils.data.Dataset):
     """
         1) loads audio,text pairs
@@ -157,6 +114,9 @@ class TTSDataset(torch.utils.data.Dataset):
                  betabinomial_online_dir=None,
                  use_betabinomial_interpolator=True,
                  pitch_online_method='pyin',
+                 two_pass_method=False,
+                 pitch_norm_method='default',
+                 pitch_norm=True,
                  **ignored):
 
         # Expect a list of filenames i.e. train and val
@@ -186,11 +146,18 @@ class TTSDataset(torch.utils.data.Dataset):
         assert p_arpabet == 0.0 or p_arpabet == 1.0, (
             'Only 0.0 and 1.0 p_arpabet is currently supported. '
             'Variable probability breaks caching of betabinomial matrices.')
-
-        self.tp = TextProcessing(symbol_set, text_cleaners, p_arpabet=p_arpabet, get_counts=True) #get counts is getting number of symbols per word for upsampling
+        if self.cwt_accent == True:
+            self.tp = TextProcessing(symbol_set, text_cleaners, p_arpabet=p_arpabet, get_counts=True) #get counts is getting number of symbols per word for upsampling
+        else:
+            self.tp = TextProcessing(symbol_set, text_cleaners, p_arpabet=p_arpabet, get_counts=False)
+        
         self.n_speakers = n_speakers
+        #Pitch extraction parameters
         self.pitch_tmp_dir = pitch_online_dir
         self.f0_method = pitch_online_method
+        self.two_pass_method = two_pass_method
+        self.norm_method = pitch_norm_method
+        self.pitch_norm = pitch_norm
         self.betabinomial_tmp_dir = betabinomial_online_dir
         self.use_betabinomial_interpolator = use_betabinomial_interpolator
 
@@ -199,7 +166,7 @@ class TTSDataset(torch.utils.data.Dataset):
 
        # expected_columns = (2 + int(load_pitch_from_disk) + (n_speakers > 1))
        # @Johannah add a check for dictionary values to check for input arguments in meta
-
+       # Add more asserts here.
         assert not (load_pitch_from_disk and self.pitch_tmp_dir is not None)
 
 
@@ -220,17 +187,13 @@ class TTSDataset(torch.utils.data.Dataset):
             text = self.audiopaths_and_text[index]['text']
             speaker = None
 
-#        if self.cwt_accent == True:
-#            cwt_acc = self.get_cwt_labels(index, text_info)
-#        else:
-#            cwt_acc = None
-
-
-
         mel = self.get_mel(audiopath)
         text, text_info = self.get_text(text)
         pitch = self.get_pitch(index, mel.size(-1))
         energy = torch.norm(mel.float(), dim=0, p=2)
+#        energy = estimate_energy(mel, norm=True, log=True)
+#        print(energy)
+       
         attn_prior = self.get_prior(index, mel.shape[1], text.shape[0])
 
         if self.cwt_accent == True:
@@ -238,8 +201,10 @@ class TTSDataset(torch.utils.data.Dataset):
         else:
             cwt_acc = None
 
-
+        #print(pitch.size(-1), mel.size(-1),audiopath)
         assert pitch.size(-1) == mel.size(-1)
+        assert energy.size(-1) == energy.size(-1)
+
 
         # No higher formants?
         if len(pitch.size()) == 1:
@@ -252,7 +217,7 @@ class TTSDataset(torch.utils.data.Dataset):
         return len(self.audiopaths_and_text)
 
     def get_mel(self, filename):
-        #print(filename)
+        print(filename)
         if not self.load_mel_from_disk:
             audio, sampling_rate = load_wav_to_torch(filename)
             if sampling_rate != self.stft.sampling_rate:
@@ -273,7 +238,11 @@ class TTSDataset(torch.utils.data.Dataset):
         return melspec
 
     def get_text(self, text):
-        text, text_info = self.tp.encode_text(text)
+        if self.cwt_accent == True:
+            text, text_info = self.tp.encode_text(text)
+        else:
+            text = self.tp.encode_text(text)
+            text_info = None
         space = [self.tp.encode_text("A A")[1]]
 
         if self.prepend_space_to_text:
@@ -317,11 +286,12 @@ class TTSDataset(torch.utils.data.Dataset):
 
         if self.load_pitch_from_disk:
             pitchpath = self.audiopaths_and_text[index]['pitch']
-            #print(pitchpath)
             pitch = torch.load(pitchpath)
-            if self.pitch_mean is not None:
-                assert self.pitch_std is not None
-                pitch = normalize_pitch(pitch, self.pitch_mean, self.pitch_std)
+
+           #Johannah: I removed this for now but will fix later           
+           # if self.pitch_mean is not None:
+           #     assert self.pitch_std is not None
+           #     pitch = normalize_pitch(pitch, self.pitch_mean, self.pitch_std)
             return pitch
 
         if self.pitch_tmp_dir is not None:
@@ -336,9 +306,8 @@ class TTSDataset(torch.utils.data.Dataset):
         if not wav.endswith('.wav'):
             wav = re.sub('/mels/', '/wavs/', wav)
             wav = re.sub('.pt$', '.wav', wav)
-
-        pitch_mel = estimate_pitch(wav, mel_len, self.f0_method,
-                                   self.pitch_mean, self.pitch_std)
+        pitch_mel = estimate_pitch(wav, mel_len, self.f0_method, self.two_pass_method,
+                                   self.pitch_mean, self.pitch_std, self.norm_method, self.pitch_norm)
 
         if self.pitch_tmp_dir is not None and not cached_fpath.is_file():
             cached_fpath.parent.mkdir(parents=True, exist_ok=True)
@@ -400,6 +369,7 @@ class TTSCollate:
 
         for i in range(len(ids_sorted_decreasing)):
             pitch = batch[ids_sorted_decreasing[i]][3]
+            #print(pitch.shape)
             energy = batch[ids_sorted_decreasing[i]][4]
             pitch_padded[i, :, :pitch.shape[1]] = pitch
             energy_padded[i, :energy.shape[0]] = energy
@@ -432,7 +402,7 @@ class TTSCollate:
                 cwt = batch[ids_sorted_decreasing[i]][8]
                 cwt_padded[i, :cwt.size(0)] = cwt
         else:
-            cwt = None
+            cwt_padded = None
 
         #print(cwt_padded.size(), text_padded.size())
 

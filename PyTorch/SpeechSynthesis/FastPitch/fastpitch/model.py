@@ -126,7 +126,7 @@ class FastPitch(nn.Module):
                  energy_predictor_kernel_size, energy_predictor_filter_size,
                  p_energy_predictor_dropout, energy_predictor_n_layers,
                  energy_embedding_kernel_size,
-                 n_speakers, speaker_emb_weight, cwt_accent, pitch_conditioning_formants=1): #@Johannah change here
+                 n_speakers, speaker_emb_weight, cwt_accent, pitch_conditioning_formants=1, speaker_independent=False): #@Johannah change here
         super(FastPitch, self).__init__()
 
         self.encoder = FFTransformer(
@@ -148,7 +148,8 @@ class FastPitch(nn.Module):
         else:
             self.speaker_emb = None
         self.speaker_emb_weight = speaker_emb_weight
-
+        # for late speaker conditioning
+        self.speaker_independent = speaker_independent
         #Embedding for word_level_conditioning
         if cwt_accent == True:
             self.word_level_emb = nn.Embedding(5, symbols_embedding_dim, padding_idx=padding_idx)
@@ -263,13 +264,16 @@ class FastPitch(nn.Module):
         if self.word_level_emb is None:
             cwt_emb = 0
         else:
-            #print(cwt, torch.max(cwt), torch.min(cwt))
             cwt_emb = self.word_level_emb(cwt) 
-            #print(cwt_emb.size())
 
-        # Input FFT
-        enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb, word_level_conditioning=cwt_emb)
+        # Input FFT - two options speaker dependent or speaker independent
+        if self.speaker_independent is True:
+            #print("YESSSSS")
+            enc_out, enc_mask = self.encoder(inputs, word_level_conditioning=cwt_emb)
+        else:
+            enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb, word_level_conditioning=cwt_emb)
 
+        
         # Alignment
         text_emb = self.encoder.word_emb(inputs)
 
@@ -321,8 +325,15 @@ class FastPitch(nn.Module):
             energy_pred = None
             energy_tgt = None
 
+
+        if self.speaker_independent:
+            #print("ADDED HERE")
+            enc_out = enc_out + spk_emb
+
         len_regulated, dec_lens = regulate_len(
             dur_tgt, enc_out, pace, mel_max_len)
+
+
 
         # Output FFT
         dec_out, dec_mask = self.decoder(len_regulated, dec_lens)
@@ -350,7 +361,13 @@ class FastPitch(nn.Module):
             cwt_emb = self.word_level_emb(word_level_conditioning)
         print(cwt_emb)
         # Input FFT
-        enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb, word_level_conditioning=cwt_emb)
+
+
+        if self.speaker_independent is True:
+            #print("YESSSSS")
+            enc_out, enc_mask = self.encoder(inputs, word_level_conditioning=cwt_emb)
+        else:
+            enc_out, enc_mask = self.encoder(inputs, conditioning=spk_emb, word_level_conditioning=cwt_emb)        
 
         # Predict durations
         log_dur_pred = self.duration_predictor(enc_out, enc_mask).squeeze(-1)
@@ -386,6 +403,11 @@ class FastPitch(nn.Module):
             enc_out = enc_out + energy_emb
         else:
             energy_pred = None
+
+
+        if self.speaker_independent:
+            #print("ADDED HERE")
+            enc_out = enc_out + spk_emb
 
         len_regulated, dec_lens = regulate_len(
             dur_pred if dur_tgt is None else dur_tgt,

@@ -145,7 +145,7 @@ class TextProcessing(object):
                         for word in words]
                     text_arpabet = ''.join(text_arpabet)
                     text = text_arpabet
-                    text_encoded = self.text_to_sequence(text)
+                   # text_encoded = self.text_to_sequence(text)
 
             elif self.handle_arpabet == 'word' and self.get_counts == False:
                 words = _words_re.findall(text)
@@ -157,7 +157,7 @@ class TextProcessing(object):
                     for word in words]
                 text_arpabet = ''.join(text_arpabet)
                 text = text_arpabet
-                text_encoded = self.text_to_sequence(text)
+               # text_encoded = self.text_to_sequence(text)
 
             elif self.handle_arpabet == 'word' and self.get_counts == True:
                 words = _words_re.findall(text)
@@ -182,12 +182,14 @@ class TextProcessing(object):
                             te = self.text_to_sequence(word[0])
                             text_info.append((word[0], len(te)))
                             text_encoded += te
+                return text_encoded, text_info
 
             elif self.handle_arpabet != '':
                 raise Exception("{} handle_arpabet is not supported".format(
                     self.handle_arpabet))
 
+        text_encoded = self.text_to_sequence(text)
         if return_all:
             return text_encoded, text_clean, text_arpabet
 
-        return text_encoded, text_info
+        return text_encoded
