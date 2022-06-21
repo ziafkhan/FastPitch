@@ -254,18 +254,19 @@ def load_checkpoint(args, model, ema_model, optimizer, scaler, epoch,
     if args.local_rank == 0:
         print(f'Loading model and optimizer state from {filepath}')
     checkpoint = torch.load(filepath, map_location='cpu')
-    epoch[0] = checkpoint['epoch'] + 1
-    total_iter[0] = checkpoint['iteration']
+    epoch[0] = checkpoint['epoch'] + 1 if "epoch" in checkpoint else 1
+    total_iter[0] = checkpoint['iteration'] if "iteration" in checkpoint else 0
 
     sd = {k.replace('module.', ''): v
           for k, v in checkpoint['state_dict'].items()}
     getattr(model, 'module', model).load_state_dict(sd)
-    optimizer.load_state_dict(checkpoint['optimizer'])
+    if "optimizer" in checkpoint:
+        optimizer.load_state_dict(checkpoint['optimizer'])
 
-    if args.amp:
+    if args.amp and "scaler" in checkpoint:
         scaler.load_state_dict(checkpoint['scaler'])
 
-    if ema_model is not None:
+    if ema_model is not None and "ema_state_dict" in checkpoint:
         ema_model.load_state_dict(checkpoint['ema_state_dict'])
 
 
