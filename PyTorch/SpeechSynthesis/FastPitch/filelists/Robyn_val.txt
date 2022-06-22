@@ -1,54 +1,54 @@
-wavs/robyn_robyn_0020.wav|and started to eat. He crunched|0
-wavs/robyn_robyn_0066.wav|by the fire and looked at the sky. Henry didn't didn't know there were so many stars in the sky.|0
-wavs/robyn_robyn_0071.wav|Henry's father and mother snuggled, Henry and Mudge snuggled.|0
-wavs/robyn_robyn_0080.wav|But it was a pig, a big pig.|0
-wavs/robyn_robyn_0103.wav|Julius didn't think all the alaskan pigs in the world could have thought him that.|0
-wavs/robyn_robyn_0115.wav|That did it, she said, we are no longer on speaking terms. I was only horsing around, said Greg.|0
-wavs/robyn_robyn_0120.wav|That did it, she said. We are no longer on speaking terms.|0
-wavs/robyn_robyn_0151.wav|hospital released Mr. Brown at ten. The doctor waved good bye once again.|0
-wavs/robyn_robyn_0157.wav|Greg wanted a microscope.|0
-wavs/robyn_robyn_0204.wav|Move the mirror at the bottom ti till it catches the light.|0
-wavs/robyn_robyn_0218.wav|please give me some tiny things to look at.|0
-wavs/robyn_robyn_0271.wav|Greg looked.|0
-wavs/robyn_robyn_0277.wav|Crystals! said Greg.|0
-wavs/robyn_robyn_0294.wav|Let's see some.|0
-wavs/robyn_robyn_0295.wav|Good sugar crystals.|0
-wavs/robyn_robyn_0299.wav|Got smaller and smaller. They are going|0
-wavs/robyn_robyn_0307.wav|No crystals here, he said.|0
-wavs/robyn_robyn_0310.wav|Greg's friend Billy came to the door.|0
-wavs/robyn_robyn_0329.wav|He got a little flour and put it on a slide.|0
-wavs/robyn_robyn_0357.wav|Where is the flour?|0
-wavs/robyn_robyn_0405.wav|Think, said Billy. Where does wool come from?|0
-wavs/robyn_robyn_0461.wav|Not in our class, said Greg.|0
-wavs/robyn_robyn_0483.wav|He put a cover slip on it.|0
-wavs/robyn_robyn_0491.wav|Greg took a leaf from his fish tank and made a slide.|0
-wavs/robyn_robyn_0533.wav|When then I will go and get my bat, said the rat.|0
-wavs/robyn_robyn_0552.wav|No rat, no bat, no hat can move me.|0
-wavs/robyn_robyn_0555.wav|Look what we have, she said.|0
-wavs/robyn_robyn_0556.wav|Look what we have, said the hat.|0
-wavs/robyn_robyn_0588.wav|Get off! said the cat.|0
-wavs/robyn_robyn_0610.wav|he might notice his hair needs a trim.|0
-wavs/robyn_robyn_0635.wav|He'll hang up his drawing and stand back to look at it.|0
-wavs/robyn_robyn_0652.wav|But remember what the weather.|0
-wavs/robyn_robyn_0671.wav|The Tates lived in Weatherbury.|0
-wavs/robyn_robyn_0696.wav|We really.|0
-wavs/robyn_robyn_0737.wav|As she did.|0
-wavs/robyn_robyn_0756.wav|Strange things too, Christy hurried into her bedroom.|0
-wavs/robyn_robyn_0780.wav|His son Pablo was still asleep.|0
-wavs/robyn_robyn_0805.wav|Then the ox got up and pulled again.|0
-wavs/robyn_robyn_0808.wav|There is no school today said today Papa, said Pablo.|0
-wavs/robyn_robyn_0837.wav|People came out of their houses.|0
-wavs/robyn_robyn_0886.wav|They made a new school and a new market.|0
-wavs/robyn_robyn_0890.wav|The people of the village sold them them oranges and melons and hot dogs and corn cakes to eat.|0
-wavs/robyn_robyn_0894.wav|His wife had made them the night before.|0
-wavs/robyn_robyn_0916.wav|Next to Pickles' yard was a house in.|0
-wavs/robyn_robyn_0952.wav|A fire truck came up the treat street|0
-wavs/robyn_robyn_0955.wav|Mrs. Goodkind, Mrs. Goodkind came out of her house.|0
-wavs/robyn_robyn_0969.wav|Pickles is a cat who wishes to do big things. And someday he will do them.|0
-wavs/robyn_robyn_0987.wav|Hello, said the Chief. Oh, hello Mrs. Goodkind. Yes, Pickles is here, he came with Joe.|0
-wavs/robyn_robyn_0994.wav|The men were pleased to have a cat.|0
-wavs/robyn_robyn_1007.wav|But by the time the firemen came back from the fire, Pickles could slide down the fff pole.|0
-wavs/robyn_robyn_1032.wav|The Chief said to Pickles, I have asked Mrs. Goodkind to come because she was your first friend.|0
-wavs/robyn_robyn_1089.wav|And then jumped up and down on it until every last piece of candy had fallen off.|0
-wavs/robyn_robyn_1132.wav|Fireman Joe and two other men slid down the pole.|0
-wavs/robyn_robyn_1144.wav|Come, cat, he said to her let me help you.|0
+wavs/robyn_robyn_0020.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0020.pt|and started to eat. He crunched
+wavs/robyn_robyn_0066.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0066.pt|by the fire and looked at the sky. Henry didn't didn't know there were so many stars in the sky.
+wavs/robyn_robyn_0071.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0071.pt|Henry's father and mother snuggled, Henry and Mudge snuggled.
+wavs/robyn_robyn_0080.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0080.pt|But it was a pig, a big pig.
+wavs/robyn_robyn_0103.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0103.pt|Julius didn't think all the alaskan pigs in the world could have thought him that.
+wavs/robyn_robyn_0115.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0115.pt|That did it, she said, we are no longer on speaking terms. I was only horsing around, said Greg.
+wavs/robyn_robyn_0120.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0120.pt|That did it, she said. We are no longer on speaking terms.
+wavs/robyn_robyn_0151.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0151.pt|hospital released Mr. Brown at ten. The doctor waved good bye once again.
+wavs/robyn_robyn_0157.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0157.pt|Greg wanted a microscope.
+wavs/robyn_robyn_0204.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0204.pt|Move the mirror at the bottom ti till it catches the light.
+wavs/robyn_robyn_0218.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0218.pt|please give me some tiny things to look at.
+wavs/robyn_robyn_0271.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0271.pt|Greg looked.
+wavs/robyn_robyn_0277.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0277.pt|Crystals! said Greg.
+wavs/robyn_robyn_0294.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0294.pt|Let's see some.
+wavs/robyn_robyn_0295.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0295.pt|Good sugar crystals.
+wavs/robyn_robyn_0299.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0299.pt|Got smaller and smaller. They are going
+wavs/robyn_robyn_0307.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0307.pt|No crystals here, he said.
+wavs/robyn_robyn_0310.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0310.pt|Greg's friend Billy came to the door.
+wavs/robyn_robyn_0329.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0329.pt|He got a little flour and put it on a slide.
+wavs/robyn_robyn_0357.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0357.pt|Where is the flour?
+wavs/robyn_robyn_0405.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0405.pt|Think, said Billy. Where does wool come from?
+wavs/robyn_robyn_0461.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0461.pt|Not in our class, said Greg.
+wavs/robyn_robyn_0483.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0483.pt|He put a cover slip on it.
+wavs/robyn_robyn_0491.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0491.pt|Greg took a leaf from his fish tank and made a slide.
+wavs/robyn_robyn_0533.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0533.pt|When then I will go and get my bat, said the rat.
+wavs/robyn_robyn_0552.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0552.pt|No rat, no bat, no hat can move me.
+wavs/robyn_robyn_0555.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0555.pt|Look what we have, she said.
+wavs/robyn_robyn_0556.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0556.pt|Look what we have, said the hat.
+wavs/robyn_robyn_0588.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0588.pt|Get off! said the cat.
+wavs/robyn_robyn_0610.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0610.pt|he might notice his hair needs a trim.
+wavs/robyn_robyn_0635.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0635.pt|He'll hang up his drawing and stand back to look at it.
+wavs/robyn_robyn_0652.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0652.pt|But remember what the weather.
+wavs/robyn_robyn_0671.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0671.pt|The Tates lived in Weatherbury.
+wavs/robyn_robyn_0696.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0696.pt|We really.
+wavs/robyn_robyn_0737.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0737.pt|As she did.
+wavs/robyn_robyn_0756.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0756.pt|Strange things too, Christy hurried into her bedroom.
+wavs/robyn_robyn_0780.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0780.pt|His son Pablo was still asleep.
+wavs/robyn_robyn_0805.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0805.pt|Then the ox got up and pulled again.
+wavs/robyn_robyn_0808.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0808.pt|There is no school today said today Papa, said Pablo.
+wavs/robyn_robyn_0837.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0837.pt|People came out of their houses.
+wavs/robyn_robyn_0886.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0886.pt|They made a new school and a new market.
+wavs/robyn_robyn_0890.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0890.pt|The people of the village sold them them oranges and melons and hot dogs and corn cakes to eat.
+wavs/robyn_robyn_0894.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0894.pt|His wife had made them the night before.
+wavs/robyn_robyn_0916.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0916.pt|Next to Pickles' yard was a house in.
+wavs/robyn_robyn_0952.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0952.pt|A fire truck came up the treat street
+wavs/robyn_robyn_0955.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0955.pt|Mrs. Goodkind, Mrs. Goodkind came out of her house.
+wavs/robyn_robyn_0969.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0969.pt|Pickles is a cat who wishes to do big things. And someday he will do them.
+wavs/robyn_robyn_0987.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0987.pt|Hello, said the Chief. Oh, hello Mrs. Goodkind. Yes, Pickles is here, he came with Joe.
+wavs/robyn_robyn_0994.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0994.pt|The men were pleased to have a cat.
+wavs/robyn_robyn_1007.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1007.pt|But by the time the firemen came back from the fire, Pickles could slide down the fff pole.
+wavs/robyn_robyn_1032.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1032.pt|The Chief said to Pickles, I have asked Mrs. Goodkind to come because she was your first friend.
+wavs/robyn_robyn_1089.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1089.pt|And then jumped up and down on it until every last piece of candy had fallen off.
+wavs/robyn_robyn_1132.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1132.pt|Fireman Joe and two other men slid down the pole.
+wavs/robyn_robyn_1144.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1144.pt|Come, cat, he said to her let me help you.
