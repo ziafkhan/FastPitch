@@ -1,67 +1,67 @@
-wavs/robyn_robyn_0003.wav|The cupboard is bare, said dragon. Time to go shopping.
-wavs/robyn_robyn_0012.wav|He bought catsup from the fruit and vegetable group, he bought pork rinds from the meat group and he bought
-wavs/robyn_robyn_0032.wav|Finally, dragon's car came to a stop.
-wavs/robyn_robyn_0040.wav|Henry's mother had been a campfire girl so she knew all about camping. She knew how to set up a tent, she knew how to build a camp fire, she knew how to cook camp food.
-wavs/robyn_robyn_0049.wav|They park and parked the car and got ready to hike
-wavs/robyn_robyn_0110.wav|The End.
-wavs/robyn_robyn_0116.wav|But Martha was ah... unmoved.
-wavs/robyn_robyn_0118.wav|The next morning Martha reed a funny story.
-wavs/robyn_robyn_0127.wav|But when summer rolled around again, Martha was ready and waiting.
-wavs/robyn_robyn_0134.wav|The postman delivered the letter out back for a cow two pigs three ducks and a yack. All the animals except for the mouse voted to move into Mrs. Brown's house.
-wavs/robyn_robyn_0162.wav|Tiny things without a maestro microscope? asked his father.
-wavs/robyn_robyn_0183.wav|Greg's father spoke to Billy's father.
-wavs/robyn_robyn_0195.wav|Woah! he said. The my a microscope.
-wavs/robyn_robyn_0208.wav|now, he said.
-wavs/robyn_robyn_0209.wav|Well, Greg,
-wavs/robyn_robyn_0219.wav|His mother
-wavs/robyn_robyn_0223.wav|Greg ran back and got a glass slide.
-wavs/robyn_robyn_0236.wav|Greg's mother came in. Let me see the salt, she said.
-wavs/robyn_robyn_0244.wav|at the salt.
-wavs/robyn_robyn_0258.wav|Then he took another slide
-wavs/robyn_robyn_0281.wav|Oh, he said.
-wavs/robyn_robyn_0297.wav|He put some water on the sugar.
-wavs/robyn_robyn_0320.wav|Is everything made of crystals? asked Billy.
-wavs/robyn_robyn_0343.wav|On.
-wavs/robyn_robyn_0390.wav|Look at this, Billy.
-wavs/robyn_robyn_0418.wav|But my hair does have scales Greg, said.
-wavs/robyn_robyn_0425.wav|May I come in? Asked Mrs. Broom.
-wavs/robyn_robyn_0466.wav|Yes, said said Greg. Seals are what every living thing is made of.
-wavs/robyn_robyn_0478.wav|This is Greg's.
-wavs/robyn_robyn_0516.wav|I told you I needed a microscope, Father, he said.
-wavs/robyn_robyn_0537.wav|said the bat.
-wavs/robyn_robyn_0547.wav|This is the mat of the rat, said the hat.
-wavs/robyn_robyn_0553.wav|I shall sit on this mat for as long as I wish.
-wavs/robyn_robyn_0564.wav|Come and get it, said the hat.
-wavs/robyn_robyn_0569.wav|What was that? asked the bat.
-wavs/robyn_robyn_0583.wav|and the bat and Wilma's pet rat.
-wavs/robyn_robyn_0590.wav|The fish said nothing.
-wavs/robyn_robyn_0593.wav|Because of the cat, said the rat.
-wavs/robyn_robyn_0598.wav|The bat, and the hat. He hate.
-wavs/robyn_robyn_0608.wav|To make sure he doesn't have a milk mustache.
-wavs/robyn_robyn_0611.wav|So he'll probably ask for a pair of nail scissors.
-wavs/robyn_robyn_0653.wav|Was like on Rain spell Iceland.
-wavs/robyn_robyn_0656.wav|Rain spell Iceland for vacation.
-wavs/robyn_robyn_0662.wav|a
-wavs/robyn_robyn_0664.wav|They were friends with the fairies.
-wavs/robyn_robyn_0678.wav|They were friends with the fairies.
-wavs/robyn_robyn_0699.wav|Christy repleted suddenly she jumped something.
-wavs/robyn_robyn_0702.wav|Something cold and wet had landed on her nose.
-wavs/robyn_robyn_0714.wav|This is very strange said Mrs. Mr. Tate.
-wavs/robyn_robyn_0755.wav|I'll call rachel after lunch she though, maybe she's been noticing.
-wavs/robyn_robyn_0763.wav|Once there was a farmer who lived in Mexico.
-wavs/robyn_robyn_0838.wav|Look! said the farmer.
-wavs/robyn_robyn_0845.wav|And another. Hot lava came out of the earth. Steaming lava spread.
-wavs/robyn_robyn_0863.wav|They carried big crosses.
-wavs/robyn_robyn_0871.wav|So you are the one with the plow that opened up the earth, they said to the farmer.
-wavs/robyn_robyn_0873.wav|The soldiers
-wavs/robyn_robyn_0878.wav|The farmer
-wavs/robyn_robyn_0898.wav|Can you make another hill hill of fire the children said?
-wavs/robyn_robyn_0905.wav|His paws were big and he wished to do big things with them.
-wavs/robyn_robyn_0911.wav|He ran after little cats.
-wavs/robyn_robyn_0938.wav|It blew and blew and blew.
-wavs/robyn_robyn_0950.wav|She was taking on the telephone.
-wavs/robyn_robyn_0957.wav|She point to Pickles.
-wavs/robyn_robyn_0988.wav|What did you say? You think Pickles would like to live in our firehouse?
-wavs/robyn_robyn_1015.wav|Pickles said to himself now I must learn to help the firemen with their work.
-wavs/robyn_robyn_1088.wav|He shook the candy reth and back and forth.
-wavs/robyn_robyn_1102.wav|Then dragon wrapped himself up in a warm quilt and heeded off to the store.
+wavs/robyn_robyn_0003.wav|The cupboard is bare, said dragon. Time to go shopping.|0
+wavs/robyn_robyn_0012.wav|He bought catsup from the fruit and vegetable group, he bought pork rinds from the meat group and he bought|0
+wavs/robyn_robyn_0032.wav|Finally, dragon's car came to a stop.|0
+wavs/robyn_robyn_0040.wav|Henry's mother had been a campfire girl so she knew all about camping. She knew how to set up a tent, she knew how to build a camp fire, she knew how to cook camp food.|0
+wavs/robyn_robyn_0049.wav|They park and parked the car and got ready to hike|0
+wavs/robyn_robyn_0110.wav|The End.|0
+wavs/robyn_robyn_0116.wav|But Martha was ah... unmoved.|0
+wavs/robyn_robyn_0118.wav|The next morning Martha reed a funny story.|0
+wavs/robyn_robyn_0127.wav|But when summer rolled around again, Martha was ready and waiting.|0
+wavs/robyn_robyn_0134.wav|The postman delivered the letter out back for a cow two pigs three ducks and a yack. All the animals except for the mouse voted to move into Mrs. Brown's house.|0
+wavs/robyn_robyn_0162.wav|Tiny things without a maestro microscope? asked his father.|0
+wavs/robyn_robyn_0183.wav|Greg's father spoke to Billy's father.|0
+wavs/robyn_robyn_0195.wav|Woah! he said. The my a microscope.|0
+wavs/robyn_robyn_0208.wav|now, he said.|0
+wavs/robyn_robyn_0209.wav|Well, Greg,|0
+wavs/robyn_robyn_0219.wav|His mother|0
+wavs/robyn_robyn_0223.wav|Greg ran back and got a glass slide.|0
+wavs/robyn_robyn_0236.wav|Greg's mother came in. Let me see the salt, she said.|0
+wavs/robyn_robyn_0244.wav|at the salt.|0
+wavs/robyn_robyn_0258.wav|Then he took another slide|0
+wavs/robyn_robyn_0281.wav|Oh, he said.|0
+wavs/robyn_robyn_0297.wav|He put some water on the sugar.|0
+wavs/robyn_robyn_0320.wav|Is everything made of crystals? asked Billy.|0
+wavs/robyn_robyn_0343.wav|On.|0
+wavs/robyn_robyn_0390.wav|Look at this, Billy.|0
+wavs/robyn_robyn_0418.wav|But my hair does have scales Greg, said.|0
+wavs/robyn_robyn_0425.wav|May I come in? Asked Mrs. Broom.|0
+wavs/robyn_robyn_0466.wav|Yes, said said Greg. Seals are what every living thing is made of.|0
+wavs/robyn_robyn_0478.wav|This is Greg's.|0
+wavs/robyn_robyn_0516.wav|I told you I needed a microscope, Father, he said.|0
+wavs/robyn_robyn_0537.wav|said the bat.|0
+wavs/robyn_robyn_0547.wav|This is the mat of the rat, said the hat.|0
+wavs/robyn_robyn_0553.wav|I shall sit on this mat for as long as I wish.|0
+wavs/robyn_robyn_0564.wav|Come and get it, said the hat.|0
+wavs/robyn_robyn_0569.wav|What was that? asked the bat.|0
+wavs/robyn_robyn_0583.wav|and the bat and Wilma's pet rat.|0
+wavs/robyn_robyn_0590.wav|The fish said nothing.|0
+wavs/robyn_robyn_0593.wav|Because of the cat, said the rat.|0
+wavs/robyn_robyn_0598.wav|The bat, and the hat. He hate.|0
+wavs/robyn_robyn_0608.wav|To make sure he doesn't have a milk mustache.|0
+wavs/robyn_robyn_0611.wav|So he'll probably ask for a pair of nail scissors.|0
+wavs/robyn_robyn_0653.wav|Was like on Rain spell Iceland.|0
+wavs/robyn_robyn_0656.wav|Rain spell Iceland for vacation.|0
+wavs/robyn_robyn_0662.wav|a|0
+wavs/robyn_robyn_0664.wav|They were friends with the fairies.|0
+wavs/robyn_robyn_0678.wav|They were friends with the fairies.|0
+wavs/robyn_robyn_0699.wav|Christy repleted suddenly she jumped something.|0
+wavs/robyn_robyn_0702.wav|Something cold and wet had landed on her nose.|0
+wavs/robyn_robyn_0714.wav|This is very strange said Mrs. Mr. Tate.|0
+wavs/robyn_robyn_0755.wav|I'll call rachel after lunch she though, maybe she's been noticing.|0
+wavs/robyn_robyn_0763.wav|Once there was a farmer who lived in Mexico.|0
+wavs/robyn_robyn_0838.wav|Look! said the farmer.|0
+wavs/robyn_robyn_0845.wav|And another. Hot lava came out of the earth. Steaming lava spread.|0
+wavs/robyn_robyn_0863.wav|They carried big crosses.|0
+wavs/robyn_robyn_0871.wav|So you are the one with the plow that opened up the earth, they said to the farmer.|0
+wavs/robyn_robyn_0873.wav|The soldiers|0
+wavs/robyn_robyn_0878.wav|The farmer|0
+wavs/robyn_robyn_0898.wav|Can you make another hill hill of fire the children said?|0
+wavs/robyn_robyn_0905.wav|His paws were big and he wished to do big things with them.|0
+wavs/robyn_robyn_0911.wav|He ran after little cats.|0
+wavs/robyn_robyn_0938.wav|It blew and blew and blew.|0
+wavs/robyn_robyn_0950.wav|She was taking on the telephone.|0
+wavs/robyn_robyn_0957.wav|She point to Pickles.|0
+wavs/robyn_robyn_0988.wav|What did you say? You think Pickles would like to live in our firehouse?|0
+wavs/robyn_robyn_1015.wav|Pickles said to himself now I must learn to help the firemen with their work.|0
+wavs/robyn_robyn_1088.wav|He shook the candy reth and back and forth.|0
+wavs/robyn_robyn_1102.wav|Then dragon wrapped himself up in a warm quilt and heeded off to the store.|0
