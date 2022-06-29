@@ -1,6 +1,6 @@
 wavs/robyn_robyn_0001.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0001.pt|Dragon gets by. Shopping.
 wavs/robyn_robyn_0002.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0002.pt|Dragon look in his cupboard. But there was no food at all.
-wavs/robyn_robyn_0004.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0004.pt|Dragon got into his car and drove.
+wavs/robyn_robyn_0003.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0003.pt|The cupboard is bare, said dragon. Time to go shopping.
 wavs/robyn_robyn_0005.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0005.pt|The food store was at the top of a hill.
 wavs/robyn_robyn_0006.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0006.pt|It was a very steep drive
 wavs/robyn_robyn_0007.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0007.pt|Dragon loved to go shopping. He was a very wise shopper.
@@ -8,6 +8,7 @@ wavs/robyn_robyn_0008.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0009.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0009.pt|He bought cheese curls from the dairy group, he bought doughnuts from the bread group.
 wavs/robyn_robyn_0010.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0010.pt|He bought cat catshup from the fruit grou and vegetable group,
 wavs/robyn_robyn_0011.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0011.pt|He b
+wavs/robyn_robyn_0012.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0012.pt|He bought catsup from the fruit and vegetable group, he bought pork rinds from the meat group and he bought
 wavs/robyn_robyn_0013.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0013.pt|fu fudge
 wavs/robyn_robyn_0014.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0014.pt|and he bought fudge pudge from the chocolate group.
 wavs/robyn_robyn_0015.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0015.pt|Dragon had a balanced diet
@@ -15,32 +16,36 @@ wavs/robyn_robyn_0016.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0017.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0017.pt|I know what I will do said dragon.
 wavs/robyn_robyn_0018.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0018.pt|I will eat some of the food now and the rest will fit in the car.
 wavs/robyn_robyn_0019.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0019.pt|Dragon sat in the parking lot
+wavs/robyn_robyn_0020.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0020.pt|and started to eat. He crunched
 wavs/robyn_robyn_0021.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0021.pt|Dragon sat in the parking lot and started to eat.
 wavs/robyn_robyn_0022.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0022.pt|He crunched up the cheese curls, he donated the doughnuts, he packed away the pork riiinds.
 wavs/robyn_robyn_0023.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0023.pt|Dragon ate and ate and ate until all the food was gone.
 wavs/robyn_robyn_0024.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0024.pt|burp
 wavs/robyn_robyn_0025.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0025.pt|Now dragon could not fit into his car.
-wavs/robyn_robyn_0026.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0026.pt|Oh what am I going to do
 wavs/robyn_robyn_0027.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0027.pt|cried dragon
 wavs/robyn_robyn_0028.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0028.pt|I know what I will do, said dragon, I will push my car home
 wavs/robyn_robyn_0029.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0029.pt|So dragon pushed his car down the hill.
 wavs/robyn_robyn_0030.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0030.pt|So dragon pushed his car down the hill.
 wavs/robyn_robyn_0031.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0031.pt|The car began to roll. Faster and faster and faster and faster.
+wavs/robyn_robyn_0032.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0032.pt|Finally, dragon's car came to a stop.
 wavs/robyn_robyn_0033.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0033.pt|Right in front of his house.
-wavs/robyn_robyn_0034.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0034.pt|All the excitement had made dragon very hungry.
 wavs/robyn_robyn_0035.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0035.pt|He went into his kitchen
 wavs/robyn_robyn_0036.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0036.pt|and looked in the cupboard.
 wavs/robyn_robyn_0037.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0037.pt|There was no food at all. The cupboard is bare, said dragon. Time to go shopping.
 wavs/robyn_robyn_0038.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0038.pt|The End.
 wavs/robyn_robyn_0039.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0039.pt|Big bear lake. In August, Henry and Henry's big dog, Mudge, always went camping. They went with Henry's parents.
+wavs/robyn_robyn_0040_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0040_1.pt|Henry's mother had been a campfire girl so she knew all about camping.
+wavs/robyn_robyn_0040_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0040_2.pt|She knew how to set up a tent, she knew how to build a camp fire, she knew how to cook camp food.
 wavs/robyn_robyn_0041.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0041.pt|Henry's dad didn't know anything about camping. He just came with a guitar and sm smiles.
 wavs/robyn_robyn_0042.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0042.pt|Henry and Mudge loved camping. This year they were going to big bear lake and Henry's cou Henry couldn't wait.
 wavs/robyn_robyn_0043.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0043.pt|We might even see a bear, Henry said. Henry was not sh so sure he wanted to see a bear.
 wavs/robyn_robyn_0044.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0044.pt|He shivered and but put an arm around Mudge.
 wavs/robyn_robyn_0045.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0045.pt|Mudge have a gave a big slow loud yaun yaun. He drooled on henry's foot.
 wavs/robyn_robyn_0046.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0046.pt|Henry giggled, no bears will get us, Mudge, Henry said. We're not too slippery. We're too slippery.
-wavs/robyn_robyn_0047.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0047.pt|Mudge gave a big slow loud yawn. He drooled on henry's foot. Henry giggled, no bear will get us, Mudge, Henry said. We too slippery.
+wavs/robyn_robyn_0047_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0047_1.pt|Mudge gave a big slow loud yawn. He drooled on henry's foot.
+wavs/robyn_robyn_0047_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0047_2.pt|Henry giggled, no bear will get us, Mudge, Henry said. We too slippery.
 wavs/robyn_robyn_0048.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0048.pt|A good smelly hike. Henry and Mudge and Henry's parents drove to big bear lake
+wavs/robyn_robyn_0049.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0049.pt|They park and parked the car and got ready to hike
 wavs/robyn_robyn_0050.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0050.pt|Everyone had a backpack, even mudge. His had lot his had lots of crackers.
 wavs/robyn_robyn_0051.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0051.pt|Henry's mother said, let's go and off they went. They walked and walked and climbed and...
 wavs/robyn_robyn_0052.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0052.pt|They walked and walked and climbed and climbed.
@@ -48,19 +53,20 @@ wavs/robyn_robyn_0053.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0054.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0054.pt|He saw waterfalls and rainbow
 wavs/robyn_robyn_0055.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0055.pt|Mudge didn't see much of anything.
 wavs/robyn_robyn_0056.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0056.pt|Mudge loved to hike and smell.
-wavs/robyn_robyn_0057.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0057.pt|He smelled a racoon.
 wavs/robyn_robyn_0058.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0058.pt|He smelled a racoon from yesterday, he smelled a deer from the last night, he smelled an oatmeal cookie from henry's back pocket.
 wavs/robyn_robyn_0059.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0059.pt|Mudge, Henry laughed off, giving Mudge the cookie.
 wavs/robyn_robyn_0060.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0060.pt|Finally, Henry's mother picked a good place to camp.
-wavs/robyn_robyn_0061.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0061.pt|Henry's parents set up the tent. Henry's unpacked Henry unpacked the food and pants and lanterns. Mudge unpacked a ham sandwich.
-wavs/robyn_robyn_0062.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0062.pt|Finally, the camp was almost ready. It needed just one more thing.
+wavs/robyn_robyn_0061_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0061_1.pt|Henry's parents set up the tent. Henry's unpacked Henry unpacked the food and pants and lanterns.
+wavs/robyn_robyn_0061_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0061_2.pt|Mudge unpacked a ham sandwich.
 wavs/robyn_robyn_0063.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0063.pt|Who knows the words to love me tender said henry's father.
 wavs/robyn_robyn_0064.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0064.pt|Henry looked at Mudge and groaned.
 wavs/robyn_robyn_0065.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0065.pt|It was a beautiful night. Henry and Henry's parents lay on her back.
+wavs/robyn_robyn_0066.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0066.pt|by the fire and looked at the sky. Henry didn't didn't know there were so many stars in the sky.
 wavs/robyn_robyn_0067.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0067.pt|There's the big dipper, said Henry's mother, there's the little dipper, said Henry.
 wavs/robyn_robyn_0068.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0068.pt|Mudge wasn't looking.
 wavs/robyn_robyn_0069.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0069.pt|Mudge loved camping.
 wavs/robyn_robyn_0070.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0070.pt|Henry's father sang one more sappy love song.
+wavs/robyn_robyn_0071.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0071.pt|Henry's father and mother snuggled, Henry and Mudge snuggled.
 wavs/robyn_robyn_0072.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0072.pt|It was as quiet as quiet could be.
 wavs/robyn_robyn_0073.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0073.pt|Everyone slept safe and sound and there were no bears no scares.
 wavs/robyn_robyn_0074.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0074.pt|Just the clean smell of trees and wonderful green dreams. The end.
@@ -68,7 +74,6 @@ wavs/robyn_robyn_0075.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0076.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0076.pt|alabama but wintered in alaska. He told Maya that was the reason he liked ice cubes in his coffee.
 wavs/robyn_robyn_0077.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0077.pt|On one of granddaddy's visits from alaska he brought a crate.
 wavs/robyn_robyn_0078.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0078.pt|Granddaddy smiled. Something for my special you.
-wavs/robyn_robyn_0079.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0079.pt|Maya hoped it was a horse or an older brother. She'd always wanted one or the other.
 wavs/robyn_robyn_0081.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0081.pt|But it was a pig. A big pig. An alaskan pig who did a polar bear imitation
 wavs/robyn_robyn_0082.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0082.pt|and climbed out of the crate. Julius had come.
 wavs/robyn_robyn_0083.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0083.pt|Maya's parents didn't think that they would like Julius. He showed them no fun no sharing. Maya loved Julius.
@@ -77,9 +82,8 @@ wavs/robyn_robyn_0085.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0086.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0086.pt|Julius made big mess.
 wavs/robyn_robyn_0087.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0087.pt|He would he would roll himself in flour when he wanted Maya to bake him cookies.
 wavs/robyn_robyn_0088.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0088.pt|Julius made a big messes and spread the newspaper everywhere before anyone could read it. He left crumbs on the sheet and never picked up hids towels.
-wavs/robyn_robyn_0089.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0089.pt|Julius made too much noise. He'd stay up late watching old movies and he'd always play records when everybody else wanted to read.
+wavs/robyn_robyn_0089_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0089_2.pt|He'd stay up late watching old movies and he'd always play records when everybody else wanted to read.
 wavs/robyn_robyn_0090.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0090.pt|But Maya knew the other Julius too the Julius who was fun to take on walks...
-wavs/robyn_robyn_0091.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0091.pt|But Maya knew the other Julius too the Julius who was fun to take on walks cause he did great dog imitation and chase cats.
 wavs/robyn_robyn_0092.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0092.pt|He the Julius who sneaked into stores with her and and tried on clothis. Julius like anything blue and stretchy.
 wavs/robyn_robyn_0093.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0093.pt|They try on hats to make like red felt, Julius liked straw, it tasted better.
 wavs/robyn_robyn_0094.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0094.pt|Trying on shoes was hard.
@@ -97,31 +101,42 @@ wavs/robyn_robyn_0106.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0107.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0107.pt|Julius shared the things Maya had thought him with the pa... her parents sometimes.
 wavs/robyn_robyn_0108.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0108.pt|Julius shared the things Maya had thought him with her parents sometimes.
 wavs/robyn_robyn_0109.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0109.pt|And that was all right because living with Maya and sharing everything was even better than being an cool pig from alaska.
-wavs/robyn_robyn_0111.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0111.pt|The Surprise. Written by Janson Marshall. One late summer morning greg had a wicket idea. I should he said. I really should. Shouldn't.
+wavs/robyn_robyn_0110.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0110.pt|The End.
+wavs/robyn_robyn_0111_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0111_1.pt|The Surprise. Written by Janson Marshall.
 wavs/robyn_robyn_0112.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0112.pt|I shouldn't he said, I really shouldn't but he just could help, couldn't help himself. Here comes the rain he cried.
 wavs/robyn_robyn_0113.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0113.pt|Agots screamed Martha.
 wavs/robyn_robyn_0114.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0114.pt|Martha was thoroughly denched and as mad as a wet hen.
+wavs/robyn_robyn_0115.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0115.pt|That did it, she said, we are no longer on speaking terms. I was only horsing around, said Greg.
+wavs/robyn_robyn_0116.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0116.pt|But Martha was ah... unmoved.
 wavs/robyn_robyn_0117.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0117.pt|But Martha was unmooed.
+wavs/robyn_robyn_0118.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0118.pt|The next morning Martha reed a funny story.
 wavs/robyn_robyn_0119.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0119.pt|Then she remembered,
-wavs/robyn_robyn_0121.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0121.pt|I was only horsing around said Gre George. But Martha was unmoved.
-wavs/robyn_robyn_0122.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0122.pt|The next morning Martha reed a funny story. I can't wait to tell George, she said. Then she remembered that she and George were no longer on speaking terms. Around noon Martha heard a joke on the radio.
+wavs/robyn_robyn_0120.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0120.pt|That did it, she said. We are no longer on speaking terms.
+wavs/robyn_robyn_0122_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0122_1.pt|The next morning Martha reed a funny story. I can't wait to tell George, she said.
+wavs/robyn_robyn_0122_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0122_2.pt|Then she remembered that she and George were no longer on speaking terms.
+wavs/robyn_robyn_0122_3.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0122_3.pt|Around noon Martha heard a joke on the radio.
 wavs/robyn_robyn_0123.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0123.pt|George will love this one, she said.
-wavs/robyn_robyn_0124.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0124.pt|But she and George weren't speaking. In the afternoon Martha observed the first autumn leave fall to the ground. Autumn is George's favorite season, she said. Another leave came swirling down. That does it, said Martha. Martha went straight to George house. George's house. I forgive you, she said. George was the likely to be back on speaking terms. Good friends just can't stay cross for long, said George.
+wavs/robyn_robyn_0124_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0124_1.pt|But she and George weren't speaking. In the afternoon Martha observed the first autumn leave fall to the ground.
+wavs/robyn_robyn_0124_3.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0124_3.pt|That does it, said Martha. Martha went straight to George house. George's house.
+wavs/robyn_robyn_0124_4.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0124_4.pt|I forgive you, she said. George was the likely to be back on speaking terms.
+wavs/robyn_robyn_0124_5.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0124_5.pt|Good friends just can't stay cross for long, said George.
 wavs/robyn_robyn_0125.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0125.pt|Good friends can't stay cross for long said George.
 wavs/robyn_robyn_0126.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0126.pt|You can say that again, said Martha and together they watched the autumn arrive.
+wavs/robyn_robyn_0127.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0127.pt|But when summer rolled around again, Martha was ready and waiting.
 wavs/robyn_robyn_0128.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0128.pt|But when summer rolled around again, Martha was ready and waiting.
 wavs/robyn_robyn_0129.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0129.pt|Mr. Brown went to town. By Wong Herbert Lee
-wavs/robyn_robyn_0130.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0130.pt|Mr. Brown was in a barn out back with a cow two pigs three ducks and a yack. Life on the farm wasn't always this way. Everything changed just last saturday.
-wavs/robyn_robyn_0131.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0131.pt|When riding her bicycle down the street a terrier means a dog taste Mrs. Browns feet.
-wavs/robyn_robyn_0132.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0132.pt|In a hospital bed she rested waiting to be x-rayed and tested. Mr. Brown send word in a letter to say she'd come home,
+wavs/robyn_robyn_0130_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0130_1.pt|Mr. Brown was in a barn out back with a cow two pigs three ducks and a yack. Life on the farm wasn't always this way.
+wavs/robyn_robyn_0132_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0132_1.pt|In a hospital bed she rested waiting to be x-rayed and tested. Mr. Brown send word in a letter to say she'd come home,
 wavs/robyn_robyn_0133.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0133.pt|...to say she'd come home when she was better and the envelope said, will be home soon, be good.
-wavs/robyn_robyn_0135.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0135.pt|They rang the doorbell to hear the chims, flushed the toilet one hundred times. That's really crazy
+wavs/robyn_robyn_0134_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0134_2.pt|All the animals except for the mouse voted to move into Mrs. Brown's house.
+wavs/robyn_robyn_0135_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0135_1.pt|They rang the doorbell to hear the chims, flushed the toilet one hundred times. That's really crazy
 wavs/robyn_robyn_0136.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0136.pt|...raced up the stairs, came sliding back down, each one wearing a different gown.
 wavs/robyn_robyn_0137.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0137.pt|...took turns bouncing on Mrs. Brown's bed, painted the house in matching barn red.
 wavs/robyn_robyn_0138.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0138.pt|They rided th the pantry
 wavs/robyn_robyn_0139.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0139.pt|They raided the pantry, prepared a snack for a cow two pigs three ducks and a yack.
 wavs/robyn_robyn_0140.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0140.pt|In the bathroom they played for hours, putting on makeup and taking long shoers showers.
-wavs/robyn_robyn_0141.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0141.pt|They dried off in front of a roaring fire, warm and cozy but beginning to tire. Fire and tire rhyme. Tip toed upstairs by candle light, borrow pajamas to wear for the night.
+wavs/robyn_robyn_0141_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0141_1.pt|They dried off in front of a roaring fire, warm and cozy but beginning to tire. Fire and tire rhyme.
+wavs/robyn_robyn_0141_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0141_2.pt|Tip toed upstairs by candle light, borrow pajamas to wear for the night.
 wavs/robyn_robyn_0142.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0142.pt|The hospital released Mrs. Brown.
 wavs/robyn_robyn_0143.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0143.pt|...at eight. A taxi cab dropped her off by the gate.
 wavs/robyn_robyn_0144.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0144.pt|She hobbled upstairs and crawled in the sack, didn't see a cow two pigs three ducks and a yack.
@@ -129,20 +144,23 @@ wavs/robyn_robyn_0145.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0146.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0146.pt|The four walls and windows start to shake.
 wavs/robyn_robyn_0147.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0147.pt|All this commotion woke Mr. Brown.
 wavs/robyn_robyn_0148.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0148.pt|...in time to feel her bed crashing down. The police were first to arrive on the scene.
-wavs/robyn_robyn_0149.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0149.pt|Fire f trucks dispatched from station thirteen. An ambulance raced all the way from town and cra carried away poor Mr. Brown.
+wavs/robyn_robyn_0149_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0149_1.pt|Fire f trucks dispatched from station thirteen.
+wavs/robyn_robyn_0149_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0149_2.pt|An ambulance raced all the way from town and cra carried away poor Mr. Brown.
 wavs/robyn_robyn_0150.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0150.pt|In the hospital she lay on her her back with a cow two pigs three ducks and a yack.
+wavs/robyn_robyn_0151.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0151.pt|hospital released Mr. Brown at ten. The doctor waved good bye once again.
 wavs/robyn_robyn_0152.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0152.pt|In a taxi they cramped all eight.
 wavs/robyn_robyn_0153.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0153.pt|The driver dropped them off by the gate. He sweeped out the feathers and
 wavs/robyn_robyn_0154.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0154.pt|hair and
 wavs/robyn_robyn_0155.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0155.pt|charged Mr. Brown twice the fare.
-wavs/robyn_robyn_0156.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0156.pt|Life on farm wasn't always this way until Mr. Brown Mrs. Brown went to town that day. So now she lives in a barn out back with a cow two pigs three ducks and a yack. That's it.
+wavs/robyn_robyn_0156_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0156_1.pt|Life on farm wasn't always this way until Mr. Brown Mrs. Brown went to town that day.
+wavs/robyn_robyn_0156_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0156_2.pt|So now she lives in a barn out back with a cow two pigs three ducks and a yack.
+wavs/robyn_robyn_0157.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0157.pt|Greg wanted a microscope.
 wavs/robyn_robyn_0158.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0158.pt|Father, he said, buy me a microscope, please.
 wavs/robyn_robyn_0159.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0159.pt|What for? asked his father.
 wavs/robyn_robyn_0160.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0160.pt|So I can see tiny things, said Greg.
 wavs/robyn_robyn_0161.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0161.pt|Can't you see
-wavs/robyn_robyn_0163.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0163.pt|Look at this spot.
+wavs/robyn_robyn_0162.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0162.pt|Tiny things without a maestro microscope? asked his father.
 wavs/robyn_robyn_0164.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0164.pt|It is tiny.
-wavs/robyn_robyn_0165.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0165.pt|Look at this ant.
 wavs/robyn_robyn_0166.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0166.pt|It is tiny.
 wavs/robyn_robyn_0167.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0167.pt|What do you want to see?
 wavs/robyn_robyn_0168.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0168.pt|Well, said Greg.
@@ -159,7 +177,7 @@ wavs/robyn_robyn_0178.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0179.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0179.pt|Oh, said Greg.
 wavs/robyn_robyn_0180.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0180.pt|Billy's father didn't not pay a lot.
 wavs/robyn_robyn_0181.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0181.pt|I will speak to him, said Greg's father.
-wavs/robyn_robyn_0182.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0182.pt|Greg's father
+wavs/robyn_robyn_0183.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0183.pt|Greg's father spoke to Billy's father.
 wavs/robyn_robyn_0184.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0184.pt|Then he began to shop for a microscope.
 wavs/robyn_robyn_0185.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0185.pt|He went to the toy stores.
 wavs/robyn_robyn_0186.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0186.pt|He went to the big dar department stores.
@@ -171,7 +189,7 @@ wavs/robyn_robyn_0191.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0192.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0192.pt|it and see,
 wavs/robyn_robyn_0193.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0193.pt|his father.
 wavs/robyn_robyn_0194.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0194.pt|Greg opened the box.
-wavs/robyn_robyn_0196.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0196.pt|What a microscope.
+wavs/robyn_robyn_0195.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0195.pt|Woah! he said. The my a microscope.
 wavs/robyn_robyn_0197.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0197.pt|Did you pay a lot? Greg asked.
 wavs/robyn_robyn_0198.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0198.pt|Not too much, said his father.
 wavs/robyn_robyn_0199.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0199.pt|Greg's father put the microscope on the table in front of the window.
@@ -179,9 +197,12 @@ wavs/robyn_robyn_0200.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0201.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0201.pt|Greg sat down. He looked into it.
 wavs/robyn_robyn_0202.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0202.pt|I can't see anything.
 wavs/robyn_robyn_0203.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0203.pt|It is all dark, he said.
+wavs/robyn_robyn_0204.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0204.pt|Move the mirror at the bottom ti till it catches the light.
 wavs/robyn_robyn_0205.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0205.pt|ss said his father.
 wavs/robyn_robyn_0206.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0206.pt|Greg moved the mirror.
 wavs/robyn_robyn_0207.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0207.pt|I can see
+wavs/robyn_robyn_0208.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0208.pt|now, he said.
+wavs/robyn_robyn_0209.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0209.pt|Well, Greg,
 wavs/robyn_robyn_0210.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0210.pt|said his father. Look at at tiny things.
 wavs/robyn_robyn_0211.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0211.pt|Greg sat still.
 wavs/robyn_robyn_0212.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0212.pt|Didn't you buy some slides for me to
@@ -190,12 +211,14 @@ wavs/robyn_robyn_0214.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0215.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0215.pt|What shall I look at? asked Greg.
 wavs/robyn_robyn_0216.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0216.pt|What is tiny? He ran into the kitchen.
 wavs/robyn_robyn_0217.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0217.pt|Mother, he said,
+wavs/robyn_robyn_0218.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0218.pt|please give me some tiny things to look at.
+wavs/robyn_robyn_0219.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0219.pt|His mother
 wavs/robyn_robyn_0220.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0220.pt|His mother was holding
 wavs/robyn_robyn_0221.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0221.pt|the salt box. Try some salt, he said
 wavs/robyn_robyn_0222.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0222.pt|she said.
+wavs/robyn_robyn_0223.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0223.pt|Greg ran back and got a glass slide.
 wavs/robyn_robyn_0224.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0224.pt|He put some salt on it.
 wavs/robyn_robyn_0225.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0225.pt|The he went to the microscope.
-wavs/robyn_robyn_0226.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0226.pt|He put the slide on.
 wavs/robyn_robyn_0227.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0227.pt|Wait, called Greg's father.
 wavs/robyn_robyn_0228.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0228.pt|I will show you how to use it.
 wavs/robyn_robyn_0229.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0229.pt|He showed Greg
@@ -205,16 +228,13 @@ wavs/robyn_robyn_0232.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0233.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0233.pt|The salt looks hundred times bigger than it really is.
 wavs/robyn_robyn_0234.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0234.pt|Hundred times bigger!
 wavs/robyn_robyn_0235.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0235.pt|said Greg.
-wavs/robyn_robyn_0237.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0237.pt|She looked through the microscope.
 wavs/robyn_robyn_0238.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0238.pt|My goodness, she said.
 wavs/robyn_robyn_0239.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0239.pt|The salt looks like rocks.
 wavs/robyn_robyn_0240.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0240.pt|Come into the kitchen, Greg.
 wavs/robyn_robyn_0241.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0241.pt|Let's look for more tiny things.
 wavs/robyn_robyn_0242.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0242.pt|Greg did not go right away. He just
 wavs/robyn_robyn_0243.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0243.pt|keep looking
-wavs/robyn_robyn_0245.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0245.pt|Add some water, said his father.
 wavs/robyn_robyn_0246.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0246.pt|Greg got some water and put a drop on the salt.
-wavs/robyn_robyn_0247.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0247.pt|Then he looked into the microscope.
 wavs/robyn_robyn_0248.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0248.pt|Father, he cried,
 wavs/robyn_robyn_0249.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0249.pt|the salt is
 wavs/robyn_robyn_0250.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0250.pt|getting smaller and smaller.
@@ -227,7 +247,6 @@ wavs/robyn_robyn_0256.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0257.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0257.pt|Greg put the slide in the sun.
 wavs/robyn_robyn_0259.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0259.pt|and went into the kitchen.
 wavs/robyn_robyn_0260.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0260.pt|Let's try some sugar, he said
-wavs/robyn_robyn_0261.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0261.pt|to his mother.
 wavs/robyn_robyn_0262.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0262.pt|Greg's mother gave him some sugar.
 wavs/robyn_robyn_0263.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0263.pt|Greg put it on the slide.
 wavs/robyn_robyn_0264.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0264.pt|Then he went back to look at it through the microscope.
@@ -237,14 +256,16 @@ wavs/robyn_robyn_0267.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0268.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0268.pt|I lost the salt.
 wavs/robyn_robyn_0269.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0269.pt|I will lose the sugar, too.
 wavs/robyn_robyn_0270.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0270.pt|See if your salt slide is dry, said his father.
+wavs/robyn_robyn_0271.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0271.pt|Greg looked.
 wavs/robyn_robyn_0272.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0272.pt|Father, he said.
-wavs/robyn_robyn_0273.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0273.pt|The salt came out of the water.
 wavs/robyn_robyn_0274.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0274.pt|It is back on the slide. But it looks different.
 wavs/robyn_robyn_0275.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0275.pt|You get better crystals.
 wavs/robyn_robyn_0276.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0276.pt|You get better crystals when they form in water, said his father.
+wavs/robyn_robyn_0277.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0277.pt|Crystals! said Greg.
 wavs/robyn_robyn_0278.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0278.pt|What are they?
 wavs/robyn_robyn_0279.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0279.pt|Look at them and see, said his father.
 wavs/robyn_robyn_0280.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0280.pt|Greg put the slide on the microscope.
+wavs/robyn_robyn_0281.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0281.pt|Oh, he said.
 wavs/robyn_robyn_0282.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0282.pt|The salt looks like glass blocks now.
 wavs/robyn_robyn_0283.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0283.pt|Let me look, said his father, and call Mother.
 wavs/robyn_robyn_0284.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0284.pt|Greg went to get his mother.
@@ -257,26 +278,28 @@ wavs/robyn_robyn_0290.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0291.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0291.pt|has sharp corners, just like diamonds.
 wavs/robyn_robyn_0292.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0292.pt|Do all crystals have sharp corners? asked Greg.
 wavs/robyn_robyn_0293.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0293.pt|Yes, said his father.
+wavs/robyn_robyn_0295.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0295.pt|Good sugar crystals.
 wavs/robyn_robyn_0296.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0296.pt|Said Greg.
 wavs/robyn_robyn_0298.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0298.pt|He looked through the microscope. Each little block.
+wavs/robyn_robyn_0299.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0299.pt|Got smaller and smaller. They are going
 wavs/robyn_robyn_0300.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0300.pt|Going gone, said Greg.
 wavs/robyn_robyn_0301.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0301.pt|He put the slide in the sun.
 wavs/robyn_robyn_0302.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0302.pt|He looked at it when it was dry. The sugar looked like glass flau flowers.
 wavs/robyn_robyn_0303.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0303.pt|What beautiful crystals, Greg said.
-wavs/robyn_robyn_0304.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0304.pt|Now let's look at at pepper.
-wavs/robyn_robyn_0305.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0305.pt|He put some pepper on a slide and looked at it.
 wavs/robyn_robyn_0306.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0306.pt|No crystals he.
+wavs/robyn_robyn_0307.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0307.pt|No crystals here, he said.
 wavs/robyn_robyn_0308.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0308.pt|Pepper looks like dirt.
 wavs/robyn_robyn_0309.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0309.pt|The next day was a holiday.
+wavs/robyn_robyn_0310.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0310.pt|Greg's friend Billy came to the door.
 wavs/robyn_robyn_0311.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0311.pt|Come and see my new microscope, said Greg.
 wavs/robyn_robyn_0312.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0312.pt|This is a good one, Billy said.
-wavs/robyn_robyn_0313.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0313.pt|Let me see some slides, I.
 wavs/robyn_robyn_0314.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0314.pt|I made my own, said Greg.
 wavs/robyn_robyn_0315.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0315.pt|And he showed Billy the salt and sugar slides.
 wavs/robyn_robyn_0316.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0316.pt|Billy looked.
 wavs/robyn_robyn_0317.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0317.pt|Those are crystals, says Greg.
 wavs/robyn_robyn_0318.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0318.pt|Ever.
 wavs/robyn_robyn_0319.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0319.pt|Every little crystal of sugar and salt has sharp corners, like diamonds.
+wavs/robyn_robyn_0320.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0320.pt|Is everything made of crystals? asked Billy.
 wavs/robyn_robyn_0321.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0321.pt|No, said Greg.
 wavs/robyn_robyn_0322.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0322.pt|Look at pepper.
 wavs/robyn_robyn_0323.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0323.pt|Billy looked at the pepper.
@@ -285,6 +308,7 @@ wavs/robyn_robyn_0325.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0326.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0326.pt|Did you look at flour?
 wavs/robyn_robyn_0327.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0327.pt|How about butter? And milk?
 wavs/robyn_robyn_0328.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0328.pt|One thing at a time, said Greg.
+wavs/robyn_robyn_0329.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0329.pt|He got a little flour and put it on a slide.
 wavs/robyn_robyn_0330.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0330.pt|Add a drop of water, said Billy.
 wavs/robyn_robyn_0331.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0331.pt|Will the flour go into the water? asked Greg.
 wavs/robyn_robyn_0332.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0332.pt|I don't know, said Billy.
@@ -294,34 +318,31 @@ wavs/robyn_robyn_0335.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0336.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0336.pt|The flour stays there. Don't you have a cover glass?
 wavs/robyn_robyn_0337.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0337.pt|asked Billy.
 wavs/robyn_robyn_0338.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0338.pt|Put a cover glass.
-wavs/robyn_robyn_0339.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0339.pt|On.
 wavs/robyn_robyn_0340.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0340.pt|Why? asked Greg.
 wavs/robyn_robyn_0341.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0341.pt|You will see better, said Billy.
 wavs/robyn_robyn_0342.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0342.pt|Greg started to put the cover glass.
+wavs/robyn_robyn_0343.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0343.pt|On.
 wavs/robyn_robyn_0344.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0344.pt|Billy watched.
 wavs/robyn_robyn_0345.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0345.pt|Don't plop it on, he said.
 wavs/robyn_robyn_0346.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0346.pt|Why not? asked Greg.
-wavs/robyn_robyn_0347.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0347.pt|You will get too many air bubbles, said Billy.
 wavs/robyn_robyn_0348.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0348.pt|Good! I want to see what they look like, said Greg.
 wavs/robyn_robyn_0349.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0349.pt|Oh, you will see, said Billy.
 wavs/robyn_robyn_0350.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0350.pt|Just plop the cover.
-wavs/robyn_robyn_0351.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0351.pt|Glass on Greg did just that.
 wavs/robyn_robyn_0352.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0352.pt|Then he looked at the slide.
 wavs/robyn_robyn_0353.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0353.pt|What are those big black circles asked Greg.
 wavs/robyn_robyn_0354.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0354.pt|Air bubbles, said Billy.
 wavs/robyn_robyn_0355.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0355.pt|I like them! said Greg.
 wavs/robyn_robyn_0356.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0356.pt|Where.
+wavs/robyn_robyn_0357.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0357.pt|Where is the flour?
 wavs/robyn_robyn_0358.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0358.pt|Let me see.
 wavs/robyn_robyn_0359.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0359.pt|Said Billy.
 wavs/robyn_robyn_0360.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0360.pt|Those little clear things must be the flour.
 wavs/robyn_robyn_0361.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0361.pt|Just then Greg's mother came in.
 wavs/robyn_robyn_0362.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0362.pt|Flour? she said. Let me see what it looks like.
 wavs/robyn_robyn_0363.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0363.pt|I see black rings.
-wavs/robyn_robyn_0364.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0364.pt|I see black rings.
 wavs/robyn_robyn_0365.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0365.pt|Those are air bubbles, said Greg.
 wavs/robyn_robyn_0366.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0366.pt|Look between them.
 wavs/robyn_robyn_0367.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0367.pt|You will see little clear things.
-wavs/robyn_robyn_0368.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0368.pt|A that is the flour.
 wavs/robyn_robyn_0369.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0369.pt|Greg said his mother.
 wavs/robyn_robyn_0370.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0370.pt|Greg said to his mother.
 wavs/robyn_robyn_0371.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0371.pt|You know so much.
@@ -331,7 +352,6 @@ wavs/robyn_robyn_0374.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0375.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0375.pt|Greg and Billy keep looking at different things.
 wavs/robyn_robyn_0376.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0376.pt|They looked at butter.
 wavs/robyn_robyn_0377.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0377.pt|They looked at milk.
-wavs/robyn_robyn_0378.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0378.pt|They looked at dust.
 wavs/robyn_robyn_0379.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0379.pt|Every minute Greg's mother heard the boys say, Oh, look at this.
 wavs/robyn_robyn_0380.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0380.pt|Woah, see this.
 wavs/robyn_robyn_0381.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0381.pt|Then they were standing near her.
@@ -343,38 +363,35 @@ wavs/robyn_robyn_0386.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0387.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0387.pt|He made a slide and looked at it.
 wavs/robyn_robyn_0388.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0388.pt|This is the best yet.
 wavs/robyn_robyn_0389.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0389.pt|This isn't the best yet, he said.
+wavs/robyn_robyn_0390.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0390.pt|Look at this, Billy.
 wavs/robyn_robyn_0391.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0391.pt|Look, Mother.
 wavs/robyn_robyn_0392.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0392.pt|Greg's mother looked.
 wavs/robyn_robyn_0393.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0393.pt|Billy looked.
 wavs/robyn_robyn_0394.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0394.pt|The cotton thread was ra really many threads twisted together.
-wavs/robyn_robyn_0395.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0395.pt|This is wonderful, said Greg's mum.
 wavs/robyn_robyn_0396.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0396.pt|Try some of my wool.
 wavs/robyn_robyn_0397.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0397.pt|Greg put a piece of wool under the microscope.
-wavs/robyn_robyn_0398.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0398.pt|Each wool thread was really men really many threads twist together.
 wavs/robyn_robyn_0399.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0399.pt|But look, Billy, said Greg.
 wavs/robyn_robyn_0400.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0400.pt|Look at one of the wool threads.
 wavs/robyn_robyn_0401.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0401.pt|It has scales all over it, like fish scales.
 wavs/robyn_robyn_0402.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0402.pt|Billy looked. Hmm, he said.
 wavs/robyn_robyn_0403.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0403.pt|Maybe all hair hair looks like that.
 wavs/robyn_robyn_0404.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0404.pt|Hair, cried Greg. What has has hair to do with wool?
-wavs/robyn_robyn_0406.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0406.pt|Greg thought. From sheep, he yelled.
+wavs/robyn_robyn_0405.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0405.pt|Think, said Billy. Where does wool come from?
 wavs/robyn_robyn_0407.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0407.pt|I get it.
 wavs/robyn_robyn_0408.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0408.pt|Wool is sheep hair. So there, said Billy.
-wavs/robyn_robyn_0409.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0409.pt|On Monday Greg came home from school. He had an idea.
-wavs/robyn_robyn_0410.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0410.pt|I am going to look at other hairs, he said to his mother.
 wavs/robyn_robyn_0411.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0411.pt|He pulled hair from his head.
-wavs/robyn_robyn_0412.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0412.pt|Now I will see what it looks like, he said.
 wavs/robyn_robyn_0413.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0413.pt|He made a slide.
-wavs/robyn_robyn_0414.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0414.pt|He looked at his hair.
 wavs/robyn_robyn_0415.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0415.pt|Does it look like wool? asked his mother.
 wavs/robyn_robyn_0416.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0416.pt|Greg looked at his mother.
 wavs/robyn_robyn_0417.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0417.pt|I am not a sheep, he said.
+wavs/robyn_robyn_0418.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0418.pt|But my hair does have scales Greg, said.
 wavs/robyn_robyn_0419.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0419.pt|His mother.
 wavs/robyn_robyn_0420.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0420.pt|I wonder what I a god a dog's hair looks like.
 wavs/robyn_robyn_0421.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0421.pt|Mother, said Greg. You wonder almost as much as I do.
 wavs/robyn_robyn_0422.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0422.pt|Where will I find a dog?
 wavs/robyn_robyn_0423.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0423.pt|Just then the doorbell rang.
 wavs/robyn_robyn_0424.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0424.pt|Greg went to the door.
+wavs/robyn_robyn_0425.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0425.pt|May I come in? Asked Mrs. Broom.
 wavs/robyn_robyn_0426.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0426.pt|Greg looked at her dog.
 wavs/robyn_robyn_0427.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0427.pt|Sure, Mrs. Broom.
 wavs/robyn_robyn_0428.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0428.pt|Come in. Please, said Greg.
@@ -385,19 +402,16 @@ wavs/robyn_robyn_0432.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0433.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0433.pt|Mrs. Broom? Greg one.
 wavs/robyn_robyn_0434.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0434.pt|May we have one of Coco's hair, Mrs. Broom?
 wavs/robyn_robyn_0435.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0435.pt|Greg wants to look at it through the microscope.
-wavs/robyn_robyn_0436.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0436.pt|Well, in that case, said Mrs. Broom.
 wavs/robyn_robyn_0437.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0437.pt|Well in the case that said Mrs. Brow Broom.
 wavs/robyn_robyn_0438.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0438.pt|She looked at the sleeve of her coat.
 wavs/robyn_robyn_0439.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0439.pt|Her.
 wavs/robyn_robyn_0440.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0440.pt|Here are a few few, she said.
 wavs/robyn_robyn_0441.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0441.pt|Greg took the hair.
 wavs/robyn_robyn_0442.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0442.pt|He put them on a slide with water and a cover slip.
-wavs/robyn_robyn_0443.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0443.pt|Greg looked at the slide.
 wavs/robyn_robyn_0444.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0444.pt|Let me see, said his mother.
 wavs/robyn_robyn_0445.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0445.pt|I want to see my dog's hair, said Mrs. Broom.
 wavs/robyn_robyn_0446.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0446.pt|One at a time, said Greg.
 wavs/robyn_robyn_0447.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0447.pt|One at a time.
-wavs/robyn_robyn_0448.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0448.pt|Mrs. Broom looked.
 wavs/robyn_robyn_0449.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0449.pt|His mu.
 wavs/robyn_robyn_0450.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0450.pt|His mother looked.
 wavs/robyn_robyn_0451.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0451.pt|It's hard to believe, said Mrs. Broom.
@@ -410,10 +424,11 @@ wavs/robyn_robyn_0457.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0458.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0458.pt|One day Greg said to his mother, my teacher wants me to bring my microscope to school.
 wavs/robyn_robyn_0459.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0459.pt|Don't.
 wavs/robyn_robyn_0460.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0460.pt|They have one? asked his mother.
+wavs/robyn_robyn_0461.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0461.pt|Not in our class, said Greg.
 wavs/robyn_robyn_0462.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0462.pt|Well, carry it ev it very careful lee, said his mother.
-wavs/robyn_robyn_0463.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0463.pt|Greg took the microscpe to school.
 wavs/robyn_robyn_0464.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0464.pt|When he came home, he said, mother, the teacher showed us how every living thing is made of seals.
 wavs/robyn_robyn_0465.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0465.pt|Seals? said Greg's mother.
+wavs/robyn_robyn_0466.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0466.pt|Yes, said said Greg. Seals are what every living thing is made of.
 wavs/robyn_robyn_0467.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0467.pt|Well, show me, said Greg's mother.
 wavs/robyn_robyn_0468.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0468.pt|Let's get an onion, said Greg.
 wavs/robyn_robyn_0469.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0469.pt|He peeled off the thin clear skin from a piece of onion.
@@ -423,28 +438,26 @@ wavs/robyn_robyn_0472.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0473.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0473.pt|Greg's mother looked.
 wavs/robyn_robyn_0474.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0474.pt|They are like bricks in a wall, she said.
 wavs/robyn_robyn_0475.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0475.pt|I'll show you my seals, said Greg.
-wavs/robyn_robyn_0476.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0476.pt|Don't cut yourself, said his mother.
 wavs/robyn_robyn_0477.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0477.pt|I won't. Just watch.
+wavs/robyn_robyn_0478.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0478.pt|This is Greg's.
 wavs/robyn_robyn_0479.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0479.pt|Greg took a tooth pin.
 wavs/robyn_robyn_0480.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0480.pt|Tooth pin he rubbed.
 wavs/robyn_robyn_0481.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0481.pt|And the end of it on the sa inside of his mouth.
 wavs/robyn_robyn_0482.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0482.pt|Then he rubbed that end an in a drop of water on a slide.
+wavs/robyn_robyn_0483.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0483.pt|He put a cover slip on it.
 wavs/robyn_robyn_0484.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0484.pt|Then he looked through the microscope.
 wavs/robyn_robyn_0485.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0485.pt|Here, Mother, he said.
 wavs/robyn_robyn_0486.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0486.pt|These are my very own seals.
 wavs/robyn_robyn_0487.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0487.pt|His mother looked. That what nice cells, she said.
 wavs/robyn_robyn_0488.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0488.pt|Greg had a new idea.
-wavs/robyn_robyn_0489.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0489.pt|I'm going to look at the leaves in my fish tank, he said.
 wavs/robyn_robyn_0490.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0490.pt|Maybe I will see seals there, too.
-wavs/robyn_robyn_0492.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0492.pt|Green bricks, he called to his mother.
-wavs/robyn_robyn_0493.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0493.pt|Then he moved the slide to see the edge of the leaf.
+wavs/robyn_robyn_0491.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0491.pt|Greg took a leaf from his fish tank and made a slide.
 wavs/robyn_robyn_0494.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0494.pt|Things are moving there.
 wavs/robyn_robyn_0495.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0495.pt|Things are moving here, he cried.
 wavs/robyn_robyn_0496.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0496.pt|Just then Greg's father came home.
 wavs/robyn_robyn_0497.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0497.pt|What's for dinner? he asked. I'm hungry.
 wavs/robyn_robyn_0498.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0498.pt|Greg's mother went to the kitchen dinner.
 wavs/robyn_robyn_0499.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0499.pt|Dinner will will be ready soon he said.
-wavs/robyn_robyn_0500.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0500.pt|she said.
 wavs/robyn_robyn_0501.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0501.pt|See what Greg has under the microscope.
 wavs/robyn_robyn_0502.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0502.pt|Take a look, said Greg.
 wavs/robyn_robyn_0503.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0503.pt|It is the busiest play pl place you ever saw.
@@ -457,9 +470,9 @@ wavs/robyn_robyn_0509.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0510.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0510.pt|This far. His father keep looking.
 wavs/robyn_robyn_0511.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0511.pt|He looked and looked. Greg waited his mother came into the room.
 wavs/robyn_robyn_0512.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0512.pt|Did you see this? asked Greg's father.
-wavs/robyn_robyn_0513.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0513.pt|No, let me see she said.
 wavs/robyn_robyn_0514.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0514.pt|Down to look Greg waited.
 wavs/robyn_robyn_0515.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0515.pt|Then he looked at his father.
+wavs/robyn_robyn_0516.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0516.pt|I told you I needed a microscope, Father, he said.
 wavs/robyn_robyn_0517.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0517.pt|Wilma the witch has a crazy broom.
 wavs/robyn_robyn_0518.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0518.pt|It likes to fly around her room.
 wavs/robyn_robyn_0519.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0519.pt|She also has a fat cat and a pet rat.
@@ -476,23 +489,27 @@ wavs/robyn_robyn_0529.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0530.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0530.pt|So what, said the cat.
 wavs/robyn_robyn_0531.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0531.pt|So get off! said the rat.
 wavs/robyn_robyn_0532.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0532.pt|No I won't, said the cat.
+wavs/robyn_robyn_0533.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0533.pt|When then I will go and get my bat, said the rat.
 wavs/robyn_robyn_0534.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0534.pt|It will get you off the mat.
-wavs/robyn_robyn_0535.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0535.pt|No it won't, said the cat.
 wavs/robyn_robyn_0536.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0536.pt|This is the ma mat of the rat
+wavs/robyn_robyn_0537.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0537.pt|said the bat.
 wavs/robyn_robyn_0538.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0538.pt|So what, said the cat.
-wavs/robyn_robyn_0539.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0539.pt|So get off! said the bat.
 wavs/robyn_robyn_0540.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0540.pt|No I won't, said the cat.
 wavs/robyn_robyn_0541.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0541.pt|Then I will go and get my hat.
 wavs/robyn_robyn_0542.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0542.pt|Said the rat bat.
-wavs/robyn_robyn_0543.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0543.pt|Said the bat.
 wavs/robyn_robyn_0544.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0544.pt|It will get out of the.
 wavs/robyn_robyn_0545.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0545.pt|you get you ow off that ma the mat.
 wavs/robyn_robyn_0546.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0546.pt|No it won't, said the cat.
+wavs/robyn_robyn_0547.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0547.pt|This is the mat of the rat, said the hat.
 wavs/robyn_robyn_0548.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0548.pt|So what, said the cat.
 wavs/robyn_robyn_0549.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0549.pt|So get off! said the sh said the hat.
 wavs/robyn_robyn_0550.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0550.pt|No I won't, said the cat.
 wavs/robyn_robyn_0551.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0551.pt|I am a cat, and I am fat.
+wavs/robyn_robyn_0552.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0552.pt|No rat, no bat, no hat can move me.
+wavs/robyn_robyn_0553.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0553.pt|I shall sit on this mat for as long as I wish.
 wavs/robyn_robyn_0554.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0554.pt|We shall see, said the hat.
+wavs/robyn_robyn_0555.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0555.pt|Look what we have, she said.
+wavs/robyn_robyn_0556.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0556.pt|Look what we have, said the hat.
 wavs/robyn_robyn_0557.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0557.pt|Big deal, a dish, said the cat.
 wavs/robyn_robyn_0558.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0558.pt|A dish and wheat else? asked the hat.
 wavs/robyn_robyn_0559.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0559.pt|Hmmm a fish! said the cat.
@@ -500,11 +517,12 @@ wavs/robyn_robyn_0560.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0561.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0561.pt|For me? asked the cat.
 wavs/robyn_robyn_0562.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0562.pt|Yes, for you, said the hat.
 wavs/robyn_robyn_0563.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0563.pt|Bring it closer, said the cat.
+wavs/robyn_robyn_0564.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0564.pt|Come and get it, said the hat.
 wavs/robyn_robyn_0565.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0565.pt|You think I am stupid, said the cat.
 wavs/robyn_robyn_0566.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0566.pt|You want to get me off the mat.
 wavs/robyn_robyn_0567.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0567.pt|I won't get off, and that is that!
 wavs/robyn_robyn_0568.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0568.pt|Ratatat.
-wavs/robyn_robyn_0570.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0570.pt|I don't know, said the hat.
+wavs/robyn_robyn_0569.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0569.pt|What was that? asked the bat.
 wavs/robyn_robyn_0571.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0571.pt|Ratatat.
 wavs/robyn_robyn_0572.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0572.pt|It sounds like a rat with a tat, said the cat.
 wavs/robyn_robyn_0573.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0573.pt|It's not me, said the bat rat.
@@ -521,13 +539,16 @@ wavs/robyn_robyn_0584.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0585.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0585.pt|which landed on the bat,
 wavs/robyn_robyn_0586.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0586.pt|who landed on the rat,
 wavs/robyn_robyn_0587.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0587.pt|who landed on the cat, lying flat on the mat.
+wavs/robyn_robyn_0588.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0588.pt|Get off! said the cat.
 wavs/robyn_robyn_0589.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0589.pt|No we won't! said the hat and the bat and the ha rat.
-wavs/robyn_robyn_0591.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0591.pt|Wilma came home. She looked at the room. She picked up the broom.
+wavs/robyn_robyn_0590.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0590.pt|The fish said nothing.
 wavs/robyn_robyn_0592.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0592.pt|Then she asked, Why is th fish out of the dish?
+wavs/robyn_robyn_0593.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0593.pt|Because of the cat, said the rat.
 wavs/robyn_robyn_0594.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0594.pt|My dear little brat, said Wilma,
 wavs/robyn_robyn_0595.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0595.pt|what makes you think this is your mat?
 wavs/robyn_robyn_0596.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0596.pt|The fat cat smiled.
 wavs/robyn_robyn_0597.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0597.pt|The fat cat got up and stretched, off.
+wavs/robyn_robyn_0598.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0598.pt|The bat, and the hat. He hate.
 wavs/robyn_robyn_0599.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0599.pt|Ate the fish, licked the dish, and went back to lie down in the vat.
 wavs/robyn_robyn_0600.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0600.pt|Thank goodness! said the mat.
 wavs/robyn_robyn_0601.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0601.pt|The end.
@@ -535,9 +556,11 @@ wavs/robyn_robyn_0602.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0603.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0603.pt|If you give a mouse a cookie, he's going to ask for a glass of milk.
 wavs/robyn_robyn_0604.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0604.pt|When you give him a milk
 wavs/robyn_robyn_0605.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0605.pt|He'll probably ask for a a straw.
-wavs/robyn_robyn_0606.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0606.pt|When he's finished, he'll ask for a napkin.
 wavs/robyn_robyn_0607.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0607.pt|Then he'll want to look in a mirror
+wavs/robyn_robyn_0608.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0608.pt|To make sure he doesn't have a milk mustache.
 wavs/robyn_robyn_0609.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0609.pt|When he looks into the mirror,
+wavs/robyn_robyn_0610.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0610.pt|he might notice his hair needs a trim.
+wavs/robyn_robyn_0611.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0611.pt|So he'll probably ask for a pair of nail scissors.
 wavs/robyn_robyn_0612.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0612.pt|When he's finished giving himself a ss a trim,
 wavs/robyn_robyn_0613.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0613.pt|he'll want a broom to sweep up.
 wavs/robyn_robyn_0614.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0614.pt|He'll start sweeping.
@@ -555,12 +578,9 @@ wavs/robyn_robyn_0625.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0626.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0626.pt|So you'll read to him from one of your books,
 wavs/robyn_robyn_0627.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0627.pt|and he'll ask to see pictures.
 wavs/robyn_robyn_0628.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0628.pt|When he looks at the pictures, he'll get too so excited he'll want to draw one of his own.
-wavs/robyn_robyn_0629.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0629.pt|He'll ask for paper and some crayons.
-wavs/robyn_robyn_0630.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0630.pt|He'll draw a picture.
 wavs/robyn_robyn_0631.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0631.pt|When the picture is finished, he'll want to sigggn his name
-wavs/robyn_robyn_0632.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0632.pt|with a pen.
 wavs/robyn_robyn_0633.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0633.pt|Then he'll want to hang his picture on your refrigerator. Which means he'll need
-wavs/robyn_robyn_0634.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0634.pt|Scotch tape.
+wavs/robyn_robyn_0635.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0635.pt|He'll hang up his drawing and stand back to look at it.
 wavs/robyn_robyn_0636.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0636.pt|Looking at the refrigerator
 wavs/robyn_robyn_0637.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0637.pt|will remind him that
 wavs/robyn_robyn_0638.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0638.pt|he's thirsty. So.
@@ -571,32 +591,36 @@ wavs/robyn_robyn_0642.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0643.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0643.pt|Finished.
 wavs/robyn_robyn_0644.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0644.pt|Isn't it a beautiful day mum, Christy Tate.
 wavs/robyn_robyn_0645.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0645.pt|Christy Tate asked happily.
-wavs/robyn_robyn_0646.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0646.pt|She gasped out of
 wavs/robyn_robyn_0647.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0647.pt|the car.
 wavs/robyn_robyn_0648.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0648.pt|Window at the blue sky and sunshine.
-wavs/robyn_robyn_0649.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0649.pt|Do you think it will stay like this for all of summer vacation?
 wavs/robyn_robyn_0650.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0650.pt|Mrs. m Tate laughed.
 wavs/robyn_robyn_0651.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0651.pt|Well, let's hope so she said.
+wavs/robyn_robyn_0652.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0652.pt|But remember what the weather.
+wavs/robyn_robyn_0653.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0653.pt|Was like on Rain spell Iceland.
 wavs/robyn_robyn_0654.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0654.pt|It was always changing.
 wavs/robyn_robyn_0655.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0655.pt|Christy smiled to herself she and her parents had been to.
+wavs/robyn_robyn_0656.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0656.pt|Rain spell Iceland for vacation.
 wavs/robyn_robyn_0657.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0657.pt|During the last ss school break.
 wavs/robyn_robyn_0658.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0658.pt|Christy had made a new friend.
 wavs/robyn_robyn_0659.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0659.pt|Er Rachel Walker and
 wavs/robyn_robyn_0660.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0660.pt|two girls know
 wavs/robyn_robyn_0661.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0661.pt|now share
+wavs/robyn_robyn_0662.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0662.pt|a
 wavs/robyn_robyn_0663.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0663.pt|A very special secret.
-wavs/robyn_robyn_0665.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0665.pt|And banished them from fairy land.
+wavs/robyn_robyn_0664.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0664.pt|They were friends with the fairies.
 wavs/robyn_robyn_0666.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0666.pt|Rachel and Christy had helped the fairy sisters get back home.
 wavs/robyn_robyn_0667.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0667.pt|Could Rachel come and stay with us for a little while mum?
 wavs/robyn_robyn_0668.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0668.pt|Please?
 wavs/robyn_robyn_0669.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0669.pt|Christy asked as they.
 wavs/robyn_robyn_0670.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0670.pt|As they pulled up outside their house.
+wavs/robyn_robyn_0671.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0671.pt|The Tates lived in Weatherbury.
 wavs/robyn_robyn_0672.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0672.pt|A pretty village in the middle of the cur.
 wavs/robyn_robyn_0673.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0673.pt|Countryside.
 wavs/robyn_robyn_0674.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0674.pt|Christy smiled to herself.
 wavs/robyn_robyn_0675.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0675.pt|She and her parents had been to rain spell Iceland for vacation during the last school break.
 wavs/robyn_robyn_0676.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0676.pt|Christy had made a new friend there.
 wavs/robyn_robyn_0677.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0677.pt|Rachel walker and the two girls no now shared a very special secret.
+wavs/robyn_robyn_0678.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0678.pt|They were friends with the fairies.
 wavs/robyn_robyn_0679.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0679.pt|When evil jack frost had put a spell on the seven rainbow fairies.
 wavs/robyn_robyn_0680.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0680.pt|And banished them from fairy land.
 wavs/robyn_robyn_0681.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0681.pt|Rachel and Christy had helped the fairies sisters get back home.
@@ -611,15 +635,14 @@ wavs/robyn_robyn_0689.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0690.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0690.pt|To the left of the house was an old wooden barn.
 wavs/robyn_robyn_0691.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0691.pt|Mrs. tate Mr. tate was standing at the top of a ladder next to the barn holding a hammer.
 wavs/robyn_robyn_0692.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0692.pt|I'm just repairing the barn roof.
-wavs/robyn_robyn_0693.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0693.pt|He explained it's been licky.
 wavs/robyn_robyn_0694.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0694.pt|Oh dear said Mrs. Tate, opening the car truck.
 wavs/robyn_robyn_0695.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0695.pt|She handed two sh shopping bags to Christy.
+wavs/robyn_robyn_0696.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0696.pt|We really.
 wavs/robyn_robyn_0697.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0697.pt|We.
 wavs/robyn_robyn_0698.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0698.pt|Really have to do something about that barn it's falling down I like it.
+wavs/robyn_robyn_0699.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0699.pt|Christy repleted suddenly she jumped something.
 wavs/robyn_robyn_0700.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0700.pt|Sudden.
-wavs/robyn_robyn_0701.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0701.pt|Suddenly she jumped.
 wavs/robyn_robyn_0703.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0703.pt|Oh no she exclaimed.
-wavs/robyn_robyn_0704.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0704.pt|I think it's star it's raining then she started as the white flakes that had landed on her pink shirt.
 wavs/robyn_robyn_0705.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0705.pt|It's not raining she gasped it's snow.
 wavs/robyn_robyn_0706.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0706.pt|Snow? Mrs. Tate looked shocked.
 wavs/robyn_robyn_0707.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0707.pt|A in summer? It can't be!
@@ -632,7 +655,6 @@ wavs/robyn_robyn_0713.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0715.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0715.pt|Froning.
 wavs/robyn_robyn_0716.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0716.pt|I wonder how long it will last.
 wavs/robyn_robyn_0717.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0717.pt|Christy granced out of the kitchen window.
-wavs/robyn_robyn_0718.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0718.pt|Mum dad! The snow stopped already, she cried.
 wavs/robyn_robyn_0719.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0719.pt|Mr. and Mrs. Tate joined Christy at the window.
 wavs/robyn_robyn_0720.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0720.pt|The sun was shining and the sky was blue.
 wavs/robyn_robyn_0721.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0721.pt|A few puddles of water, were all that, that remind of the su sudden snowstorm
@@ -644,22 +666,19 @@ wavs/robyn_robyn_0726.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0727.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0727.pt|But why?
 wavs/robyn_robyn_0728.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0728.pt|She and Rachel had found, of the all of the rainbow fairies.
 wavs/robyn_robyn_0729.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0729.pt|And jack frost had promised not to harm them again
-wavs/robyn_robyn_0730.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0730.pt|everything was fine in fairy land, now was
 wavs/robyn_robyn_0731.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0731.pt|now
 wavs/robyn_robyn_0732.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0732.pt|wasn't it?
 wavs/robyn_robyn_0733.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0733.pt|Now, wasn't it?
 wavs/robyn_robyn_0734.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0734.pt|You'd better go and change out of that wet shirt Christy said.
 wavs/robyn_robyn_0735.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0735.pt|Her mum.
-wavs/robyn_robyn_0736.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0736.pt|Christy turned away from the window.
+wavs/robyn_robyn_0737.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0737.pt|As she did.
 wavs/robyn_robyn_0738.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0738.pt|As she did, she spotted something on the kitchen table.
 wavs/robyn_robyn_0739.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0739.pt|It was a rusty old metal with weather vane in the shape of a rooster
 wavs/robyn_robyn_0740.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0740.pt|What's that he asked she asked.
 wavs/robyn_robyn_0741.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0741.pt|I found it in the park this morning
 wavs/robyn_robyn_0742.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0742.pt|Her father.
 wavs/robyn_robyn_0743.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0743.pt|Said it will look great on top of the barn, once I'm done fixing the roof.
-wavs/robyn_robyn_0744.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0744.pt|Christy reached a hand toward the weather vane.
 wavs/robyn_robyn_0745.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0745.pt|As she did the m, metal glowed and glittered sparkle ss and danced toward her fingers.
-wavs/robyn_robyn_0746.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0746.pt|Christy blinked in surprise.
 wavs/robyn_robyn_0747.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0747.pt|When she looked again, the sparkles had vanished.
 wavs/robyn_robyn_0748.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0748.pt|All she could see was rusty metal.
 wavs/robyn_robyn_0749.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0749.pt|Confused Christy ran upstairs.
@@ -668,12 +687,15 @@ wavs/robyn_robyn_0751.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0752.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0752.pt|Had she imagined the sparkles?
 wavs/robyn_robyn_0753.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0753.pt|Maybe.
 wavs/robyn_robyn_0754.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0754.pt|Sh then the snow was real though, she was sure of that.
+wavs/robyn_robyn_0755.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0755.pt|I'll call rachel after lunch she though, maybe she's been noticing.
+wavs/robyn_robyn_0756.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0756.pt|Strange things too, Christy hurried into her bedroom.
 wavs/robyn_robyn_0757.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0757.pt|There on a shelf above her bed was the snow globe.
 wavs/robyn_robyn_0758.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0758.pt|The fairies has given her.
 wavs/robyn_robyn_0759.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0759.pt|It was a very special thank you gift for helping the fairies.
 wavs/robyn_robyn_0760.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0760.pt|Rachel had one too.
 wavs/robyn_robyn_0761.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0761.pt|It was filled with glittering fairy dust, in all the colours of the rainbow.
 wavs/robyn_robyn_0762.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0762.pt|When sh the snow globe was shaken up the dust swirl and sparkle inside.
+wavs/robyn_robyn_0763.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0763.pt|Once there was a farmer who lived in Mexico.
 wavs/robyn_robyn_0764.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0764.pt|He lived in a little village, in a house which had only one room.
 wavs/robyn_robyn_0765.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0765.pt|The farmer was not happy.
 wavs/robyn_robyn_0766.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0766.pt|Nothing ever happens, he said.
@@ -682,7 +704,6 @@ wavs/robyn_robyn_0768.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0769.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0769.pt|We have a school, and a market, and a church with an old bell that rings on Sundays.
 wavs/robyn_robyn_0770.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0770.pt|Our village is the best there is.
 wavs/robyn_robyn_0771.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0771.pt|But nothing ever happens, said the farmer.
-wavs/robyn_robyn_0772.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0772.pt|Every morning, when the farmer woke up, the first thing he saw was the roof of his little house.
 wavs/robyn_robyn_0773.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0773.pt|Every morning for breakfast he ate two flat cakes of ground corn.
 wavs/robyn_robyn_0774.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0774.pt|His wife had made them the night before.
 wavs/robyn_robyn_0775.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0775.pt|He put honey over the cakes, and drank cinnamon tea fro from a clay mug.
@@ -695,13 +716,11 @@ wavs/robyn_robyn_0782.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0783.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0783.pt|Nothing will.
 wavs/robyn_robyn_0784.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0784.pt|The farmer led his oaks away and did not look back.
 wavs/robyn_robyn_0785.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0785.pt|At night the farmer returned.
-wavs/robyn_robyn_0786.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0786.pt|He fed his ox.
 wavs/robyn_robyn_0787.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0787.pt|Then he sat down by the fire.
 wavs/robyn_robyn_0788.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0788.pt|Pablo played with five smooth stones.
 wavs/robyn_robyn_0789.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0789.pt|He threw the stones at a hole he had dug in the earth.
 wavs/robyn_robyn_0790.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0790.pt|See, Papa! said Pablo. I got one one in!
 wavs/robyn_robyn_0791.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0791.pt|But the farmer was tired. He did not answer.
-wavs/robyn_robyn_0792.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0792.pt|Every day was the same.
 wavs/robyn_robyn_0793.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0793.pt|One morning the farmer wore.
 wavs/robyn_robyn_0794.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0794.pt|One morning the farmer w worked woke up very early. He pulled on his woolen shirt.
 wavs/robyn_robyn_0795.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0795.pt|He took his big hat from a peg on the wall.
@@ -710,12 +729,11 @@ wavs/robyn_robyn_0797.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0798.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0798.pt|Soon it will be time to plant the corn.
 wavs/robyn_robyn_0799.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0799.pt|All morning the farmer worked in his field.
 wavs/robyn_robyn_0800.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0800.pt|The ox t helped him.
-wavs/robyn_robyn_0801.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0801.pt|When there was a big rock in the way, the ox stopped and lay down.
-wavs/robyn_robyn_0802.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0802.pt|The farmer pushed the rock away.
-wavs/robyn_robyn_0803.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0803.pt|Said the farmer.
 wavs/robyn_robyn_0804.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0804.pt|The ox k looked at the farmer.
+wavs/robyn_robyn_0805.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0805.pt|Then the ox got up and pulled again.
 wavs/robyn_robyn_0806.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0806.pt|Late in the morning, when the su sun was high Pablo came to the field.
 wavs/robyn_robyn_0807.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0807.pt|Pablo said Pablo said the farmer. Why are you not in school?
+wavs/robyn_robyn_0808.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0808.pt|There is no school today said today Papa, said Pablo.
 wavs/robyn_robyn_0809.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0809.pt|To help you plow.
 wavs/robyn_robyn_0810.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0810.pt|The farmer smiled.
 wavs/robyn_robyn_0811.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0811.pt|He reached into his pocket, and gay and gave the boy a small wooden toy.
@@ -727,8 +745,6 @@ wavs/robyn_robyn_0816.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0817.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0817.pt|The farmer and his son pushed and and the ox pulled.
 wavs/robyn_robyn_0818.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0818.pt|But the plow his plow did not move.
 wavs/robyn_robyn_0819.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0819.pt|It sank into the earl earth.
-wavs/robyn_robyn_0820.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0820.pt|It went down, down down, into a little hole.
-wavs/robyn_robyn_0821.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0821.pt|The little hole became a bigger hole.
 wavs/robyn_robyn_0822.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0822.pt|There was a noise deep under the ground.
 wavs/robyn_robyn_0823.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0823.pt|As if something big
 wavs/robyn_robyn_0824.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0824.pt|had growled farmer.
@@ -744,19 +760,21 @@ wavs/robyn_robyn_0833.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0834.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0834.pt|He ran inside the church and ra rang the old bell.
 wavs/robyn_robyn_0835.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0835.pt|The other farmer.
 wavs/robyn_robyn_0836.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0836.pt|The other farmers came from their fields.
+wavs/robyn_robyn_0837.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0837.pt|People came out of their houses.
+wavs/robyn_robyn_0838.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0838.pt|Look! said the farmer.
 wavs/robyn_robyn_0839.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0839.pt|Look there!
 wavs/robyn_robyn_0840.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0840.pt|That night no one slept.
 wavs/robyn_robyn_0841.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0841.pt|Everyone watched the fire in the sky.
 wavs/robyn_robyn_0842.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0842.pt|It came from.
 wavs/robyn_robyn_0843.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0843.pt|From where the farmer's field had been.
 wavs/robyn_robyn_0844.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0844.pt|There was a loud boom, and another.
+wavs/robyn_robyn_0845.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0845.pt|And another. Hot lava came out of the earth. Steaming lava spread.
 wavs/robyn_robyn_0846.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0846.pt|Over the ground.
 wavs/robyn_robyn_0847.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0847.pt|Through the trees it came toward the farmer's house.
 wavs/robyn_robyn_0848.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0848.pt|It came toward the village pieces of the burning burning stone flew in the air.
 wavs/robyn_robyn_0849.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0849.pt|The earth was
 wavs/robyn_robyn_0850.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0850.pt|The earth was coughing. Every time in.
 wavs/robyn_robyn_0851.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0851.pt|A, a time it coughed.
-wavs/robyn_robyn_0852.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0852.pt|The fire grew bigger.
 wavs/robyn_robyn_0853.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0853.pt|In a few days the hill was a big as a mountain and every few minutes, there was a loud boom.
 wavs/robyn_robyn_0854.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0854.pt|Squirrels and rabbits ran.
 wavs/robyn_robyn_0855.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0855.pt|ran and birds flew away from the fire.
@@ -767,54 +785,57 @@ wavs/robyn_robyn_0859.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0860.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0860.pt|put wet clothes over their noses
 wavs/robyn_robyn_0861.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0861.pt|to keep out the smoke.
 wavs/robyn_robyn_0862.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0862.pt|Some of the people went close to steaming lava.
+wavs/robyn_robyn_0863.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0863.pt|They carried big crosses.
 wavs/robyn_robyn_0864.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0864.pt|They prayed for the fire to stop.
 wavs/robyn_robyn_0865.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0865.pt|Of a hill.
 wavs/robyn_robyn_0866.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0866.pt|When the booming stopped and the fire fires grew smaller, the farmer's house was gone.
 wavs/robyn_robyn_0867.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0867.pt|The school was gone the market was gone.
 wavs/robyn_robyn_0868.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0868.pt|Half of half the village was gone.
-wavs/robyn_robyn_0869.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0869.pt|One day some one.
-wavs/robyn_robyn_0870.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0870.pt|In uniform came in cars and trucks.
+wavs/robyn_robyn_0871.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0871.pt|So you are the one with the plow that opened up the earth, they said to the farmer.
 wavs/robyn_robyn_0872.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0872.pt|They laughed. You are lucky to be alive amigo.
-wavs/robyn_robyn_0874.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0874.pt|Everyone must go! the the capitan said.
+wavs/robyn_robyn_0873.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0873.pt|The soldiers
 wavs/robyn_robyn_0875.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0875.pt|It is not safe to live here
 wavs/robyn_robyn_0876.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0876.pt|The farmer and his wife and Pablo and all the people of the village went with the soldiers.
 wavs/robyn_robyn_0877.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0877.pt|They rode away in trucks.
+wavs/robyn_robyn_0878.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0878.pt|The farmer
 wavs/robyn_robyn_0879.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0879.pt|round a new house.
 wavs/robyn_robyn_0880.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0880.pt|It was bigger than the one they lived in before.
 wavs/robyn_robyn_0881.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0881.pt|It was not the far from the old one. But it was far enough away to be the safe from El Monstruo.
 wavs/robyn_robyn_0882.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0882.pt|which means The Monster.
-wavs/robyn_robyn_0883.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0883.pt|That is the name the people gave
 wavs/robyn_robyn_0884.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0884.pt|to the great volcano.
 wavs/robyn_robyn_0885.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0885.pt|The people made a new village.
+wavs/robyn_robyn_0886.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0886.pt|They made a new school and a new market.
 wavs/robyn_robyn_0887.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0887.pt|They had great fiesta because now they were safe.
 wavs/robyn_robyn_0888.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0888.pt|At the fiesta the band played, and the people danced and clapped their hands.
 wavs/robyn_robyn_0889.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0889.pt|People from the city came in a bus to see El Monstruo.
 wavs/robyn_robyn_0891.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0891.pt|Now the farmer had a new field.
 wavs/robyn_robyn_0892.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0892.pt|Every morning.
-wavs/robyn_robyn_0893.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0893.pt|Every morning he woke up early. It was still dark, and El Monstruo glowed in the sky. Every morning for breakfast he ate two flat cakes of ground corn.
-wavs/robyn_robyn_0895.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0895.pt|Farmer went to his new field his ox went with him, just a bi as before.
+wavs/robyn_robyn_0893_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0893_1.pt|Every morning he woke up early. It was still dark, and El Monstruo glowed in the sky.
+wavs/robyn_robyn_0893_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0893_2.pt|Every morning for breakfast he ate two flat cakes of ground corn.
+wavs/robyn_robyn_0894.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0894.pt|His wife had made them the night before.
 wavs/robyn_robyn_0896.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0896.pt|Sometimes Pablo brought the children of the village to see the farmer.
 wavs/robyn_robyn_0897.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0897.pt|From the field they could see the volcano smoking, like an old man smoking the his pipe.
+wavs/robyn_robyn_0898.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0898.pt|Can you make another hill hill of fire the children said?
 wavs/robyn_robyn_0899.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0899.pt|No, my friends, no no said the farmer.
 wavs/robyn_robyn_0900.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0900.pt|He laughed. One hill of fire is enough for me.
 wavs/robyn_robyn_0901.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0901.pt|The end.
 wavs/robyn_robyn_0902.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0902.pt|Once upon a time, there was a yellow cat with black spots in his fur.
 wavs/robyn_robyn_0903.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0903.pt|His name was Pickles.
 wavs/robyn_robyn_0904.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0904.pt|Pickles was a young cat.
+wavs/robyn_robyn_0905.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0905.pt|His paws were big and he wished to do big things with them.
 wavs/robyn_robyn_0906.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0906.pt|But where could Pickles find anything big to do?
-wavs/robyn_robyn_0907.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0907.pt|Pickles lived in a barrel. In a barrel.
 wavs/robyn_robyn_0908.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0908.pt|The barrel was all that he had for a home.
 wavs/robyn_robyn_0909.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0909.pt|Pickles' barrel was in an old yard where there was nothing big to do.
 wavs/robyn_robyn_0910.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0910.pt|So what did Pickle do?
+wavs/robyn_robyn_0911.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0911.pt|He ran after little cats.
 wavs/robyn_robyn_0912.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0912.pt|He ran after every little cat that came into the yard and he chased and he chased the little cat out of the yard.
 wavs/robyn_robyn_0913.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0913.pt|Yard.
 wavs/robyn_robyn_0914.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0914.pt|This was a bad, bad thing.
 wavs/robyn_robyn_0915.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0915.pt|This was a bad, bad thing, but it was all that Pickles could find to do.
+wavs/robyn_robyn_0916.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0916.pt|Next to Pickles' yard was a house in.
 wavs/robyn_robyn_0917.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0917.pt|In the house lived many cats who called out to Pickles, You are bad.
 wavs/robyn_robyn_0918.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0918.pt|You cannot be our friend.
 wavs/robyn_robyn_0919.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0919.pt|But Pickles did have a friend in the house.
-wavs/robyn_robyn_0920.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0920.pt|His friend was Mrs. Goodkind.
-wavs/robyn_robyn_0921.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0921.pt|Every day Mrs. Goodkind came into the yard and gave Pickles something to eat.
 wavs/robyn_robyn_0922.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0922.pt|One day Mrs. Goodkind said Pickles, you are not a bad cat. You are not a good cat. You are.
 wavs/robyn_robyn_0923.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0923.pt|Good and bad. And bad and good.
 wavs/robyn_robyn_0924.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0924.pt|You are a mixed-up cat.
@@ -823,14 +844,15 @@ wavs/robyn_robyn_0926.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0927.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0927.pt|She took him into her home to live.
 wavs/robyn_robyn_0928.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0928.pt|In Mrs. Goodkind's home there was a pretty chair for Pickles to sit on.
 wavs/robyn_robyn_0929.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0929.pt|There were toys for him to play with.
-wavs/robyn_robyn_0930.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0930.pt|But Pickles did not want to sit on a pretty chair. He did not want to play with toys. He So he ran back to his barrel in the yard. And he began to chase the little cat.
+wavs/robyn_robyn_0930_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0930_1.pt|But Pickles did not want to sit on a pretty chair. He did not want to play with toys. He So he ran back to his barrel in the yard.
+wavs/robyn_robyn_0930_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0930_2.pt|And he began to chase the little cat.
 wavs/robyn_robyn_0931.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0931.pt|He began to chase the little cats again.
-wavs/robyn_robyn_0932.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0932.pt|Mrs. Goodkind said to Pickles, things cannot go on like this. Something will happen.
 wavs/robyn_robyn_0933.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0933.pt|The next day Pickles chased a little cat up an an up an old tree. He climbed after her.
 wavs/robyn_robyn_0934.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0934.pt|Pickles sat up in the tree near the little cat.
 wavs/robyn_robyn_0935.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0935.pt|He would not let her climb down.
 wavs/robyn_robyn_0936.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0936.pt|After a time, the wind.
 wavs/robyn_robyn_0937.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0937.pt|After a time, the wind began to blow.
+wavs/robyn_robyn_0938.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0938.pt|It blew and blew and blew.
 wavs/robyn_robyn_0939.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0939.pt|And the rain came down.
 wavs/robyn_robyn_0940.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0940.pt|Harder and harder and harder. It came down har.
 wavs/robyn_robyn_0941.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0941.pt|At last Pickles let the little cat climb down and go home.
@@ -838,30 +860,27 @@ wavs/robyn_robyn_0942.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0943.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0943.pt|He wanted to get back into his barrel.
 wavs/robyn_robyn_0944.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0944.pt|But he could not climb down.
 wavs/robyn_robyn_0945.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0945.pt|Sometimes this happens to a cat. And it happened to Pickles.
-wavs/robyn_robyn_0946.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0946.pt|Mrs. Goodkind Goodkind ran to the tree.
 wavs/robyn_robyn_0947.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0947.pt|Pickles! she called. Please try to climb down.
 wavs/robyn_robyn_0948.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0948.pt|But Pickles could not climb down.
-wavs/robyn_robyn_0949.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0949.pt|Mrs. Goodkind ran into her house. Pickles could not see her by the window.
+wavs/robyn_robyn_0950.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0950.pt|She was taking on the telephone.
 wavs/robyn_robyn_0951.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0951.pt|Then she called out to Pickles, the firemen are coming!
 wavs/robyn_robyn_0953.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0953.pt|and stopped at Pickles' yard.
-wavs/robyn_robyn_0954.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0954.pt|Three firemen jumped down from the truck.
+wavs/robyn_robyn_0955.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0955.pt|Mrs. Goodkind, Mrs. Goodkind came out of her house.
 wavs/robyn_robyn_0956.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0956.pt|She ran to the firemen.
+wavs/robyn_robyn_0957.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0957.pt|She point to Pickles.
 wavs/robyn_robyn_0958.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0958.pt|The firemen put a ladder against the tree.
 wavs/robyn_robyn_0959.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0959.pt|One of the firemen began to climb up the ladder.
 wavs/robyn_robyn_0960.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0960.pt|The fireman climbed to the top of the ladder.
 wavs/robyn_robyn_0961.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0961.pt|Come cat, he said he.
-wavs/robyn_robyn_0962.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0962.pt|Come cat, he said to Pickles. Let me help you.
 wavs/robyn_robyn_0963.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0963.pt|The fireman picked up Pickles and took him into his coat.
 wavs/robyn_robyn_0964.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0964.pt|Then he took Pickles down the ladder, down mi to Mrs. Goodkind.
 wavs/robyn_robyn_0965.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0965.pt|Mrs. Goodkind, said the fireman, is this your cat?
 wavs/robyn_robyn_0966.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0966.pt|No, Joe, said Mrs. Goodkind. Pickles has no home, and he does not want to live with me.
 wavs/robyn_robyn_0967.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0967.pt|Why? Asked Joe.
-wavs/robyn_robyn_0968.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0968.pt|Mrs. Goodkind answered, My home is too little for Pickles.
+wavs/robyn_robyn_0969.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0969.pt|Pickles is a cat who wishes to do big things. And someday he will do them.
 wavs/robyn_robyn_0970.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0970.pt|Look at his big paws.
 wavs/robyn_robyn_0971.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0971.pt|Pickles put out a paw for Joe to see.
-wavs/robyn_robyn_0972.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0972.pt|My goodness, Pickles, said Joe.
 wavs/robyn_robyn_0973.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0973.pt|What big paws you have!
-wavs/robyn_robyn_0974.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0974.pt|Pickles looked at Joe.
 wavs/robyn_robyn_0975.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0975.pt|and said the one word he could say:
 wavs/robyn_robyn_0976.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0976.pt|And Joe could see that Pickles want something very much.
 wavs/robyn_robyn_0977.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0977.pt|Joe gave Pickles a pat.
@@ -873,16 +892,17 @@ wavs/robyn_robyn_0982.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_0983.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0983.pt|He is the one a who chases little cats.
 wavs/robyn_robyn_0984.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0984.pt|How do you know? asked Joe.
 wavs/robyn_robyn_0985.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0985.pt|The Chief answered, A Fire Chief knows many things.
-wavs/robyn_robyn_0986.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0986.pt|Just then the telephone began to ring.
+wavs/robyn_robyn_0987.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0987.pt|Hello, said the Chief. Oh, hello Mrs. Goodkind. Yes, Pickles is here, he came with Joe.
+wavs/robyn_robyn_0988.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0988.pt|What did you say? You think Pickles would like to live in our firehouse?
 wavs/robyn_robyn_0989.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0989.pt|Well, we shall see. Thank you, Mrs. Goodkind. Good-bye.
 wavs/robyn_robyn_0990.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0990.pt|The Chief looked at Pickles and said, Mrs. Goodkind says you are not a bad cat. And Joe likes you.
 wavs/robyn_robyn_0991.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0991.pt|I will let you live here if you will learn to be a good firehouse cat.
 wavs/robyn_robyn_0992.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0992.pt|Pickles wa Pickles walked quietly up the stairs after Joe.
 wavs/robyn_robyn_0993.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0993.pt|Joe and Pickles went into a room where the firemen lived.
+wavs/robyn_robyn_0994.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0994.pt|The men were pleased to have a cat.
 wavs/robyn_robyn_0995.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0995.pt|They wanted to play with Pickles.
 wavs/robyn_robyn_0996.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0996.pt|But suddenly the fire bell rang. All the firemen ran to the big a big pole and down they wa went.
 wavs/robyn_robyn_0997.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0997.pt|The pole was the fast way to get to their trucks.
-wavs/robyn_robyn_0998.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0998.pt|Pickles could hear the trucks start up and rush off the fire.
 wavs/robyn_robyn_0999.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_0999.pt|Pickles said to himself, I must learn to do what the firemen do.
 wavs/robyn_robyn_1000.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1000.pt|I must learn to slide down the pole.
 wavs/robyn_robyn_1001.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1001.pt|He jumped and put his paws around the pole.
@@ -891,6 +911,7 @@ wavs/robyn_robyn_1003.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1004.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1004.pt|Up the stairs he ran.
 wavs/robyn_robyn_1005.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1005.pt|Down the pole he came and bumped, he tried again.
 wavs/robyn_robyn_1006.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1006.pt|And bumped.
+wavs/robyn_robyn_1007.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1007.pt|But by the time the firemen came back from the fire, Pickles could slide down the fff pole.
 wavs/robyn_robyn_1008.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1008.pt|What a wonderful cat you are! said the firemen.
 wavs/robyn_robyn_1009.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1009.pt|The Chief did not say anything.
 wavs/robyn_robyn_1010.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1010.pt|Pickles said to himself, I must keep on learning everything I can.
@@ -898,6 +919,7 @@ wavs/robyn_robyn_1011.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1012.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1012.pt|And he learned to sit up straight to on the seat while the truck raced to a fire.
 wavs/robyn_robyn_1013.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1013.pt|What a wonderful cat you are said the firemen.
 wavs/robyn_robyn_1014.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1014.pt|The Chief did not say anything.
+wavs/robyn_robyn_1015.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1015.pt|Pickles said to himself now I must learn to help the firemen with their work.
 wavs/robyn_robyn_1016.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1016.pt|At the next fire, he jumped down from the truck.
 wavs/robyn_robyn_1017.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1017.pt|He ran to a big ha.
 wavs/robyn_robyn_1018.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1018.pt|Whose.
@@ -905,15 +927,14 @@ wavs/robyn_robyn_1019.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1020.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1020.pt|shoot the water at the flames.
 wavs/robyn_robyn_1021.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1021.pt|He ran to a big whose, put his paws around it, and tried to help a fireman
 wavs/robyn_robyn_1022.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1022.pt|shoot the water at the flames.
-wavs/robyn_robyn_1023.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1023.pt|What a wonderful cat you are! said the firemen.
 wavs/robyn_robyn_1024.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1024.pt|The Chief did not say anything.
 wavs/robyn_robyn_1025.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1025.pt|The Chief called all the firemen to his desk.
-wavs/robyn_robyn_1026.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1026.pt|Then he called for Pickles.
 wavs/robyn_robyn_1027.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1027.pt|Pickles did not know what was going to happen.
 wavs/robyn_robyn_1028.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1028.pt|He said to himself, Maybe the Chief does not like the way I work.
 wavs/robyn_robyn_1029.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1029.pt|Maybe he wants to send me back to my old yard.
 wavs/robyn_robyn_1030.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1030.pt|But Pickles went to the Chief.
 wavs/robyn_robyn_1031.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1031.pt|At the Chief's desk stood all the firemen - and Mrs. Goodkind!
+wavs/robyn_robyn_1032.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1032.pt|The Chief said to Pickles, I have asked Mrs. Goodkind to come because she was your first friend.
 wavs/robyn_robyn_1033.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1033.pt|Pickles jumped up on my desk.
 wavs/robyn_robyn_1034.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1034.pt|I have something to say to you, Pickles jump
 wavs/robyn_robyn_1035.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1035.pt|To you pickles jump on the desk and looked at the Chief. Out of the desk the Chief took
@@ -925,16 +946,13 @@ wavs/robyn_robyn_1040.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1041.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1041.pt|And with these words, the Chief put the little a hat on Pickles' head.
 wavs/robyn_robyn_1042.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1042.pt|The Old Tree.
 wavs/robyn_robyn_1043.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1043.pt|Pickles made friends, with all the firemen. But the he did not make friends with any cats. When
-wavs/robyn_robyn_1044.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1044.pt|When cats came to the firehouse to look at the trucks, people, Pickles chased them away.
 wavs/robyn_robyn_1045.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1045.pt|The Chief called Pickles Pickles to him and said A Fire Cat must be kind to everyone.
 wavs/robyn_robyn_1046.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1046.pt|You must be good to other cats.
 wavs/robyn_robyn_1047.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1047.pt|Little by little, Pickles learned to be good to the cats he met me he met.
-wavs/robyn_robyn_1048.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1048.pt|He, to be good to the cats he met.
 wavs/robyn_robyn_1049.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1049.pt|He made friends with then them too.
 wavs/robyn_robyn_1050.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1050.pt|Then all the cats loved to come to the firehouse.
 wavs/robyn_robyn_1051.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1051.pt|On rainy days, on rainy days, most cats stayed at home, and Pickles sat upstairs with the firemen.
 wavs/robyn_robyn_1052.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1052.pt|One rainy day, as he sat there, he thought to himself How bad I was.
-wavs/robyn_robyn_1053.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1053.pt|One cold morning, Dragon went out to find the perfect Christmas tree.
 wavs/robyn_robyn_1054.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1054.pt|He walked through the crunchy snow.
 wavs/robyn_robyn_1055.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1055.pt|He saw all sorts of trees.
 wavs/robyn_robyn_1056.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1056.pt|Crude ones, and straight ones.
@@ -945,7 +963,6 @@ wavs/robyn_robyn_1060.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1061.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1061.pt|Dragon looked down and ss saw the tree's beautiful
 wavs/robyn_robyn_1062.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1062.pt|brown trunk.
 wavs/robyn_robyn_1063.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1063.pt|It stood firm and strong in the frozen earth.
-wavs/robyn_robyn_1064.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1064.pt|He looked up and saw its beautiful green branches.
 wavs/robyn_robyn_1065.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1065.pt|They waved back and forth in the cold December, wind.
 wavs/robyn_robyn_1066.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1066.pt|Dragon could not cut down ss such a lovely tree.
 wavs/robyn_robyn_1067.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1067.pt|Instead he came back with colored lights, silver bell and everything he needed to make his tree even more beautiful.
@@ -958,7 +975,6 @@ wavs/robyn_robyn_1073.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1074.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1074.pt|When Dragon hung his candy reth one on the wall, the, one of the pieces of chocolate fell off.
 wavs/robyn_robyn_1075.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1075.pt|Dragon picked it up and ate it.
 wavs/robyn_robyn_1076.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1076.pt|It was very good.
-wavs/robyn_robyn_1077.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1077.pt|Dragon did not want his reth to look bare, so he promised not to eat any more candy.
 wavs/robyn_robyn_1078.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1078.pt|I will eat only the pieces that fall off,
 wavs/robyn_robyn_1079.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1079.pt|ss he said.
 wavs/robyn_robyn_1080.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1080.pt|Dragon bumped his elbow against the wall
@@ -967,12 +983,11 @@ wavs/robyn_robyn_1082.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1083.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1083.pt|up at his candy reth.
 wavs/robyn_robyn_1084.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1084.pt|He tried not to think about the smooth, rich, sweet creamy, dark chocolate candy.
 wavs/robyn_robyn_1085.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1085.pt|Dragon could not sit still.
-wavs/robyn_robyn_1086.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1086.pt|He began to drool.
 wavs/robyn_robyn_1087.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1087.pt|Suddenly, Dragon could not stop himself.
-wavs/robyn_robyn_1090.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1090.pt|Dragon got a tummy ache from eating so much chocolate.
+wavs/robyn_robyn_1088.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1088.pt|He shook the candy reth and back and forth.
+wavs/robyn_robyn_1089.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1089.pt|And then jumped up and down on it until every last piece of candy had fallen off.
 wavs/robyn_robyn_1091.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1091.pt|Next year, said Dragon, I will make my reth out of pin pine cones.
 wavs/robyn_robyn_1092.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1092.pt|Dragon was always losing his mittens.
-wavs/robyn_robyn_1093.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1093.pt|No matter how hard he tried, he could never keep track of them.
 wavs/robyn_robyn_1094.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1094.pt|Whenever he needed them most, they were nowhere to be found.
 wavs/robyn_robyn_1095.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1095.pt|So Dragon went and bought out and bought a pair of clip on mittens.
 wavs/robyn_robyn_1096.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1096.pt|He clipped them to his coat sleeves, he he c would never lose his mittens again.
@@ -981,6 +996,7 @@ wavs/robyn_robyn_1098.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1099.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1099.pt|Every year he saved his money, and every Christmas he bought wonderful presents for himself.
 wavs/robyn_robyn_1100.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1100.pt|Dragon made a list of things he would buy.
 wavs/robyn_robyn_1101.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1101.pt|Lots of food, a new coat, a big birdhouse.
+wavs/robyn_robyn_1102.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1102.pt|Then dragon wrapped himself up in a warm quilt and heeded off to the store.
 wavs/robyn_robyn_1103.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1103.pt|Then Dragon finished his Christmas shopping
 wavs/robyn_robyn_1104.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1104.pt|the store clerk loaded everything into a big sack.
 wavs/robyn_robyn_1105.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1105.pt|On his way home, Dragon passed some raccoons singing in the street.
@@ -994,14 +1010,11 @@ wavs/robyn_robyn_1112.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1113.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1113.pt|She looked very cold.
 wavs/robyn_robyn_1114.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1114.pt|Dragon reached into his sack and took out his new wool overcoat.
 wavs/robyn_robyn_1115.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1115.pt|Merry Christmas, said Dragon.
-wavs/robyn_robyn_1116.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1116.pt|Finally, Dragon saw two little birds si sitting on a branch.
 wavs/robyn_robyn_1117.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1117.pt|The birds did not have a home to live in.
 wavs/robyn_robyn_1118.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1118.pt|They looked very sad.
 wavs/robyn_robyn_1119.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1119.pt|Dragon opened his big sack took out his birdhouse, and hung it on branch.
 wavs/robyn_robyn_1120.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1120.pt|Merry Christmas, said Dragon.
-wavs/robyn_robyn_1121.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1121.pt|When Dragon got home, his big sack was empty.
 wavs/robyn_robyn_1122.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1122.pt|There were no presents left for him.
-wavs/robyn_robyn_1123.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1123.pt|But Dragon did not feel sad.
 wavs/robyn_robyn_1124.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1124.pt|He went upstairs to his quiet room and crawled beneath his soft warm quilt.
 wavs/robyn_robyn_1125.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1125.pt|And later as he slept, Dragon dreamed he heard angels singing in the stairy night.
 wavs/robyn_robyn_1126.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1126.pt|But I was wrong. I think we need three microscopes for this family.
@@ -1009,21 +1022,19 @@ wavs/robyn_robyn_1127.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_roby
 wavs/robyn_robyn_1128.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1128.pt|Once I chased a little cat up a tree. Oh, me! Oh, my!
 wavs/robyn_robyn_1129.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1129.pt|Up a tree oh, me! Oh, my!
 wavs/robyn_robyn_1130.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1130.pt|We didn't a, why did I do that?
-wavs/robyn_robyn_1131.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1131.pt|Suddenly Pickles heard the Chief call out, Cat in a tree!
+wavs/robyn_robyn_1132.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1132.pt|Fireman Joe and two other men slid down the pole.
 wavs/robyn_robyn_1133.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1133.pt|Pickles slid down after them.
 wavs/robyn_robyn_1134.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1134.pt|He heard the Chief say The tree is in the old yard next to Mrs. Goodkind's house.
 wavs/robyn_robyn_1135.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1135.pt|Oh, thought Pickles. That's the yard where I lived. And that's the tree.
-wavs/robyn_robyn_1136.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1136.pt|The that's the tree Pickles jumped, Pickles jumped up an, on the truck with the three firemen.
-wavs/robyn_robyn_1137.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1137.pt|Away they rode to the yard. And he, and there there, in the wind and the rain, stood Mrs. Goodkind, pointing to a very little cat.
-wavs/robyn_robyn_1138.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1138.pt|The firemen put the firemen put a ladder against the tree. The ladder scared the little cat, and she ran to ha a high branch,
+wavs/robyn_robyn_1137_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1137_1.pt|Away they rode to the yard. And he, and there there, in the wind and the rain, stood Mrs. Goodkind, pointing to a very little cat.
+wavs/robyn_robyn_1138_1.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1138_1.pt|The firemen put the firemen put a ladder against the tree.
+wavs/robyn_robyn_1138_2.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1138_2.pt|The ladder scared the little cat, and she ran to ha a high branch,
 wavs/robyn_robyn_1139.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1139.pt|where a fireman could not go. Joe said to Mrs. Goodkind, I don't know what to do. But Pickles knew knew.
 wavs/robyn_robyn_1140.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1140.pt|He began to climb the ladder.
-wavs/robyn_robyn_1141.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1141.pt|Pickles climbed up and up and up.
-wavs/robyn_robyn_1142.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1142.pt|It was hard work. But at last he came to the top of the ladder.
 wavs/robyn_robyn_1143.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1143.pt|Then he climbed up the tree until he came to the tree to the little cat.
+wavs/robyn_robyn_1144.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1144.pt|Come, cat, he said to her let me help you.
 wavs/robyn_robyn_1145.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1145.pt|He picked her up and took her gently down to Mrs. Good.
 wavs/robyn_robyn_1146.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1146.pt|Mrs. Goodkind thanked Pickles.
-wavs/robyn_robyn_1147.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1147.pt|Then he sh then she said to him, I always knew that some day you would do a big things.
 wavs/robyn_robyn_1148.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1148.pt|I always knew that someday you would do big things.
 wavs/robyn_robyn_1149.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1149.pt|Today you have done something very big.
 wavs/robyn_robyn_1150.wav|/exports/eddie/scratch/s2239849/Robyn/pitch/robyn_robyn_1150.pt|Pickles waved a paw at her.
