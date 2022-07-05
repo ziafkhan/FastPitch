@@ -41,13 +41,14 @@ class FastPitchLoss(nn.Module):
         self.dur_predictor_loss_scale = dur_predictor_loss_scale
         self.pitch_predictor_loss_scale = pitch_predictor_loss_scale
         self.energy_predictor_loss_scale = energy_predictor_loss_scale
+        self.postnet_loss_scale = 1.0
         self.attn_loss_scale = attn_loss_scale
         self.attn_ctc_loss = AttentionCTCLoss()
 
     def forward(self, model_out, targets, is_training=True, meta_agg='mean'):
         (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt,
          energy_pred, energy_tgt, attn_soft, attn_hard, attn_dur,
-         attn_logprob) = model_out
+         attn_logprob, mel_postnet_out) = model_out
 
         (mel_tgt, in_lens, out_lens) = targets
 
@@ -66,10 +67,13 @@ class FastPitchLoss(nn.Module):
 
         ldiff = mel_tgt.size(1) - mel_out.size(1)
         mel_out = F.pad(mel_out, (0, 0, 0, ldiff, 0, 0), value=0.0)
+        mel_postnet_out = F.pad(mel_postnet_out, (0, 0, 0, ldiff, 0, 0), value=0.0)
         mel_mask = mel_tgt.ne(0).float()
         loss_fn = F.mse_loss
         mel_loss = loss_fn(mel_out, mel_tgt, reduction='none')
+        mel_postnet_loss = loss_fn(mel_postnet_out, mel_tgt, reduction='none')
         mel_loss = (mel_loss * mel_mask).sum() / mel_mask.sum()
+        mel_postnet_loss = (mel_postnet_loss * mel_mask).sum() / mel_mask.sum()
 
         ldiff = pitch_tgt.size(2) - pitch_pred.size(2)
         pitch_pred = F.pad(pitch_pred, (0, ldiff, 0, 0, 0, 0), value=0.0)
@@ -90,7 +94,8 @@ class FastPitchLoss(nn.Module):
                 + dur_pred_loss * self.dur_predictor_loss_scale
                 + pitch_loss * self.pitch_predictor_loss_scale
                 + energy_loss * self.energy_predictor_loss_scale
-                + attn_loss * self.attn_loss_scale)
+                + attn_loss * self.attn_loss_scale
+                + mel_postnet_loss * self.postnet_loss_scale)
 
         meta = {
             'loss': loss.clone().detach(),

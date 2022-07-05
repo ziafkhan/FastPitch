@@ -36,6 +36,7 @@ from common.utils import mask_from_lens
 from fastpitch.alignment import b_mas, mas_width1
 from fastpitch.attention import ConvAttention
 from fastpitch.transformer import FFTransformer
+from fastpitch.postnet import Postnet
 
 
 def regulate_len(durations, enc_out, pace: float = 1.0,
@@ -208,6 +209,8 @@ class FastPitch(nn.Module):
             n_mel_channels, 0, symbols_embedding_dim,
             use_query_proj=True, align_query_enc_type='3xconv')
 
+        self.postnet = Postnet()
+
     def binarize_attention(self, attn, in_lens, out_lens):
         """For training purposes only. Binarizes attention with MAS.
            These will no longer recieve a gradient.
@@ -313,9 +316,11 @@ class FastPitch(nn.Module):
         # Output FFT
         dec_out, dec_mask = self.decoder(len_regulated, dec_lens)
         mel_out = self.proj(dec_out)
+        mel_postnet_out = mel_out + self.postnet(mel_out)
+        print(mel_postnet_out.shape, mel_out.shape)
         return (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred,
                 pitch_tgt, energy_pred, energy_tgt, attn_soft, attn_hard,
-                attn_hard_dur, attn_logprob)
+                attn_hard_dur, attn_logprob, mel_postnet_out)
 
     def infer(self, inputs, pace=1.0, dur_tgt=None, pitch_tgt=None,
               energy_tgt=None, pitch_transform=None, max_duration=75,
@@ -373,6 +378,7 @@ class FastPitch(nn.Module):
 
         dec_out, dec_mask = self.decoder(len_regulated, dec_lens)
         mel_out = self.proj(dec_out)
+        mel_out = mel_out + self.postnet(mel_out)
         # mel_lens = dec_mask.squeeze(2).sum(axis=1).long()
         mel_out = mel_out.permute(0, 2, 1)  # For inference.py
         return mel_out, dec_lens, dur_pred, pitch_pred, energy_pred
