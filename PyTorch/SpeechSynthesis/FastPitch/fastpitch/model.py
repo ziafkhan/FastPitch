@@ -317,7 +317,6 @@ class FastPitch(nn.Module):
         dec_out, dec_mask = self.decoder(len_regulated, dec_lens)
         mel_out = self.proj(dec_out)
         mel_postnet_out = mel_out + self.postnet(mel_out)
-        print(mel_postnet_out.shape, mel_out.shape)
         return (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred,
                 pitch_tgt, energy_pred, energy_tgt, attn_soft, attn_hard,
                 attn_hard_dur, attn_logprob, mel_postnet_out)
