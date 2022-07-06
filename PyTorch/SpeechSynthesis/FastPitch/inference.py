@@ -134,7 +134,7 @@ def parse_args(parser):
 
 def load_model_from_ckpt(checkpoint_path, ema, model):
 
-    checkpoint_data = torch.load(checkpoint_path)
+    checkpoint_data = torch.load(checkpoint_path, map_location="cpu")
     status = ''
 
     if 'state_dict' in checkpoint_data:
