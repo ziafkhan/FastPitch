@@ -133,8 +133,8 @@ def parse_args(parser):
 
 
 def load_model_from_ckpt(checkpoint_path, ema, model):
-
-    checkpoint_data = torch.load(checkpoint_path)
+    device = "cuda:0" if torch.cuda.is_available() else "cpu"
+    checkpoint_data = torch.load(checkpoint_path, map_location=device)
     status = ''
 
     if 'state_dict' in checkpoint_data:

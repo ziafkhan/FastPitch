@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 : ${WAVEGLOW:="pretrained_models/waveglow/nvidia_waveglow256pyt_fp16.pt"}
-: ${FASTPITCH:="pretrained_models/fastpitch/nvidia_fastpitch_210824.pt"}
+: ${FASTPITCH:="pretrained_models/fastpitch/FastPitch_checkpoint_200.pt"}
 : ${BATCH_SIZE:=32}
-: ${PHRASES:="phrases/devset10.tsv"}
+: ${PHRASES:="phrases/devset10_small.tsv"}
 : ${OUTPUT_DIR:="./output/audio_$(basename ${PHRASES} .tsv)"}
 : ${LOG_FILE:="$OUTPUT_DIR/nvlog_infer.json"}
 : ${AMP:=false}
@@ -13,7 +13,8 @@
 : ${DENOISING:=0.01}
 : ${WARMUP:=0}
 : ${REPEATS:=1}
-: ${CPU:=false}
+: ${CPU:=true}
+: ${SAVE_MELS:=true}
 
 : ${SPEAKER:=0}
 : ${NUM_SPEAKERS:=1}
@@ -39,6 +40,7 @@ ARGS+=" --n-speakers $NUM_SPEAKERS"
 [ "$PHONE" = "true" ]       && ARGS+=" --p-arpabet 1.0"
 [ "$ENERGY" = "true" ]      && ARGS+=" --energy-conditioning"
 [ "$TORCHSCRIPT" = "true" ] && ARGS+=" --torchscript"
+[ "$SAVE_MELS" = "true" ]   && ARGS+=" --save-mels"
 
 mkdir -p "$OUTPUT_DIR"
 
