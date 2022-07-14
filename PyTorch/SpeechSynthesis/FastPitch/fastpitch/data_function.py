@@ -31,6 +31,7 @@ import re
 from pathlib import Path
 
 import librosa
+import soundfile as sf
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -40,6 +41,9 @@ from scipy.stats import betabinom
 import common.layers as layers
 from common.text.text_processing import TextProcessing
 from common.utils import load_wav_to_torch, load_filepaths_and_text, to_gpu
+import parselmouth 
+from parselmouth import praat
+import math
 
 
 class BetaBinomialInterpolator:
@@ -317,12 +321,55 @@ class TTSDataset(torch.utils.data.Dataset):
 
         pitch_mel = estimate_pitch(wav, mel_len, self.f0_method,
                                    self.pitch_mean, self.pitch_std)
+        formants = self.estimate_formants(wav)
+        pitch_mel = torch.vstack((pitch_mel, formants))
 
         if self.pitch_tmp_dir is not None and not cached_fpath.is_file():
             cached_fpath.parent.mkdir(parents=True, exist_ok=True)
             torch.save(pitch_mel, cached_fpath)
 
         return pitch_mel
+
+    def estimate_formants(self,
+                    wav_filepath, 
+                    time_step=256/22050, #hop_length/sampling_rate 
+                    num_formants=5.5, 
+                    center_formant=5500,
+                    window_size=1024/22050, #window_size/sampling_rate 
+                    pre_emphasis_start=50
+                    ):
+        sound = parselmouth.Sound(wav_filepath)
+        data, sr = sf.read(wav_filepath)
+        hop_length = time_step*sr
+        formants = praat.call(sound, "To Formant (burg)", 
+                            time_step, 
+                            num_formants, 
+                            center_formant, 
+                            window_size, 
+                            pre_emphasis_start
+                            )
+        numPoints = math.ceil(len(data)/hop_length)
+        
+        f1_list, f2_list, f3_list, f4_list, t_list = [], [], [], [], []
+        
+        for point in range(0, numPoints):
+            t = point*time_step
+            point += 1
+            f1 = praat.call(formants, "Get value at time", 1, t, 'Hertz', 'Linear')
+            f2 = praat.call(formants, "Get value at time", 2, t, 'Hertz', 'Linear')
+            f3 = praat.call(formants, "Get value at time", 3, t, 'Hertz', 'Linear')
+            f4 = praat.call(formants, "Get value at time", 4, t, 'Hertz', 'Linear')
+            t_list.append(t)
+            f1_list.append(f1 if not math.isnan(f1) else 0.0)
+            f2_list.append(f2 if not math.isnan(f2) else 0.0)
+            f3_list.append(f3 if not math.isnan(f3) else 0.0)
+            f4_list.append(f4 if not math.isnan(f4) else 0.0)
+        f1 = torch.Tensor(f1_list).reshape((1,-1))
+        f2 = torch.Tensor(f2_list).reshape((1,-1))
+        f3 = torch.Tensor(f3_list).reshape((1,-1))
+        f4 = torch.Tensor(f4_list).reshape((1,-1))
+        
+        return t_list, torch.vstack((f1,f2,f3,f4))
 
 
 class TTSCollate:
