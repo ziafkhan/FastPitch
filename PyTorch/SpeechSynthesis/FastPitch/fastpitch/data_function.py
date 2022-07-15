@@ -220,6 +220,7 @@ class TTSDataset(torch.utils.data.Dataset):
         mel = self.get_mel(audiopath)
         text = self.get_text(text)
         pitch = self.get_pitch(index, mel.size(-1))
+        formants = self.get_formants(index)
         energy = torch.norm(mel.float(), dim=0, p=2)
         attn_prior = self.get_prior(index, mel.shape[1], text.shape[0])
 
@@ -229,7 +230,7 @@ class TTSDataset(torch.utils.data.Dataset):
         if len(pitch.size()) == 1:
             pitch = pitch[None, :]
 
-        return (text, mel, len(text), pitch, energy, speaker, attn_prior,
+        return (text, mel, len(text), pitch, formants, energy, speaker, attn_prior,
                 audiopath)
 
     def __len__(self):
@@ -321,14 +322,35 @@ class TTSDataset(torch.utils.data.Dataset):
 
         pitch_mel = estimate_pitch(wav, mel_len, self.f0_method,
                                    self.pitch_mean, self.pitch_std)
-        formants = self.estimate_formants(wav)
-        pitch_mel = torch.vstack((pitch_mel, formants))
-
+                                   
         if self.pitch_tmp_dir is not None and not cached_fpath.is_file():
             cached_fpath.parent.mkdir(parents=True, exist_ok=True)
             torch.save(pitch_mel, cached_fpath)
 
         return pitch_mel
+
+    def get_formants(self, index):
+        audiopath, *fields = self.audiopaths_and_text[index]
+
+        if self.n_speakers > 1:
+            spk = int(fields[-1])
+        else:
+            spk = 0
+
+        if self.load_pitch_from_disk:
+            pitchpath = fields[0]
+            formantpath = pitchpath.replace("pitch","formant")
+            formant = torch.load(formantpath)
+            return formant
+        # No luck so far - calculate
+        wav = audiopath
+        if not wav.endswith('.wav'):
+            wav = re.sub('/mels/', '/wavs/', wav)
+            wav = re.sub('.pt$', '.wav', wav)
+
+        _, formant_mel = self.estimate_formants(wav)
+
+        return formant_mel
 
     def estimate_formants(self,
                     wav_filepath, 
@@ -369,7 +391,7 @@ class TTSDataset(torch.utils.data.Dataset):
         f3 = torch.Tensor(f3_list).reshape((1,-1))
         f4 = torch.Tensor(f4_list).reshape((1,-1))
         
-        return t_list, torch.vstack((f1,f2,f3,f4))
+        return t_list, torch.vstack((f1, f2, f3, f4))
 
 
 class TTSCollate:

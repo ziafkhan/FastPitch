@@ -98,6 +98,7 @@ def main():
 
     if args.extract_pitch:
         Path(args.dataset_path, 'pitch').mkdir(parents=False, exist_ok=True)
+        Path(args.dataset_path, 'formants').mkdir(parents=False, exist_ok=True)
 
     if args.save_alignment_priors:
         Path(args.dataset_path, 'alignment_priors').mkdir(parents=False, exist_ok=True)
@@ -142,7 +143,7 @@ def main():
         for i, batch in enumerate(tqdm.tqdm(data_loader)):
             tik = time.time()
 
-            _, input_lens, mels, mel_lens, _, pitch, _, _, attn_prior, fpaths = batch
+            _, input_lens, mels, mel_lens, _, pitch, formants, _, _, attn_prior, fpaths = batch
 
             # Ensure filenames are unique
             for p in fpaths:
@@ -161,6 +162,10 @@ def main():
                 for j, p in enumerate(pitch):
                     fname = Path(fpaths[j]).with_suffix('.pt').name
                     fpath = Path(args.dataset_path, 'pitch', fname)
+                    torch.save(p[:mel_lens[j]], fpath)
+                for j, p in enumerate(formants):
+                    fname = Path(fpaths[j]).with_suffix('.pt').name
+                    fpath = Path(args.dataset_path, 'formants', fname)
                     torch.save(p[:mel_lens[j]], fpath)
 
             if args.save_alignment_priors:

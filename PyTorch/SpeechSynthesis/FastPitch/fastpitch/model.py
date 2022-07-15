@@ -183,6 +183,19 @@ class FastPitch(nn.Module):
             kernel_size=pitch_embedding_kernel_size,
             padding=int((pitch_embedding_kernel_size - 1) / 2))
 
+        self.formant_predictor = TemporalPredictor(
+            in_fft_output_size,
+            filter_size=pitch_predictor_filter_size,
+            kernel_size=pitch_predictor_kernel_size,
+            dropout=p_pitch_predictor_dropout, n_layers=pitch_predictor_n_layers,
+            n_predictions=4
+        )
+
+        self.formant_emb = nn.Conv1d(
+            4, symbols_embedding_dim,
+            kernel_size=pitch_embedding_kernel_size,
+            padding=int((pitch_embedding_kernel_size - 1) / 2))
+        
         # Store values precomputed for training data within the model
         self.register_buffer('pitch_mean', torch.zeros(1))
         self.register_buffer('pitch_std', torch.zeros(1))
@@ -244,7 +257,7 @@ class FastPitch(nn.Module):
 
     def forward(self, inputs, use_gt_pitch=True, pace=1.0, max_duration=75):
 
-        (inputs, input_lens, mel_tgt, mel_lens, pitch_dense, energy_dense,
+        (inputs, input_lens, mel_tgt, mel_lens, pitch_dense, formants_dense, energy_dense,
          speaker, attn_prior, audiopaths) = inputs
 
         mel_max_len = mel_tgt.size(2)
@@ -285,15 +298,20 @@ class FastPitch(nn.Module):
 
         # Predict pitch
         pitch_pred = self.pitch_predictor(enc_out, enc_mask).permute(0, 2, 1)
+        formant_pred = self.formant_predictor(enc_out, enc_mask).permute(0,2,1)
 
         # Average pitch over characters
         pitch_tgt = average_pitch(pitch_dense, dur_tgt)
+        formant_tgt = average_pitch(formants_dense, dur_tgt)
 
         if use_gt_pitch and pitch_tgt is not None:
             pitch_emb = self.pitch_emb(pitch_tgt)
+            formant_emb = self.formant_emb(formant_tgt)
         else:
             pitch_emb = self.pitch_emb(pitch_pred)
-        enc_out = enc_out + pitch_emb.transpose(1, 2)
+            formant_emb = self.formant_emb(formant_pred)
+        enc_out = enc_out + pitch_emb.transpose(1, 2) + formant_emb.transpose(1, 2)
+
 
         # Predict energy
         if self.energy_conditioning:
