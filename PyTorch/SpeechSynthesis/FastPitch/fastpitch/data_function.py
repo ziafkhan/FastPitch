@@ -427,18 +427,22 @@ class TTSCollate:
         n_formants = batch[0][3].shape[0]
         pitch_padded = torch.zeros(mel_padded.size(0), n_formants,
                                    mel_padded.size(2), dtype=batch[0][3].dtype)
+        formants_padded = torch.zeros(mel_padded.size(0), 4,
+                                   mel_padded.size(2), dtype=batch[0][4].dtype)
         energy_padded = torch.zeros_like(pitch_padded[:, 0, :])
 
         for i in range(len(ids_sorted_decreasing)):
             pitch = batch[ids_sorted_decreasing[i]][3]
-            energy = batch[ids_sorted_decreasing[i]][4]
+            formant = batch[ids_sorted_decreasing[i]][4]
+            energy = batch[ids_sorted_decreasing[i]][5]
             pitch_padded[i, :, :pitch.shape[1]] = pitch
+            formants_padded[i, :, :formant.shape[1]] = formant
             energy_padded[i, :energy.shape[0]] = energy
 
-        if batch[0][5] is not None:
+        if batch[0][6] is not None:
             speaker = torch.zeros_like(input_lengths)
             for i in range(len(ids_sorted_decreasing)):
-                speaker[i] = batch[ids_sorted_decreasing[i]][5]
+                speaker[i] = batch[ids_sorted_decreasing[i]][6]
         else:
             speaker = None
 
@@ -446,29 +450,30 @@ class TTSCollate:
                                         max_input_len)
         attn_prior_padded.zero_()
         for i in range(len(ids_sorted_decreasing)):
-            prior = batch[ids_sorted_decreasing[i]][6]
+            prior = batch[ids_sorted_decreasing[i]][7]
             attn_prior_padded[i, :prior.size(0), :prior.size(1)] = prior
 
         # Count number of items - characters in text
         len_x = [x[2] for x in batch]
         len_x = torch.Tensor(len_x)
 
-        audiopaths = [batch[i][7] for i in ids_sorted_decreasing]
+        audiopaths = [batch[i][8] for i in ids_sorted_decreasing]
 
         return (text_padded, input_lengths, mel_padded, output_lengths, len_x,
-                pitch_padded, energy_padded, speaker, attn_prior_padded,
+                pitch_padded, formants_padded, energy_padded, speaker, attn_prior_padded,
                 audiopaths)
 
 
 def batch_to_gpu(batch):
     (text_padded, input_lengths, mel_padded, output_lengths, len_x,
-     pitch_padded, energy_padded, speaker, attn_prior, audiopaths) = batch
+     pitch_padded, formants_padded, energy_padded, speaker, attn_prior, audiopaths) = batch
 
     text_padded = to_gpu(text_padded).long()
     input_lengths = to_gpu(input_lengths).long()
     mel_padded = to_gpu(mel_padded).float()
     output_lengths = to_gpu(output_lengths).long()
     pitch_padded = to_gpu(pitch_padded).float()
+    formants_padded = to_gpu(formants_padded).float()
     energy_padded = to_gpu(energy_padded).float()
     attn_prior = to_gpu(attn_prior).float()
     if speaker is not None:
@@ -476,7 +481,7 @@ def batch_to_gpu(batch):
 
     # Alignments act as both inputs and targets - pass shallow copies
     x = [text_padded, input_lengths, mel_padded, output_lengths,
-         pitch_padded, energy_padded, speaker, attn_prior, audiopaths]
+         pitch_padded, formants_padded, energy_padded, speaker, attn_prior, audiopaths]
     y = [mel_padded, input_lengths, output_lengths]
     len_x = torch.sum(output_lengths)
     return (x, y, len_x)
