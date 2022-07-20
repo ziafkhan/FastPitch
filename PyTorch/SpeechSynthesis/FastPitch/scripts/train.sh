@@ -66,7 +66,7 @@ ARGS+=" --text-cleaners $TEXT_CLEANERS"
 ARGS+=" --n-speakers $NSPEAKERS"
 
 
-[ "$CHECKPOINT_PATH" = "" ]        && ARGS+=" --resume"
+#[ "$CHECKPOINT_PATH" = "" ]        && ARGS+=" --resume"
 [ "$CHECKPOINT_PATH" != "" ]       && ARGS+=" --checkpoint-path \"${CHECKPOINT_PATH}\""
 [ "$PROJECT" != "" ]               && ARGS+=" --project \"${PROJECT}\""
 [ "$EXPERIMENT_DESC" != "" ]       && ARGS+=" --experiment-desc \"${EXPERIMENT_DESC}\""
