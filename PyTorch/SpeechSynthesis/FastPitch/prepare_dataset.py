@@ -163,10 +163,13 @@ def main():
                 #     fname = Path(fpaths[j]).with_suffix('.pt').name
                 #     fpath = Path(args.dataset_path, 'pitch', fname)
                 #     torch.save(p[:mel_lens[j]], fpath)
-                for j, p in enumerate(formants):
+                mask_formants = True
+                for j, (f, p) in enumerate(zip(formants, pitch)):
                     fname = Path(fpaths[j]).with_suffix('.pt').name
                     fpath = Path(args.dataset_path, 'formants', fname)
-                    torch.save(p[:mel_lens[j]], fpath)
+                    if mask_formants:
+                        f[:mel_lens[j]] = f[:mel_lens[j]].masked_fill_(mask=p[:mel_lens[j]]==0,value=0.0)
+                    torch.save(f[:mel_lens[j]], fpath)
 
             if args.save_alignment_priors:
                 for j, prior in enumerate(attn_prior):

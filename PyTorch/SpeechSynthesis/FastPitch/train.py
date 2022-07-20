@@ -368,11 +368,11 @@ def plot_batch_mels(pred_tgt_lists, rank):
 
 def log_validation_batch(x, y_pred, rank):
     x_fields = ['text_padded', 'input_lengths', 'mel_padded',
-                'output_lengths', 'pitch_padded', 'energy_padded',
-                'speaker', 'attn_prior', 'audiopaths']
+                'output_lengths', 'pitch_padded', 'formants_padded',
+                'energy_padded', 'speaker', 'attn_prior', 'audiopaths']
     y_pred_fields = ['mel_out', 'dec_mask', 'dur_pred', 'log_dur_pred',
-                     'pitch_pred', 'pitch_tgt', 'energy_pred',
-                     'energy_tgt', 'attn_soft', 'attn_hard',
+                     'pitch_pred', 'pitch_tgt', 'formant_pred',' formant_tgt',
+                     'energy_pred', 'energy_tgt', 'attn_soft', 'attn_hard',
                      'attn_hard_dur', 'attn_logprob']
 
     validation_dict = dict(zip(x_fields + y_pred_fields,
@@ -403,11 +403,11 @@ def validate(model, criterion, valset, batch_size, collate_fn, distributed_run,
         val_meta = defaultdict(float)
         val_num_frames = 0
         for i, batch in enumerate(val_loader):
-            # x = (inputs, input_lens, mel_tgt, mel_lens, pitch_dense,
+            # x = (inputs, input_lens, mel_tgt, mel_lens, pitch_dense, formants_dense
             # energy_dense, spectral_tilt_dense, speaker, attn_prior, audiopaths)
             x, y, num_frames = batch_to_gpu(batch)
             # (mel_out, dec_mask, dur_pred, log_dur_pred,
-            #  pitch_pred, pitch_tgt, energy_pred, energy_tgt,
+            #  pitch_pred, pitch_tgt, formant_pred, formant_tgt, energy_pred, energy_tgt,
             #  spectral_tilt_pred, spectral_tilt_tgt,
             #  attn_soft, attn_hard, attn_hard_dur, attn_logprob)
             y_pred = model(x)
@@ -663,7 +663,7 @@ def main():
                     if args.kl_loss_start_epoch == epoch and epoch_iter == 1:
                         print('Begin hard_attn loss')
 
-                    _, _, _, _, _, _, _, _, attn_soft, attn_hard, _, _, _ = y_pred
+                    _, _, _, _, _, _, _, _, _, _, attn_soft, attn_hard, _, _, _ = y_pred
                     binarization_loss = attention_kl_loss(attn_hard, attn_soft)
                     kl_weight = min((epoch - args.kl_loss_start_epoch) / args.kl_loss_warmup_epochs, 1.0) * args.kl_loss_weight
                     meta['kl_loss'] = binarization_loss.clone().detach() * kl_weight
