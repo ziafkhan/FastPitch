@@ -336,8 +336,8 @@ class FastPitch(nn.Module):
         mel_out = self.proj(dec_out)
         mel_postnet_out = mel_out + self.postnet(mel_out)
         return (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred,
-                pitch_tgt, energy_pred, energy_tgt, attn_soft, attn_hard,
-                attn_hard_dur, attn_logprob, mel_postnet_out)
+                pitch_tgt, formant_pred, formant_tgt, energy_pred, energy_tgt,
+                attn_soft, attn_hard, attn_hard_dur, attn_logprob, mel_postnet_out)
 
     def infer(self, inputs, pace=1.0, dur_tgt=None, pitch_tgt=None,
               energy_tgt=None, pitch_transform=None, max_duration=75,

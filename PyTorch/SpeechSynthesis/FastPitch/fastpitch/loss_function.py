@@ -47,8 +47,8 @@ class FastPitchLoss(nn.Module):
 
     def forward(self, model_out, targets, is_training=True, meta_agg='mean'):
         (mel_out, dec_mask, dur_pred, log_dur_pred, pitch_pred, pitch_tgt,
-         energy_pred, energy_tgt, attn_soft, attn_hard, attn_dur,
-         attn_logprob, mel_postnet_out) = model_out
+         formant_pred, formant_tgt, energy_pred, energy_tgt, 
+         attn_soft, attn_hard, attn_dur, attn_logprob, mel_postnet_out) = model_out
 
         (mel_tgt, in_lens, out_lens) = targets
 
@@ -80,6 +80,11 @@ class FastPitchLoss(nn.Module):
         pitch_loss = F.mse_loss(pitch_tgt, pitch_pred, reduction='none')
         pitch_loss = (pitch_loss * dur_mask.unsqueeze(1)).sum() / dur_mask.sum()
 
+        ldiff = formant_tgt.size(2) - formant_pred.size(2)
+        formant_pred = F.pad(formant_pred, (0, ldiff, 0, 0, 0, 0), value=0.0)
+        formant_loss = F.mse_loss(formant_tgt, formant_pred, reduction='none')
+        formant_loss = (formant_loss * dur_mask.unsqueeze(1)).sum() / dur_mask.sum()
+
         if energy_pred is not None:
             energy_pred = F.pad(energy_pred, (0, ldiff, 0, 0), value=0.0)
             energy_loss = F.mse_loss(energy_tgt, energy_pred, reduction='none')
@@ -95,7 +100,8 @@ class FastPitchLoss(nn.Module):
                 + pitch_loss * self.pitch_predictor_loss_scale
                 + energy_loss * self.energy_predictor_loss_scale
                 + attn_loss * self.attn_loss_scale
-                + mel_postnet_loss * self.postnet_loss_scale)
+                + mel_postnet_loss * self.postnet_loss_scale
+                + formant_loss * self.pitch_predictor_loss_scale)
 
         meta = {
             'loss': loss.clone().detach(),
@@ -105,6 +111,7 @@ class FastPitchLoss(nn.Module):
             'attn_loss': attn_loss.clone().detach(),
             'dur_error': (torch.abs(dur_pred - dur_tgt).sum()
                           / dur_mask.sum()).detach(),
+            'formant_loss' : formant_loss.clone().detach()
         }
 
         if energy_pred is not None:
