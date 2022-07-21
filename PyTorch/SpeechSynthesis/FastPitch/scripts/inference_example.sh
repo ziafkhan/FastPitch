@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 : ${WAVEGLOW:="pretrained_models/waveglow/nvidia_waveglow256pyt_fp16.pt"}
-: ${FASTPITCH:="pretrained_models/fastpitch/FastPitch_checkpoint_450.pt"}
-: ${BATCH_SIZE:=32}
-: ${PHRASES:="phrases/devset10_small.tsv"}
+: ${FASTPITCH:="pretrained_models/fastpitch/FastPitch_checkpoint_400_WithoutPostnet.pt"}
+: ${BATCH_SIZE:=4}
+: ${PHRASES:="phrases/devset10.tsv"}
 : ${OUTPUT_DIR:="./output/audio_$(basename ${PHRASES} .tsv)"}
 : ${LOG_FILE:="$OUTPUT_DIR/nvlog_infer.json"}
 : ${AMP:=false}
