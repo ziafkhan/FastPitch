@@ -625,6 +625,7 @@ def main():
         epoch_energy_loss = 0.0
         epoch_dur_loss = 0.0
         epoch_num_frames = 0
+        epoch_formants_loss = 0
         epoch_frames_per_sec = 0.0
 
         if distributed_run:
@@ -720,16 +721,19 @@ def main():
                 iter_pitch_loss = iter_meta['pitch_loss'].item()
                 iter_energy_loss = iter_meta['energy_loss'].item()
                 iter_dur_loss = iter_meta['duration_predictor_loss'].item()
+                iter_formant_loss = iter_meta['formant_loss'].item()
                 iter_time = time.perf_counter() - iter_start_time
                 epoch_frames_per_sec += iter_num_frames / iter_time
                 epoch_loss += iter_loss
                 epoch_num_frames += iter_num_frames
                 epoch_mel_loss += iter_mel_loss
+                epoch_formants_loss += iter_formant_loss
                 epoch_pitch_loss += iter_pitch_loss
                 epoch_energy_loss += iter_energy_loss
                 epoch_dur_loss += iter_dur_loss
 
                 if epoch_iter % 5 == 0:
+                    #print(f"Formant loss : {iter_formant_loss:.3f} Mel loss : {iter_mel_loss:.3f} Pitch loss : {iter_pitch_loss:.3f} Energy loss : {iter_energy_loss:.3f}")
                     log({
                         'epoch': epoch,
                         'epoch_iter': epoch_iter,
@@ -744,6 +748,7 @@ def main():
                         'dur-loss/dur_loss': iter_dur_loss,
                         'frames per s': iter_num_frames / iter_time,
                         'took': iter_time,
+                        'formant_less' : iter_formant_loss,
                         'lrate': optimizer.param_groups[0]['lr'],
                     }, args.local_rank)
 
