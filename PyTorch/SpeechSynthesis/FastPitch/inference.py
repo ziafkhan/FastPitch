@@ -117,6 +117,10 @@ def parse_args(parser):
                            help='Raise/lower the pitch by <hz>')
     transform.add_argument('--pitch-transform-custom', action='store_true',
                            help='Apply the transform from pitch_transform.py')
+    transform.add_argument('--formant-scale', type=float, default=1.0,
+                           help="Apply a linear scale to all formants, typical values are in the range (0.4, 2.0)")
+    transform.add_argument('--formant-shift', type=float, default=None,
+                           help="Apply a shift to all formants")
 
     text_processing = parser.add_argument_group('Text processing parameters')
     text_processing.add_argument('--text-cleaners', nargs='*',
@@ -359,7 +363,10 @@ def main():
     gen_kw = {'pace': args.pace,
               'speaker': args.speaker,
               'pitch_tgt': None,
-              'pitch_transform': build_pitch_transformation(args)}
+              'pitch_transform': build_pitch_transformation(args),
+              'formant_scale': args.formant_scale,
+              'formant_shift': args.formant_shift
+              }
 
     if args.torchscript:
         gen_kw.pop('pitch_transform')

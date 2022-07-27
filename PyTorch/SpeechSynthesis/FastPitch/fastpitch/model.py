@@ -85,6 +85,20 @@ def average_pitch(pitch, durs):
     return pitch_avg
 
 
+def scale_formants(formant:torch.tensor, vtl_multiplier=None, formant_shift=None) -> torch.tensor:
+    # assert 0.7<=vtl_multiplier<=1.3, "VTL modification has to lie between 0.7 and 1.3"
+    mu = torch.tensor([[ 826.9606],[1879.4167],[2735.6580],[3746.0940]])
+    sigma = torch.tensor([[346.2191], [488.0019], [577.8851], [649.5579]])
+    if vtl_multiplier is None and formant_shift is None:
+        return formant
+    if vtl_multiplier is not None:
+        formant = (formant*sigma + mu - vtl_multiplier*mu)/(vtl_multiplier*sigma)
+    if formant_shift is not None:
+        shift = formant_shift/sigma
+        formant += shift
+    return formant
+    
+
 class TemporalPredictor(nn.Module):
     """Predicts a single float per each temporal location"""
 
@@ -341,7 +355,7 @@ class FastPitch(nn.Module):
 
     def infer(self, inputs, pace=1.0, dur_tgt=None, pitch_tgt=None,
               energy_tgt=None, pitch_transform=None, max_duration=75,
-              speaker=0):
+              speaker=0, formant_scale=None, formant_shift=None):
 
         if self.speaker_emb is None:
             spk_emb = 0
@@ -360,6 +374,8 @@ class FastPitch(nn.Module):
 
         # Pitch over chars
         pitch_pred = self.pitch_predictor(enc_out, enc_mask).permute(0, 2, 1)
+        formant_pred = self.formant_predictor(enc_out, enc_mask).permute(0, 2, 1)
+        formant_pred = scale_formants(formant_pred, formant_scale, formant_shift)
 
         if pitch_transform is not None:
             if self.pitch_std[0] == 0.0:
@@ -374,7 +390,8 @@ class FastPitch(nn.Module):
         else:
             pitch_emb = self.pitch_emb(pitch_tgt).transpose(1, 2)
 
-        enc_out = enc_out + pitch_emb
+        formant_emb = self.formant_emb(formant_pred).transpose(1,2)
+        enc_out = enc_out + pitch_emb + formant_emb
 
         # Predict energy
         if self.energy_conditioning:
