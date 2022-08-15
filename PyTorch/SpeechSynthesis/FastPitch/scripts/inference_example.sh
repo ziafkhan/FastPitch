@@ -3,7 +3,7 @@
 : ${WAVEGLOW:="pretrained_models/waveglow/nvidia_waveglow256pyt_fp16.pt"}
 : ${FASTPITCH:="pretrained_models/fastpitch/FastPitch_checkpoint_400_WithoutPostnet.pt"}
 : ${BATCH_SIZE:=4}
-: ${PHRASES:="phrases/devset10.tsv"}
+: ${PHRASES:="phrases/devset10_large.tsv"}
 : ${OUTPUT_DIR:="./output/audio_$(basename ${PHRASES} .tsv)"}
 : ${LOG_FILE:="$OUTPUT_DIR/nvlog_infer.json"}
 : ${AMP:=false}
@@ -14,7 +14,7 @@
 : ${WARMUP:=0}
 : ${REPEATS:=1}
 : ${CPU:=true}
-: ${SAVE_MELS:=true}
+: ${SAVE_MELS:=false}
 
 : ${SPEAKER:=0}
 : ${NUM_SPEAKERS:=1}
