@@ -1,5 +1,61 @@
 # FastPitch 1.1 for PyTorch
 
+## VTL Modification Examples:
+VTL = 0.95
+
+
+https://user-images.githubusercontent.com/16511145/185294132-1f8c81e7-f157-45b8-9783-f99a73f849dc.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294134-042043af-709a-45ed-ac71-e28dc8aa3866.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294135-f69b25c4-f780-4622-a929-76cf01db1a1e.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294137-2fed2230-2524-448d-bb82-8af7c4224a1b.mp4
+
+
+VTL = 1.05
+
+
+https://user-images.githubusercontent.com/16511145/185294228-42b9badf-fa5f-466f-b477-40957d1241a8.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294229-244f1516-bb23-402d-9176-81c8c197ec21.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294231-59b62a27-69e1-4bbc-886a-f4e9dd21f0b4.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294234-2212ca24-23b9-4c99-964d-05d3316ba242.mp4
+
+
+
+VTL = 1.00
+
+
+https://user-images.githubusercontent.com/16511145/185294388-435e3fc2-f578-4083-b972-b92a53d4c7f7.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294391-b30488c9-7946-45dd-8a98-1416555a6b22.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294393-926a6c9d-5666-453d-8375-6604495abc3a.mp4
+
+
+
+https://user-images.githubusercontent.com/16511145/185294395-fa8ee89f-64ef-4d02-84e8-c4ecb613e852.mp4
+
+
 
 ## Table Of Contents
 
