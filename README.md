@@ -1,6 +1,5 @@
 # FastPitch 1.1 for PyTorch
 
-This repository provides a script and recipe to train the FastPitch model to achieve state-of-the-art accuracy and is tested and maintained by NVIDIA.
 
 ## Table Of Contents
 
