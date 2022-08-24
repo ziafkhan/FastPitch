@@ -94,7 +94,7 @@ def scale_formants(formant:torch.tensor, vtl_multiplier=None, formant_shift=None
     if vtl_multiplier is not None:
         formant = (formant*sigma + mu - vtl_multiplier*mu)/(vtl_multiplier*sigma)
     if formant_shift is not None:
-        shift = formant_shift/sigma
+        shift = formant_shift*(mu/mu[0])/sigma
         formant += shift
     return formant
     
